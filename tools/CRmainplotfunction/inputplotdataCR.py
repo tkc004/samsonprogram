@@ -1,0 +1,746 @@
+import collections
+from importplotfunctionsCR import *
+
+nested_dict = lambda: collections.defaultdict(nested_dict)
+inputplotdict = nested_dict()
+
+
+inputplotdict['figanisodiffmod_smcsm']={
+    '_plotfunction':gammasfrsnaptestinpput,
+    'dirneed':['bwsmclrdc28mhd','bwsmclrdc28mhdref'],
+    'wanted':'dirsm',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':1,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':1,
+    'newlabelneed':0,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0 
+    }
+
+
+inputplotdict['figanisodiffmod_smcgamma']={
+    '_plotfunction':gammasfrsnaptestinpput,
+    'dirneed':['bwsmclrdc28mhd','bwsmclrdc28mhdref'],
+    'wanted':'dirgammasfr',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':1,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':1,
+    'newlabelneed':0,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0 
+    }
+
+inputplotdict['figanisodiffmod_mwsm']={
+    '_plotfunction':gammasfrsnaptestinpput,
+    'dirneed':['bwmwlrdc28mhd','bwmwlrdc28mhdref'],
+    'wanted':'dirsm',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':1,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':1,
+    'newlabelneed':0,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0 
+    }
+
+inputplotdict['figanisodiffmod_mwgamma']={
+    '_plotfunction':gammasfrsnaptestinpput,
+    'dirneed':['bwmwlrdc28mhd','bwmwlrdc28mhdref'],
+    'wanted':'dirgammasfr',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':1,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':1,
+    'newlabelneed':0,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0 
+    }
+
+
+
+inputplotdict['figCRenergies_smciso']={
+    '_plotfunction':cratmulttestinput,
+    'dirneed':['bwsmclrdc0','bwsmclrdc27','bwsmclrdc28','bwsmclrdc29'],
+    'wanted':'cratmult',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':0,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'ratiocrout_sou':0,
+    'rateneed':1
+    }
+
+inputplotdict['figCRenergies_smcaniso']={
+    '_plotfunction':cratmulttestinput,
+    'dirneed':['bwsmclrstr','bwsmclrdc28mhd','bwsmclrdc28str'],
+    'wanted':'cratmult',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':0,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'ratiocrout_sou':0,
+    'rateneed':1
+    }
+
+
+inputplotdict['figCRenergies_mwiso']={
+    '_plotfunction':cratmulttestinput,
+    'dirneed':['bwmwmrdc0','bwmwmrdc27','bwmwmrdc28','bwmwmrdc29'],
+    'wanted':'cratmult',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':1,
+    'withincr':0,
+    'ratiocrout_sou':0,
+    'rateneed':1
+    }
+
+
+inputplotdict['figCRenergies_mwaniso']={
+    '_plotfunction':cratmulttestinput,
+    'dirneed':['bwmwmrstr','bwmwmrdc28mhd','bwmwmrdc28str'],
+    'wanted':'cratmult',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':1,
+    'withincr':0,
+    'ratiocrout_sou':0,
+    'rateneed':1
+    }
+
+
+inputplotdict['figCRenergies_sbciso']={
+    '_plotfunction':cratmulttestinput,
+    'dirneed':['bwsbclrdc0','bwsbclrdc27','bwsbclrdc28','bwsbclrdc29'],
+    'wanted':'cratmult',
+    'startno':0,
+    'Nsnap':651,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':0,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'ratiocrout_sou':0,
+    'rateneed':1
+    }
+
+
+inputplotdict['figCRenergies_sbcaniso']={
+    '_plotfunction':cratmulttestinput,
+    'dirneed':['bwsbclrstr','bwsbclrdc28mhd','bwsbclrdc28str'],
+    'wanted':'cratmult',
+    'startno':0,
+    'Nsnap':651,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':0,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'ratiocrout_sou':0,
+    'rateneed':1
+    }
+
+
+
+inputplotdict['figCRgasmid_smcgas']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['bwsmclr','bwsmclrmhd','bwsmclrdc0','bwsmclrdc27','bwsmclrdc28',\
+               'bwsmclrdc29','bwsmclrstr','bwsmclrdc28mhd','bwsmclrdc28str'],
+    'wanted':'gasdenmidplane',
+    'startno':480,
+    'Nsnap':500,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+inputplotdict['figCRgasmid_smccr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['bwsmclrdc0','bwsmclrdc27','bwsmclrdc28',\
+               'bwsmclrdc29','bwsmclrstr','bwsmclrdc28mhd','bwsmclrdc28str'],
+    'wanted':'crdenmidplane',
+    'startno':480,
+    'Nsnap':500,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+inputplotdict['figCRgasmid_mwgas']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['bwmwmr','bwmwmrmhd','bwmwmrdc0','bwmwmrdc27','bwmwmrdc28',\
+               'bwmwmrdc29','bwmwmrstr','bwmwmrdc28mhd','bwmwmrdc28str'],
+    'wanted':'gasdenmidplane',
+    'startno':480,
+    'Nsnap':500,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+inputplotdict['figCRgasmid_mwcr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['bwmwmrdc0','bwmwmrdc27','bwmwmrdc28',\
+               'bwmwmrdc29','bwmwmrstr','bwmwmrdc28mhd','bwmwmrdc28str'],
+    'wanted':'crdenmidplane',
+    'startno':480,
+    'Nsnap':500,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+inputplotdict['figgammasph_smc']={
+    '_plotfunction':gammasphtestinput,
+    'dirneed':['bwsmclrdc0','bwsmclrdc27','bwsmclrdc28',\
+               'bwsmclrdc29','bwsmclrstr','bwsmclrdc28mhd','bwsmclrdc28str'],
+    'wanted':'gammasph',
+    'startno':400,
+    'Nsnap':500,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+inputplotdict['fignismcr_smc']={
+    '_plotfunction':nismcretestinput,
+    'dirneed':['bwsmclrdc0','bwsmclrdc27','bwsmclrdc28',\
+               'bwsmclrdc29','bwsmclrstr','bwsmclrdc28mhd','bwsmclrdc28str'],
+    'wanted':'nismcre',
+    'startno':500,
+    'Nsnap':500,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'trackneed':0
+    }
+
+
+inputplotdict['figCRgasz_smc']={
+    '_plotfunction':crecumrtestinput,
+    'dirneed':['bwsmclrdc0','bwsmclrdc27','bwsmclrdc28',\
+               'bwsmclrdc29','bwsmclrstr','bwsmclrdc28mhd','bwsmclrdc28str'],
+    'wanted':'crecumr',
+    'startno':490,
+    'Nsnap':500,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+inputplotdict['figavestarburst_avedenr']={
+    '_plotfunction':avedentestinput,
+    'dirneed':['bwsbclrdc0','bwsbclrdc27','bwsbclrdc28',\
+               'bwsbclrdc29','bwsbclrstr','bwsbclrdc28mhd','bwsbclrdc28str'],
+    'wanted':'avedenr',
+    'startno':490,
+    'Nsnap':500,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+inputplotdict['figavestarburst_aveedenr']={
+    '_plotfunction':avedentestinput,
+    'dirneed':['bwsbclrdc0','bwsbclrdc27','bwsbclrdc28',\
+               'bwsbclrdc29','bwsbclrstr','bwsbclrdc28mhd','bwsbclrdc28str'],
+    'wanted':'aveedenr',
+    'startno':490,
+    'Nsnap':500,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+
+inputplotdict['fignismCRgl_nismcrad']={
+    '_plotfunction':nismcretestinput,
+    'dirneed':['bwsmclrdc0','bwsmclrdc27','bwsmclrdc28',\
+               'bwsmclrdc29'],
+    'wanted':'nismcrad',
+    'startno':490,
+    'Nsnap':500,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'trackneed':1
+    }
+
+
+
+inputplotdict['fignismCRgl_rcrad']={
+    '_plotfunction':nismcretestinput,
+    'dirneed':['bwsmclrdc0','bwsmclrdc27','bwsmclrdc28',\
+               'bwsmclrdc29'],
+    'wanted':'rcrad',
+    'startno':490,
+    'Nsnap':500,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'trackneed':1
+    }
+
+
+
+
+inputplotdict['figEescEsou_smc']={
+    '_plotfunction':cratmulttestinput,
+    'dirneed':['bwsmclrdc0','bwsmclrdc27','bwsmclrdc28','bwsmclrdc29'],
+    'wanted':'cratmult',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':1,
+    'withincr':0,
+    'ratiocrout_sou':1,
+    'rateneed':0
+    }
+
+
+
+inputplotdict['figCRenergies_bwmwmrdc28str']={
+    '_plotfunction':cratmulttestinput,
+    'dirneed':['bwmwmrdc28str'],
+    'wanted':'cratmult',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'testbwmwmrdc28str',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':1,
+    'withincr':0,
+    'ratiocrout_sou':0,
+    'rateneed':1
+    }
+
+
+inputplotdict['figCRenergies_bwmwmrstrts']={
+    '_plotfunction':cratmulttestinput,
+    'dirneed':['bwmwmrstrts'],
+    'wanted':'cratmult',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'testbwmwmrstrts',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':1,
+    'withincr':0,
+    'ratiocrout_sou':0,
+    'rateneed':0
+    }
+
+
+
+inputplotdict['figCRenergies_bwsmclrstr']={
+    '_plotfunction':cratmulttestinput,
+    'dirneed':['bwsmclrstr'],
+    'wanted':'cratmult',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'testbwsmclrstr',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':1,
+    'withincr':0,
+    'ratiocrout_sou':0,
+    'rateneed':1
+    }
+
+
+
+inputplotdict['figCRenergies_bwsmclrdc28str']={
+    '_plotfunction':cratmulttestinput,
+    'dirneed':['bwsmclrstr','bwsmclrdc28str'],
+    'wanted':'cratmult',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'testbwsmclrdc28str',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':1,
+    'withincr':0,
+    'ratiocrout_sou':0,
+    'rateneed':1
+    }
+
+
+inputplotdict['figCRenergies_bwsmclrstrpts']={
+    '_plotfunction':cratmulttestinput,
+    'dirneed':['bwsmclrstrpts'],
+    'wanted':'cratmult',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':1,
+    'withincr':0,
+    'ratiocrout_sou':0,
+    'rateneed':0
+    }
+
+
+
+for key in inputplotdict:
+    if inputplotdict[key]['fmeat']=='':
+        inputplotdict[key]['fmeat']=inputplotdict[key]['dirneed'][-1]

@@ -1,0 +1,9 @@
+#all python functions in CRtools
+
+from gammasfrsnaptestinpput import gammasfrsnaptestinpput
+from cratmulttestinput import cratmulttestinput
+from crdenmidplanetestinput import crdenmidplanetestinput
+from gammasphtestinput import gammasphtestinput
+from crecumrtestinput import crecumrtestinput
+from nismcretestinput import nismcretestinput
+from avedentestinput import avedentestinput

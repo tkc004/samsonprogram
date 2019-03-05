@@ -1,0 +1,5 @@
+#all python files in ISMtools
+from crdenmidplanetestinput import crdenmidplanetestinput
+from nHmidplanetestinput import nHmidplanetestinput
+from CRezdistestinput import CRezdistestinput
+from eturtimetestinput import eturtimetestinput
