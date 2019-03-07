@@ -53,13 +53,14 @@ def nHmidplanetestinput(subdict):
                     ax.plot(xnl,ynl,label=label,lw=lw,ls=lsn,color=color,marker=marker)
                 else:
                     ax[i].plot(xnl,ynl,label=label,lw=lw,ls=lsn,color=color,marker=marker)
-        if i<noplots-1: xlab=''
+        if i<noplots-1: xlab='' 
+        if i>1: legendneed=0
         if noplots==1:
-            ax.text(0.25, 0.95, ptitle, horizontalalignment='center',
-            verticalalignment='center', transform=ax.transAxes,fontsize=22)            
+            ax.set_title(ptitle, fontsize=16)
         else:
-            ax[i].text(0.25, 0.95, ptitle, horizontalalignment='center',
-            verticalalignment='center', transform=ax[i].transAxes,fontsize=22)
+            ax[i].set_title(ptitle, fontsize=16)        
+        #ax.text(0.25, 0.95, ptitle, horizontalalignment='center',
+        #verticalalignment='center', transform=ax.transAxes,fontsize=22)            
         if noplots==1:
             PS.miscsetup(ax,logx=0,logy=1,xlab=xlab,ylab=ylab,legendneed=legendneed,labfs=22,legfs=12)
         else:

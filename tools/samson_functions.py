@@ -343,6 +343,7 @@ def outdirname(runtodo, Nsnap=500):
         correctIa=0
         stron=0
         galcen=0
+        usecalstr=0
         newlabel = ''
         strlabel = ''
         crlabel=''
@@ -2729,6 +2730,9 @@ def outdirname(runtodo, Nsnap=500):
                 M1speed=500
                 haveB=1
                 stron=1
+                
+                
+                
 
                 
         if (runtodo=='bwmwmrstreve'):
@@ -2744,6 +2748,7 @@ def outdirname(runtodo, Nsnap=500):
                 iavesfr = 1.0
                 subdir='/output/'
                 maindir='oasis/bw/mw'
+                usecalstr=0
                 kappa=0
                 #color='c'
                 #TK test
@@ -3163,6 +3168,7 @@ def outdirname(runtodo, Nsnap=500):
                 M1speed=1000
                 Rvir=234
                 stron=1
+                usecalstr=1
 
 
         if (runtodo=='mw_cr_lr_dc28_2_21_M1_mhd_stream'):
@@ -4342,6 +4348,29 @@ def outdirname(runtodo, Nsnap=500):
                 stron=1
 
 
+        if (runtodo=='bwsmclrdc28strpts'):
+                rundir='smc_cr_lr_dc28_2_21_str_ll_va_evepts'
+                slabel='CR'
+                havecr=6
+                runtitle='SMC'
+                snlabel=r'$f_{mec}=1$'
+                dclabel=r'${\bf BDC28STR}$'
+                newlabel=r'MHD $\kappa$=3e28       Streaming'
+                resolabel='lr'
+                Fcal=0.01
+                iavesfr = 0.1
+                subdir='/output/'
+                maindir='oasis/bw/smc'
+                #color='m'
+                #TK test
+                color=cmaps.plasma(0.85)
+                Rvir=63
+                M1speed=1000
+                haveB=1
+                stron=1
+                
+                
+                
         if (runtodo=='bwsmclrdc28mhd'):
                 rundir='smc_cr_lr_dc28_2_21_M1_mhd_c1000_original'
                 #rundir='smc_cr_lr_dc28_2_21_M1_mhd_c1000'
@@ -6856,7 +6885,7 @@ def outdirname(runtodo, Nsnap=500):
         elif Nsnap<100:
                 Nsnapstring = '0'+str(Nsnap)
         the_snapdir = '/home/tkc004/'+maindir+'/'+rundir+'/'+subdir
-        return {'snumadd':snumadd, 'crlabel':crlabel, 'strlabel':strlabel, 'newlabel':newlabel,\
+        return {'usecalstr':usecalstr, 'snumadd':snumadd, 'crlabel':crlabel, 'strlabel':strlabel, 'newlabel':newlabel,\
  'galcen':galcen, 'snapsep':snapsep, 'stron':stron,'correctIa':correctIa, 'multifile':multifile,\
 'the_prefix':the_prefix,'the_suffix':the_suffix, 'M1speed':M1speed,'Rvir':Rvir,\
 'haveB':haveB,'havemetal':havemetal,'kappa':kappa,'exceptcool':exceptcool,\
@@ -8830,7 +8859,12 @@ def cosmichalo(runtodo):
 
 
 
-        return {'Sheaform':Sheaform,'crlabel':crlabel, 'suffixadd':suffixadd,'snapsep':snapsep, 'icolor':icolor, 'snumadd':snumadd,'h0':h0,'fileno':fileno,'rundir':rundir,'subdir':subdir,'halostr':halostr,'beginno':beginno,'finalno':finalno, 'multifile':multifile, 'halocolor':halocolor, 'labelname':labelname, 'xmax_of_box':xmax_of_box, 'firever':firever, 'usepep':usepep, 'maindir':maindir, 'highres':highres, 'newlabel':newlabel}
+        return {'usecalstr':usecalstr, 'Sheaform':Sheaform,'crlabel':crlabel,
+                'suffixadd':suffixadd,'snapsep':snapsep, 'icolor':icolor,
+                'snumadd':snumadd,'h0':h0,'fileno':fileno,'rundir':rundir,'subdir':subdir,
+                'halostr':halostr,'beginno':beginno,'finalno':finalno, 'multifile':multifile,
+                'halocolor':halocolor, 'labelname':labelname, 'xmax_of_box':xmax_of_box,
+                'firever':firever, 'usepep':usepep, 'maindir':maindir, 'highres':highres, 'newlabel':newlabel}
 
 def muprofile(Slight, Sr, murl,bandneeded,UNITS_CGS=1,UNITS_SOLAR_BAND=0):
         Slight=np.array(Slight)

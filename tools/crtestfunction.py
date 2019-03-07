@@ -1533,3 +1533,54 @@ def gasphase(runtodo,Nsnap,rotface=1,Tcut=1.0,highTcut=1e10,vcut=0.0,vhcut=1e10,
         return {'vmax':vmax,'vmin':vmin,'Gid':Gid,'TrueTemp':TrueTemp,'convertedrho':converted_rho,\
  'vx':vx, 'vy':vy, 'vz':vz, 'vr':vr, 'partX':partX,'partY':partY, 'partZ':partZ, 'partR':partR,\
 'Gu':Gu, 'Gmass':Gmass,'rho':rho,'cregy':cregy}
+    
+    
+    
+def calstrloss(G, withinr = 20., nobin = 30):
+    '''
+    A rough calculation of streaming loss vA dot gradP:
+    divide the volume radially; then calculate the dp/dr and vA; 
+    streaming loss ~ vA * dp/dr
+    
+    G: data structure from readsnap after re-center (in physical units)
+    i.e. coordinate in kpc, B in gauss, m in 1e10 msun, etc.
+    '''
+    
+    Gp = G['p']; Gm = G['m']; GB = G['B']; cregy = G['cregy']; Grho = G['rho'];
+    Gu = G['u'];
+    vth = np.sqrt(Gu)*km_in_cm
+    Gx = Gp[:,0]; Gy = Gp[:,1]; Gz = Gp[:,2];
+    Gr = np.sqrt(Gx*Gx+Gy*Gy+Gz*Gz)
+    GB2 = GB[:,0]*GB[:,0]+GB[:,1]*GB[:,1]+GB[:,2]*GB[:,2];
+    GBmag = np.sqrt(GB2);
+    cregy_in_cgs = cregy*cregy_codetocgs
+    Grho_in_cgs = Grho*rho_codetocgs
+    
+    radl = np.linspace(0.01, withinr, num=nobin)
+    Pcrl = np.array([])
+    vA2l = np.array([])
+    for i in range(nobin-1):
+        cutrin = Gr<radl[i+1]
+        cutrout = Gr>radl[i]
+        cut = cutrin*cutrout
+        vol = 4./3.*np.pi*(np.power(radl[i+1],3)-np.power(radl[i],3))
+        vol_in_cgs = vol*vol_codetocgs
+        creden_in_cgs = np.sum(cregy_in_cgs[cut])/vol_in_cgs
+        Pcr_in_cgs = creden_in_cgs*(CRgamma-1.)
+        #vA2_in_cgs = np.average(GB2[cut]/(4.*np.pi*Grho_in_cgs[cut])+vth[cut]*vth[cut],weights=Gm[cut])
+        vA2_in_cgs = np.average(GB2[cut]/(4.*np.pi*Grho_in_cgs[cut]),weights=Gm[cut])
+        Pcrl = np.append(Pcrl,Pcr_in_cgs); vA2l = np.append(vA2l,vA2_in_cgs);
+    radlm = (radl[1:]+radl[:-1])/2.
+    volm = 4./3.*np.pi*(np.power(radlm[1:],3)-np.power(radlm[:-1],3))*vol_codetocgs
+    dPcr_dr = (Pcrl[1:]-Pcrl[:-1])/(radlm[1:]-radlm[:-1])/x_codetocgs
+    vA2lm = (vA2l[1:]+vA2l[:-1])/2.
+    vAlm = np.sqrt(vA2lm)
+    strl =  -np.absolute(vAlm*dPcr_dr) #streaming loss in erg/s/cm^3
+    totstrl = np.sum(strl*volm)
+    return {'totstrl':totstrl, 'strl':strl, 'vAlm':vAlm, 'dPcr_dr':dPcr_dr, 'radlm':radlm}
+
+
+
+
+
+

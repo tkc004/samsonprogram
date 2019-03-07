@@ -1,4 +1,4 @@
-
+from pathloc import *
 
 
 
@@ -75,9 +75,9 @@ def crgridfunction(gridag,runtodo,wanted,idir,plotupt,plotit,startno,Nsnap,snaps
         vcut=-1000.0 #outflow velocity cut
         vhcut = 1e10 #upper outflow velocity cut
         withinr=8.0
-        withoutr=6.0
-        zup=1.0
-        zdown=0.0
+        withoutr=0.0
+        zup=0.5
+        zdown=-0.5
         trackgas=0
         tlabel=''
         userad=0
@@ -244,24 +244,24 @@ def crgridfunction(gridag,runtodo,wanted,idir,plotupt,plotit,startno,Nsnap,snaps
                 gridag[idir].set_ylabel(r"$\mathrm{Log}_{10} (v_z {\rm [km/s]})$")
         if wanted == 'rhoT':
             if needcontour==1:
-                totalname = 'CRplot/rhoT/rhoT_'+runtodo+'_sn'+str(startno)+'_'+str(Nsnap)+'_contour'+tlabel+'ag.pdf'
+                totalname = plotloc+'/CRplot/rhoT/rhoT_'+runtodo+'_sn'+str(startno)+'_'+str(Nsnap)+'_contour'+tlabel+'ag.pdf'
             else:
-                totalname = 'CRplot/rhoT/rhoT_'+runtodo+'_sn'+str(startno)+'_'+str(Nsnap)+tlabel+'ag.pdf'
+                totalname = plotloc+'/CRplot/rhoT/rhoT_'+runtodo+'_sn'+str(startno)+'_'+str(Nsnap)+tlabel+'ag.pdf'
         if wanted == 'Tz':
             if needcontour==1:
-                totalname = 'CRplot/Tz/Tz_'+runtodo+'_sn'+str(startno)+'_'+str(Nsnap)+'_contour'+tlabel+'ag.pdf'
+                totalname = plotloc+'/CRplot/Tz/Tz_'+runtodo+'_sn'+str(startno)+'_'+str(Nsnap)+'_contour'+tlabel+'ag.pdf'
             else:
-                totalname = 'CRplot/Tz/Tz_'+runtodo+'_sn'+str(startno)+'_'+str(Nsnap)+tlabel+'ag.pdf'
+                totalname = plotloc+'/CRplot/Tz/Tz_'+runtodo+'_sn'+str(startno)+'_'+str(Nsnap)+tlabel+'ag.pdf'
         if wanted == 'rhoz':
             if needcontour==1:
-                totalname = 'CRplot/rhoz/rhoz_'+runtodo+'_sn'+str(startno)+'_'+str(Nsnap)+'_contour'+tlabel+'ag.pdf'
+                totalname = plotloc+'/CRplot/rhoz/rhoz_'+runtodo+'_sn'+str(startno)+'_'+str(Nsnap)+'_contour'+tlabel+'ag.pdf'
             else:
-                totalname = 'CRplot/rhoz/rhoz_'+runtodo+'_sn'+str(startno)+'_'+str(Nsnap)+tlabel+'ag.pdf'
+                totalname = plotloc+'/CRplot/rhoz/rhoz_'+runtodo+'_sn'+str(startno)+'_'+str(Nsnap)+tlabel+'ag.pdf'
         if wanted == 'vzz':
-            totalname = 'CRplot/vzz/vzz_'+runtodo+'_sn'+str(startno)+'_'+str(Nsnap)+tlabel+'ag.pdf'
+            totalname = plotloc+'/CRplot/vzz/vzz_'+runtodo+'_sn'+str(startno)+'_'+str(Nsnap)+tlabel+'ag.pdf'
         if wanted == 'Tvz':
-            totalname = 'CRplot/Tvz/Tvz_'+runtodo+'_sn'+str(startno)+'_'+str(Nsnap)+tlabel+'ag.pdf'
+            totalname = plotloc+'/CRplot/Tvz/Tvz_'+runtodo+'_sn'+str(startno)+'_'+str(Nsnap)+tlabel+'ag.pdf'
         if wanted == 'pcrpth':
-            totalname = 'CRplot/pcrpth/pcrpth_'+runtodo+'_sn'+str(startno)+'_'+str(Nsnap)+tlabel+'ag.pdf'
+            totalname = plotloc+'/CRplot/pcrpth/pcrpth_'+runtodo+'_sn'+str(startno)+'_'+str(Nsnap)+tlabel+'ag.pdf'
         del Hadd
     return im, plotupt,plotit,cblabel,totalname

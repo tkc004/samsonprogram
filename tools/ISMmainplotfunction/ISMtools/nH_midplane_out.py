@@ -144,6 +144,6 @@ def nH_midplane_out(ssdict):
                 plotdict[wanted]['runtitle'] = runtitle
                 plotdict[wanted]['ptitle'] = ptitle
         if wanted=='nHmidplane':
-            filename=homedir+'CRplot/nHmidplane/nH_midplane_'+fmeat+'_sn'+str(startno)+'_'+str(Nsnap)+'.pdf'
+            filename=plotloc+'CRplot/nHmidplane/nH_midplane_'+fmeat+'_sn'+str(startno)+'_'+str(Nsnap)+'.pdf'
             plotdict[wanted]['filename'] = filename
         return plotdict

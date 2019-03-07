@@ -600,14 +600,14 @@ inputplotdict['figEescEsou_smc']={
 
 inputplotdict['figCRenergies_bwmwmrdc28str']={
     '_plotfunction':cratmulttestinput,
-    'dirneed':['bwmwmrdc28str'],
+    'dirneed':['bwmwmrstreve','bwmwmrdc28str'],
     'wanted':'cratmult',
     'startno':0,
     'Nsnap':501,
     'snapsep':10,
     'the_prefix':'snapshot',
     'the_suffix':'.hdf5',
-    'fmeat':'testbwmwmrdc28str',
+    'fmeat':'',
     'normalizedsm':0,
     'M1labelneed':0,
     'M1runlabelneed':0,
@@ -624,6 +624,35 @@ inputplotdict['figCRenergies_bwmwmrdc28str']={
     'ratiocrout_sou':0,
     'rateneed':1
     }
+
+
+inputplotdict['figCRenergies_bwmwmrstreve']={
+    '_plotfunction':cratmulttestinput,
+    'dirneed':['bwmwmrstreve'],
+    'wanted':'cratmult',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':1,
+    'withincr':0,
+    'ratiocrout_sou':0,
+    'rateneed':1
+    }
+
 
 
 inputplotdict['figCRenergies_bwmwmrstrts']={
@@ -739,6 +768,33 @@ inputplotdict['figCRenergies_bwsmclrstrpts']={
     'rateneed':0
     }
 
+
+inputplotdict['figCRenergies_bwsmclrdc28strpts']={
+    '_plotfunction':cratmulttestinput,
+    'dirneed':['bwsmclrdc28strpts'],
+    'wanted':'cratmult',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':1,
+    'withincr':0,
+    'ratiocrout_sou':0,
+    'rateneed':0
+    }
 
 
 for key in inputplotdict:

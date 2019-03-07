@@ -61,6 +61,7 @@ def eturtimefunc(ssdict):
         haveB=info['haveB']
         cosmo=info['cosmo']
         newlabel=info['newlabel']
+        color = info['color']
         ptitle=title
         if runtitle=='SMC':
             ptitle='Dwarf'

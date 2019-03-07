@@ -94,14 +94,14 @@ def cratmulttestinput(subdict):
                     lxlist.append(lineobj)
             plotn=0
             for runtodo in dirneed:
-                snaplist=[]
-                enclist=[]
-                englist=[]
-                enllist=[]
-                endlist=[]
-                enplist=[]
-                enalist=[]
-                avesfrl=[]
+                snaplist=np.array([])
+                enclist=np.array([])
+                englist=np.array([])
+                enllist=np.array([])
+                endlist=np.array([])
+                enplist=np.array([])
+                enalist=np.array([])
+                avesfrl=np.array([])
                 prel=0
                 preg=0
                 prec=0
@@ -123,6 +123,7 @@ def cratmulttestinput(subdict):
                 crecumout  = []
                 crecumpout = []
                 crecumain = []
+                totstrll = []
                 timel = []
                 info=outdirname(runtodo, Nsnap)
                 havecr = info['havecr']
@@ -152,6 +153,7 @@ def cratmulttestinput(subdict):
                     strlabel = info['strlabel']
                     haveB = info['haveB']
                     color=info['color']
+                    usecalstr=info['usecalstr']
                     ptitle=title
                     labelneed=dclabel
                     if newlabelneed==1:
@@ -221,9 +223,14 @@ def cratmulttestinput(subdict):
                             if ratiocrout_sou==1:
                                 cregyain = cregya[cutr]
                                 cregyain = cregyain[cregyain>0.] #take gain only
+                        if rateneed==1 and usecalstr==1:
+                            datastr = calstrloss(G)
+                            totstrl = datastr['totstrl']
                     except KeyError:
                             print 'KeyError'
                             continue
+                    if rateneed==1 and usecalstr==1:
+                        totstrll = np.append(totstrll,totstrl)
                     crecum = np.append(crecum, np.sum(cregy))
                     crecuml = np.append(crecuml,np.sum(cregyl))
                     crecumg = np.append(crecumg, np.sum(cregyg))
@@ -296,7 +303,10 @@ def cratmulttestinput(subdict):
                     xcrl = (crecuml[1:]-crecuml[:-1])/(timel[1:]-timel[:-1])/1e6/yr_in_sec
                     xcra = (crecuma[1:]-crecuma[:-1])/(timel[1:]-timel[:-1])/1e6/yr_in_sec
                     if stron ==1:
+                        if usecalstr==0:
                             xcrp = (crecump[1:]-crecump[:-1])/(timel[1:]-timel[:-1])/1e6/yr_in_sec
+                        else:
+                            xcrp = totstrll[:-1]
                     if withincr==1 or outputcrout==1 or ratiocrout_sou==1:
                         xcresc = (crecumesc[1:]-crecumesc[:-1])/(timel[1:]-timel[:-1])/1e6/yr_in_sec
                     if ratiocrout_sou==1:

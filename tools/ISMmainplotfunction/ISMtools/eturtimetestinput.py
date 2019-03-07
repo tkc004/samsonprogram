@@ -39,8 +39,8 @@ def eturtimetestinput(subdict):
                 labelneed = plotdict[wanted]['labelneed'];
                 color = plotdict[wanted]['color'];
                 lsn = plotdict[wanted]['lsn'][inkey];
-                lw = plotdict[wanted]['lw'];
-                marker = plotdict[wanted]['marker'];
+                lw = plotdict[wanted]['lw'][inkey];
+                marker = plotdict[wanted]['marker'][inkey];
                 linelabel = plotdict[wanted]['linelab'][inkey];
                 legendneed = 1
                 if i==0 and j==0: 
