@@ -5116,11 +5116,11 @@ if wanted=='nismgamma' or wanted=='nismcre' or wanted=='nismcrad' or wanted=='ni
                     Grho = Grho[Gidinds]
                     Grho_t = Grho_t[unindex_t]
                     Grho_t = Grho_t[Gid_tinds]
-                                        Gr = Gr[unindex]
-                                        Gr = Gr[idint0]
-                                        Gr = Gr[Gidinds]
-                                        Gr_t = Gr_t[unindex_t]
-                                        Gr_t = Gr_t[Gid_tinds]
+                    Gr = Gr[unindex]
+                    Gr = Gr[idint0]
+                    Gr = Gr[Gidinds]
+                    Gr_t = Gr_t[unindex_t]
+                    Gr_t = Gr_t[Gid_tinds]
                 if wanted == 'nismcrad' or wanted == 'rcrad':
                     cregyad = G['cregya']*1e10*solar_mass_in_g*km_in_cm*km_in_cm
                     if trackneed==1:

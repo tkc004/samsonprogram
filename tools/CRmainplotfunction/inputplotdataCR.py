@@ -1,8 +1,225 @@
 import collections
-from importplotfunctionsCR import *
+from gammasfrsnaptestinpput import gammasfrsnaptestinpput
+from cratmulttestinput import cratmulttestinput
+from crdenmidplanetestinput import crdenmidplanetestinput
+from gammasphtestinput import gammasphtestinput
+from crecumrtestinput import crecumrtestinput
+from nismcretestinput import nismcretestinput
+from avedentestinput import avedentestinput
+from avedencosmotestinput import avedencosmotestinput
+from disksurdentestinput import disksurdentestinput
+from samson_functions import checkkey
+
 
 nested_dict = lambda: collections.defaultdict(nested_dict)
 inputplotdict = nested_dict()
+
+
+
+inputplotdict['figsfr_m12ihr']={
+    '_plotfunction':gammasfrsnaptestinpput,
+    'dirneed':['m12imhdcvhr','m12icr_700hr'],
+    'wanted':'dirsfr',
+    'startno':580,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0 
+    }
+
+
+inputplotdict['figsfr_m12mhr']={
+    '_plotfunction':gammasfrsnaptestinpput,
+    'dirneed':['m12mmhdcvhr','m12mcr_700hr'],
+    'wanted':'dirsfr',
+    'startno':580,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0 
+    }
+
+
+
+inputplotdict['figm11b_gmr']={
+    '_plotfunction':avedencosmotestinput,
+    'dirneed':['m11bmhdcv','m11bcr_b_70','m11bcr_700'],
+    'wanted':'gmr',
+    'startno':590,
+    'Nsnap':600,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'title':'m11b'
+    }
+
+
+inputplotdict['figm12f_gmr']={
+    '_plotfunction':avedencosmotestinput,
+    'dirneed':['m12fmhdcvhr','m12fcr_700hr'],
+    'wanted':'gmr',
+    'startno':590,
+    'Nsnap':600,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'title':'m12fres7000'
+    }
+
+
+
+inputplotdict['figm12m_gmr']={
+    '_plotfunction':avedencosmotestinput,
+    'dirneed':['m12mmhdcvhr','m12mcr_700hr'],
+    'wanted':'gmr',
+    'startno':590,
+    'Nsnap':600,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'title':'m12mres7000'
+    }
+
+
+inputplotdict['figm12i_gmr']={
+    '_plotfunction':avedencosmotestinput,
+    'dirneed':['m12imhdcvhr','m12icr_b_70hr','m12icr_700hr'],
+    'wanted':'gmr',
+    'startno':590,
+    'Nsnap':600,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'title':'m12ires7000'
+    }
+
+
+inputplotdict['figm12i_crer']={
+    '_plotfunction':avedencosmotestinput,
+    'dirneed':['m12imhdcvhr','m12icr_b_70hr','m12icr_700hr'],
+    'wanted':'crer',
+    'startno':590,
+    'Nsnap':600,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'title':'m12ires7000'
+    }
+
+
+inputplotdict['figm11b_crer']={
+    '_plotfunction':avedencosmotestinput,
+    'dirneed':['m11bmhdcv','m11bcr_b_70','m11bcr_700'],
+    'wanted':'crer',
+    'startno':590,
+    'Nsnap':600,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'title':'m11b'
+    }
 
 
 inputplotdict['figanisodiffmod_smcsm']={
@@ -72,6 +289,83 @@ inputplotdict['figanisodiffmod_mwsm']={
     'strlabelneed':0,
     'showstarburst':0,
     'legendneed':0,
+    'correctIa':0 
+    }
+
+#,\
+#               'bwsbclrdc29','bwsbclrstr','bwsbclrdc28mhd','bwsbclrdc28str'],
+
+inputplotdict['sfr_sbc']={
+    '_plotfunction':gammasfrsnaptestinpput,
+    'dirneed':['bwsbclr','bwsbclrmhd','bwsbclrdc0','bwsbclrdc27','bwsbclrdc28',
+              'bwsbclrdc29','bwsbclrstr','bwsbclrdc28mhd','bwsbclrdc28str'],
+    'wanted':'dirsm',
+    'startno':0,
+    'Nsnap':651,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':1,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':0,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0 
+    }
+
+
+inputplotdict['sfr_mw']={
+    '_plotfunction':gammasfrsnaptestinpput,
+    'dirneed':['bwmwmr','bwmwmrmhd','bwmwmrdc0','bwmwmrdc27','bwmwmrdc28',\
+               'bwmwmrdc29','bwmwmrstr','bwmwmrdc28mhd','bwmwmrdc28str'],
+    'wanted':'dirsm',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':1,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':0,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0 
+    }
+
+
+inputplotdict['sfr_smc']={
+    '_plotfunction':gammasfrsnaptestinpput,
+    'dirneed':['bwsmclr','bwsmclrmhd','bwsmclrdc0','bwsmclrdc27','bwsmclrdc28',\
+               'bwsmclrdc29','bwsmclrstr','bwsmclrdc28mhd','bwsmclrdc28str'],
+    'wanted':'dirsm',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':1,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
     'correctIa':0 
     }
 
@@ -400,10 +694,145 @@ inputplotdict['figgammasph_smc']={
     }
 
 
+inputplotdict['figgammasph_sbc']={
+    '_plotfunction':gammasphtestinput,
+    'dirneed':['bwsbclrdc0','bwsbclrdc27','bwsbclrdc28',\
+               'bwsbclrdc29','bwsbclrstr','bwsbclrdc28mhd','bwsbclrdc28str'],
+    'wanted':'gammasph',
+    'startno':400,
+    'Nsnap':500,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+inputplotdict['figgammasph_sbctest']={
+    '_plotfunction':gammasphtestinput,
+    'dirneed':['bwsbclrstr'],
+    'wanted':'gammasph',
+    'startno':550,
+    'Nsnap':650,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+inputplotdict['figgammasph_mw']={
+    '_plotfunction':gammasphtestinput,
+    'dirneed':['bwmwmrdc0','bwmwmrdc27','bwmwmrdc28',\
+               'bwmwmrdc29','bwmwmrstr','bwmwmrdc28mhd','bwmwmrdc28str'],
+    'wanted':'gammasph',
+    'startno':400,
+    'Nsnap':500,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
 inputplotdict['fignismcr_smc']={
     '_plotfunction':nismcretestinput,
     'dirneed':['bwsmclrdc0','bwsmclrdc27','bwsmclrdc28',\
                'bwsmclrdc29','bwsmclrstr','bwsmclrdc28mhd','bwsmclrdc28str'],
+    'wanted':'nismcre',
+    'startno':500,
+    'Nsnap':500,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'trackneed':0
+    }
+
+
+inputplotdict['fignismcr_sbc']={
+    '_plotfunction':nismcretestinput,
+    'dirneed':['bwsbclrdc0','bwsbclrdc27','bwsbclrdc28',\
+               'bwsbclrdc29','bwsbclrstr','bwsbclrdc28mhd','bwsbclrdc28str'],
+    'wanted':'nismcre',
+    'startno':500,
+    'Nsnap':500,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'trackneed':0
+    }
+
+
+inputplotdict['fignismcr_mw']={
+    '_plotfunction':nismcretestinput,
+    'dirneed':['bwmwmrdc0','bwmwmrdc27','bwmwmrdc28',\
+               'bwmwmrdc29','bwmwmrstr','bwmwmrdc28mhd','bwmwmrdc28str'],
     'wanted':'nismcre',
     'startno':500,
     'Nsnap':500,
@@ -455,6 +884,33 @@ inputplotdict['figCRgasz_smc']={
     }
 
 
+inputplotdict['figCRgasz_mw']={
+    '_plotfunction':crecumrtestinput,
+    'dirneed':['bwmwmrdc0','bwmwmrdc27','bwmwmrdc28',\
+               'bwmwmrdc29','bwmwmrstr','bwmwmrdc28mhd','bwmwmrdc28str'],
+    'wanted':'crecumr',
+    'startno':490,
+    'Nsnap':500,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
 inputplotdict['figavestarburst_avedenr']={
     '_plotfunction':avedentestinput,
     'dirneed':['bwsbclrdc0','bwsbclrdc27','bwsbclrdc28',\
@@ -474,7 +930,6 @@ inputplotdict['figavestarburst_avedenr']={
     'refereelabelneed':0,
     'newlabelneed':1,
     'strlabelneed':0,
-    'showstarburst':0,
     'legendneed':1,
     'correctIa':0,
     'runlabelneed':0,
@@ -501,13 +956,37 @@ inputplotdict['figavestarburst_aveedenr']={
     'refereelabelneed':0,
     'newlabelneed':1,
     'strlabelneed':0,
-    'showstarburst':0,
     'legendneed':0,
     'correctIa':0,
     'runlabelneed':0,
     'withincr':0
     }
 
+
+inputplotdict['figavestarburst_avekedenr']={
+    '_plotfunction':avedentestinput,
+    'dirneed':['bwsbclrdc0','bwsbclrdc27','bwsbclrdc28',\
+               'bwsbclrdc29','bwsbclrstr','bwsbclrdc28mhd','bwsbclrdc28str'],
+    'wanted':'avekedenr',
+    'startno':490,
+    'Nsnap':500,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
 
 
 inputplotdict['fignismCRgl_nismcrad']={
@@ -571,7 +1050,8 @@ inputplotdict['fignismCRgl_rcrad']={
 
 inputplotdict['figEescEsou_smc']={
     '_plotfunction':cratmulttestinput,
-    'dirneed':['bwsmclrdc0','bwsmclrdc27','bwsmclrdc28','bwsmclrdc29'],
+    'dirneed':['bwsmclrdc0','bwsmclrdc27','bwsmclrdc28',\
+               'bwsmclrdc29','bwsmclrstr','bwsmclrdc28mhd','bwsmclrdc28str'],
     'wanted':'cratmult',
     'startno':0,
     'Nsnap':501,
@@ -595,6 +1075,38 @@ inputplotdict['figEescEsou_smc']={
     'ratiocrout_sou':1,
     'rateneed':0
     }
+
+
+
+
+inputplotdict['figEescEsou_mw']={
+    '_plotfunction':cratmulttestinput,
+    'dirneed':['bwmwmrdc0','bwmwmrdc27','bwmwmrdc28','bwmwmrdc29',\
+                'bwmwmrstr','bwmwmrdc28mhd','bwmwmrdc28str'],    
+    'wanted':'cratmult',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':0,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'ratiocrout_sou':1,
+    'rateneed':0
+    }
+
 
 
 
@@ -623,6 +1135,37 @@ inputplotdict['figCRenergies_bwmwmrdc28str']={
     'withincr':0,
     'ratiocrout_sou':0,
     'rateneed':1
+    }
+
+
+
+inputplotdict['figCRenergies_bwmwmrstrevepts']={
+    '_plotfunction':cratmulttestinput,
+    'dirneed':['bwmwmrstrevepts'],
+    'wanted':'cratmult',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':1,
+    'withincr':0,
+    'ratiocrout_sou':0,
+    'rateneed':0,
+    'numon':0,
+    'checkcr':1
     }
 
 
@@ -796,7 +1339,1480 @@ inputplotdict['figCRenergies_bwsmclrdc28strpts']={
     'rateneed':0
     }
 
+inputplotdict['figCRenergies_bwsmclrcsvastrpts']={
+    '_plotfunction':cratmulttestinput,
+    'dirneed':['bwsmclrstrpts','bwsmclr3vastrpts','bwsmclrstr4vapts','bwsmclrcsvastrpts'],
+    'wanted':'cratmult',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':1,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'ratiocrout_sou':0,
+    'rateneed':1,
+    'twolegend':1
+    }
 
-for key in inputplotdict:
+
+
+inputplotdict['figCRgasmid_m12ihr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12imhdcvhr','m12icr_b_70hr','m12icr_700hr'],
+    'wanted':'gasdenmidplane',
+    'startno':590,
+    'Nsnap':600,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+inputplotdict['figCRgasmid_m12mhr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12mmhdcvhr','m12mcr_700hr'],
+    'wanted':'gasdenmidplane',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+inputplotdict['figCRgasmid_m12bhr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12bcr_700hr'],
+    'wanted':'gasdenmidplane',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+
+
+inputplotdict['figBmid_m12ihr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12imhdcvhr','m12icr_b_70hr','m12icr_700hr'],
+    'wanted':'Bdenmidplane',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+
+inputplotdict['figBgasmid_m12ihr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12imhdcvhr','m12icr_b_70hr','m12icr_700hr'],
+    'wanted':'B_gasdenmid',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+
+inputplotdict['figBgasmid_m12mhr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12mmhdcvhr','m12mcr_700hr'],
+    'wanted':'B_gasdenmid',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+inputplotdict['figBgasmid_m12fhr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12fmhdcvhr','m12fcr_b_70hr','m12fcr_700hr'],
+    'wanted':'B_gasdenmid',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+inputplotdict['figBmid_m12mhr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12mmhdcvhr','m12mcr_700hr'],
+    'wanted':'Bdenmidplane',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+inputplotdict['figBrms_m12mhr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12mmhdcvhr','m12mcr_700hr'],
+    'wanted':'Brmsmidplane',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':1,
+    'title':'m12mres7000'
+    }
+
+inputplotdict['figBrms_m12ihr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12imhdcvhr','m12icr_b_70hr','m12icr_700hr'],
+    'wanted':'Brmsmidplane',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'title':'m12ires7000',
+    'maxlength':2,
+    'multz':1,
+    'fmeat':'m12ires70002kpc'
+    }
+
+
+inputplotdict['figBrms_m12ihr2']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12imhdcvhr','m12icr_700hr'],
+    'wanted':'Brmsmidplane',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'title':'m12ires7000',
+    'maxlength':2,
+    'multz':1,
+    'fmeat':'m12ires70002kpc2'
+    }
+
+
+inputplotdict['figBrms_m12mhr2']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12mmhdcvhr','m12mcr_700hr'],
+    'wanted':'Brmsmidplane',
+    'startno':580,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'title':'m12mres7000',
+    'maxlength':2,
+    'multz':1,
+    'fmeat':'m12mres70002kpc2'
+    }
+
+
+inputplotdict['figBrms_m12fhr2']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12fmhdcvhr','m12fcr_700hr'],
+    'wanted':'Brmsmidplane',
+    'startno':580,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'title':'m12fres7000',
+    'maxlength':2,
+    'multz':1,
+    'fmeat':'m12fres70002kpc2'
+    }
+
+
+inputplotdict['figgasden_m12ihr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12imhdcvhr','m12icr_b_70hr','m12icr_700hr'],
+    'wanted':'gasdenmidplane',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'multz':1,
+    'title':'m12ires7000',
+    'fmeat':'m12ires70002kpc',
+    'maxlength':2
+    }
+
+
+
+inputplotdict['figgasden_m12mhr2']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12mmhdcvhr','m12mcr_700hr'],
+    'wanted':'gasdenmidplane',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'multz':1,
+    'title':'m12mres7000',
+    'fmeat':'m12mres70002kpc2',
+    'maxlength':2
+    }
+
+inputplotdict['figgasden_m12ihr2']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12imhdcvhr','m12icr_700hr'],
+    'wanted':'gasdenmidplane',
+    'startno':580,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'multz':1,
+    'title':'m12ires7000',
+    'fmeat':'m12ires70002kpc2',
+    'maxlength':2
+    }
+
+inputplotdict['figgasden_m12mhr2']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12mmhdcvhr','m12mcr_700hr'],
+    'wanted':'gasdenmidplane',
+    'startno':580,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'multz':1,
+    'title':'m12mres7000',
+    'fmeat':'m12mres70002kpc2',
+    'maxlength':2
+    }
+
+inputplotdict['figgasden_m12fhr2']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12fmhdcvhr','m12fcr_700hr'],
+    'wanted':'gasdenmidplane',
+    'startno':580,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'multz':1,
+    'title':'m12fres7000',
+    'fmeat':'m12fres70002kpc2',
+    'maxlength':2
+    }
+
+
+inputplotdict['figgasden_m12mhr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12mmhdcvhr','m12mcr_700hr'],
+    'wanted':'gasdenmidplane',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'title':'m12mres7000_5kpc',
+    'maxlength':5
+    }
+
+inputplotdict['figcrden_m12ihr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12imhdcvhr','m12icr_b_70hr','m12icr_700hr'],
+    'wanted':'crdenmidplane',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'title':'m12ires7000',
+    'multz':1,
+    'maxlength':2,
+    'fmeat':'m12ires70002kpc'
+    }
+
+
+inputplotdict['figcrden_m12ihr1']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12icr_700hr'],
+    'wanted':'crdenmidplane',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'title':'m12ires7000',
+    'multz':1,
+    'maxlength':2,
+    'fmeat':'m12ires70002kpc1'
+    }
+
+
+inputplotdict['figcrden_m12mhr1']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12mcr_700hr'],
+    'wanted':'crdenmidplane',
+    'startno':580,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'title':'m12mres7000',
+    'multz':1,
+    'maxlength':2,
+    'fmeat':'m12mres70002kpc1'
+    }
+
+
+
+inputplotdict['figthden_m12ihr2']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12imhdcvhr','m12icr_700hr'],
+    'wanted':'thdenmidplane',
+    'startno':580,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'title':'m12ires7000',
+    'multz':1,
+    'maxlength':2,
+    'fmeat':'m12ires70002kpc2'
+    }
+
+
+inputplotdict['figsurden_m12mhr2']={
+    '_plotfunction':disksurdentestinput,
+    'dirneed':['m12mmhdcvhr','m12mcr_700hr'],
+    'wanted':'test',
+    'startno':580,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'title':'m12mres7000',
+    'multz':1,
+    'maxlength':6,
+    'fmeat':'m12mres70002kpc2'
+    }
+
+
+inputplotdict['figsurden_m12fhr2']={
+    '_plotfunction':disksurdentestinput,
+    'dirneed':['m12fmhdcvhr','m12fcr_700hr'],
+    'wanted':'test',
+    'startno':580,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'title':'m12fres7000',
+    'multz':1,
+    'maxlength':6,
+    'fmeat':'m12fres70002kpc2'
+    }
+
+
+inputplotdict['figsurden_m12ihr2']={
+    '_plotfunction':disksurdentestinput,
+    'dirneed':['m12imhdcvhr','m12icr_700hr'],
+    'wanted':'test',
+    'startno':580,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'title':'m12ires7000',
+    'multz':1,
+    'maxlength':6,
+    'fmeat':'m12ires70002kpc2'
+    }
+
+
+inputplotdict['figthden_m12fhr2']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12fmhdcvhr','m12fcr_700hr'],
+    'wanted':'thdenmidplane',
+    'startno':580,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'title':'m12fres7000',
+    'multz':1,
+    'maxlength':2,
+    'fmeat':'m12fres70002kpc2'
+    }
+
+inputplotdict['figcrden_m12fhr1']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12fmhdcvhr','m12fcr_700hr'],
+    'wanted':'crdenmidplane',
+    'startno':580,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'title':'m12fres7000',
+    'multz':1,
+    'maxlength':2,
+    'fmeat':'m12fres70002kpc1'
+    }
+
+
+inputplotdict['figcrden_m12mhrlog']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12mcr_700hr'],
+    'wanted':'crdenmidplane',
+    'startno':580,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'title':'m12mres7000',
+    'multz':0,
+    'maxlength':0.2,
+    'logx':1,
+    'fmeat':'m12mres70002kpclog'
+    }
+
+
+
+inputplotdict['figcrden_m12fhrlog']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12fcr_700hr'],
+    'wanted':'crdenmidplane',
+    'startno':580,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'title':'m12fres7000',
+    'multz':0,
+    'maxlength':0.2,
+    'logx':1,
+    'fmeat':'m12fres70002kpclog'
+    }
+
+
+inputplotdict['figcrden_m12ihrlog']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12icr_700hr'],
+    'wanted':'crdenmidplane',
+    'startno':580,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'title':'m12ires7000',
+    'multz':0,
+    'maxlength':0.2,
+    'logx':1,
+    'fmeat':'m12ires7000_2kpclog'
+    }
+
+
+inputplotdict['figthden_m12mhr2']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12mmhdcvhr','m12mcr_700hr'],
+    'wanted':'thdenmidplane',
+    'startno':580,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':0,
+    'title':'m12mres7000',
+    'multz':1,
+    'maxlength':2,
+    'fmeat':'m12mres70002kpc2'
+    }
+
+
+inputplotdict['figBrms_m12fhr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12fmhdcvhr','m12fcr_b_70hr','m12fcr_700hr'],
+    'wanted':'Brmsmidplane',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+inputplotdict['figBrms_m12bhr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12bcr_700hr'],
+    'wanted':'Brmsmidplane',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+inputplotdict['figBrms_m12chr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12ccr_700hr'],
+    'wanted':'Brmsmidplane',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+inputplotdict['figFgammasfr_sbc']={
+    '_plotfunction':gammasfrsnaptestinpput,
+    'dirneed':['bwsbclrdc0','bwsbclrdc27','bwsbclrdc28',\
+               'bwsbclrdc29','bwsbclrstr','bwsbclrdc28mhd','bwsbclrdc28str'],
+    'wanted':'dirgammasfr',
+    'startno':0,
+    'Nsnap':651,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0 
+    }
+
+
+
+inputplotdict['figFgammasfr_mw']={
+    '_plotfunction':gammasfrsnaptestinpput,
+    'dirneed':['bwmwmrdc0','bwmwmrdc27','bwmwmrdc28',\
+               'bwmwmrdc29','bwmwmrstr','bwmwmrdc28mhd','bwmwmrdc28str'],
+    'wanted':'dirgammasfr',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':0,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0 
+    }
+
+
+inputplotdict['figsfr_smc']={
+    '_plotfunction':gammasfrsnaptestinpput,
+    'dirneed':['bwsmclrdc0','bwsmclrdc27','bwsmclrdc28',\
+               'bwsmclrdc29','bwsmclrstr','bwsmclrdc28mhd','bwsmclrdc28str'],
+    'wanted':'dirsfr',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0 
+    }
+
+
+inputplotdict['figFgammasfr_smc']={
+    '_plotfunction':gammasfrsnaptestinpput,
+    'dirneed':['bwsmclrdc0','bwsmclrdc27','bwsmclrdc28',\
+               'bwsmclrdc29','bwsmclrstr','bwsmclrdc28mhd','bwsmclrdc28str'],
+    'wanted':'dirgammasfr',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0 
+    }
+
+
+inputplotdict['sfr_smcstr']={
+    '_plotfunction':gammasfrsnaptestinpput,
+    'dirneed':['bwsmclrstr','bwsmclrstr3va','bwsmclrstr4va','bwsmclrstrcsva'],
+    'wanted':'dirsm',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':1,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':1,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0 
+    }
+
+
+inputplotdict['figFgammasfr_smcstr']={
+    '_plotfunction':gammasfrsnaptestinpput,
+    'dirneed':['bwsmclrstr','bwsmclrstr3va','bwsmclrstr4va','bwsmclrstrcsva'],
+    'wanted':'dirgammasfr',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':1,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0 
+    }
+
+
+inputplotdict['figCRgasz_smcstr']={
+    '_plotfunction':crecumrtestinput,
+    'dirneed':['bwsmclrstr','bwsmclrstr3va','bwsmclrstr4va','bwsmclrstrcsva'],
+    'wanted':'crecumr',
+    'startno':490,
+    'Nsnap':500,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':0,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+
+inputplotdict['figCRenergies_smcstr']={
+    '_plotfunction':cratmulttestinput,
+    'dirneed':['bwsmclrstr','bwsmclrstr3va','bwsmclrstr4va','bwsmclrstrcsva'],
+    'wanted':'cratmult',
+    'startno':0,
+    'Nsnap':501,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':1,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':1,
+    'withincr':0,
+    'ratiocrout_sou':0,
+    'rateneed':1
+    }
+
+
+inputplotdict['figCRgassur_m12ihr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12imhdcvhr','m12icr_b_70hr','m12icr_700hr'],
+    'wanted':'gassurden',
+    'startno':590,
+    'Nsnap':600,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+inputplotdict['figCRgassur_m12mhr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12mmhdcvhr','m12mcr_700hr'],
+    'wanted':'gassurden',
+    'startno':590,
+    'Nsnap':600,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+inputplotdict['figCRedenmid_m12mhr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12mmhdcvhr','m12mcr_700hr'],
+    'wanted':'edenmidplane',
+    'startno':590,
+    'Nsnap':600,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+inputplotdict['figCRedenmid_m12ihr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['m12imhdcvhr','m12icr_b_70hr','m12icr_700hr'],
+    'wanted':'edenmidplane',
+    'startno':590,
+    'Nsnap':600,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+inputplotdict['figCRedenmid_fm12ihr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['fm12i'],
+    'wanted':'edenmidplane',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+inputplotdict['figCRedenmid_fm12bhr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['fm12b'],
+    'wanted':'edenmidplane',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+inputplotdict['figedenmid1kpc_fm12mhr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['fm12m'],
+    'wanted':'edenmidplane',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0,
+    'usez1kpc':1
+    }
+
+inputplotdict['figedenmid_fm12mhr']={
+    '_plotfunction':crdenmidplanetestinput,
+    'dirneed':['fm12m'],
+    'wanted':'edenmidplane',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'',
+    'normalizedsm':0,
+    'M1labelneed':0,
+    'M1runlabelneed':0,
+    'resoneed':0,
+    'diffusionsolverneed':0,
+    'refereelabelneed':0,
+    'newlabelneed':1,
+    'strlabelneed':0,
+    'showstarburst':0,
+    'legendneed':1,
+    'correctIa':0,
+    'runlabelneed':0,
+    'withincr':0
+    }
+
+
+
+presetkeylist = [['twolegend',0],['the_prefix','snapshot'],['the_suffix','.hdf5'],['numon',0],['checkcr',0],['usez1kpc',0],['title',''],['maxlength',0.2],['multz',0],['logx',0]]
+
+for key in list(inputplotdict):
+    for pkey in presetkeylist:
+        if not checkkey(inputplotdict[key],pkey[0]): inputplotdict[key][pkey[0]]=pkey[1]
     if inputplotdict[key]['fmeat']=='':
         inputplotdict[key]['fmeat']=inputplotdict[key]['dirneed'][-1]

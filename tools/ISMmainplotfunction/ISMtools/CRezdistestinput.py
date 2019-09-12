@@ -39,15 +39,13 @@ def CRezdistestinput(subdict):
                 ynl = plotdict[wanted]['ynl'][inkey];
                 labelneed = plotdict[wanted]['labelneed'];
                 color = plotdict[wanted]['color'];
-                lsn = plotdict[wanted]['lsn'];
+                lsn = plotdict[wanted]['lsn'][inkey];
                 lw = plotdict[wanted]['lw'][inkey];
                 marker = plotdict[wanted]['marker'][inkey];
                 linelabel = plotdict[wanted]['linelab'][inkey];
                 legendneed = 1
-                if i==0 and j==0: 
+                if i==noplots-1 and j==0: 
                     label = linelabel
-                elif i==1 and k==0:
-                    label = labelneed
                 else:
                     label = '_nolegend_' 
                 if noplots==1:
@@ -56,14 +54,14 @@ def CRezdistestinput(subdict):
                     ax[i].plot(xnl,ynl,label=label,lw=lw,ls=lsn,color=color,marker=marker)
         if i<noplots-1: xlab=''
         if noplots==1:
-            ax.text(0.25, 0.95, ptitle, horizontalalignment='center',
+            ax.text(0.2, 0.8, ptitle, horizontalalignment='center',
             verticalalignment='center', transform=ax.transAxes,fontsize=22)            
         else:
-            ax[i].text(0.25, 0.95, ptitle, horizontalalignment='center',
+            ax[i].text(0.2, 0.8, ptitle, horizontalalignment='center',
             verticalalignment='center', transform=ax[i].transAxes,fontsize=22)
         if noplots==1:
-            PS.miscsetup(ax,logx=0,logy=1,xlab=xlab,ylab=ylab,legendneed=legendneed,labfs=22,legfs=12)
+            PS.miscsetup(ax,logx=0,logy=1,xlab=xlab,ylab=ylab,legendneed=legendneed,labfs=22,legfs=12,legloc='lower right')
         else:
-            PS.miscsetup(ax[i],logx=0,logy=1,xlab=xlab,ylab=ylab,legendneed=legendneed,labfs=22,legfs=12)        
+            PS.miscsetup(ax[i],logx=0,logy=1,xlab=xlab,ylab=ylab,legendneed=legendneed,labfs=22,legfs=12,legloc='lower right')        
     PS.finishsave(plt,filename)
     return None

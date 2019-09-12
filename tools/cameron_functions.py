@@ -5,9 +5,9 @@ def calnH(Gmas,Gnh,KernalLengths,density,Gmetal):
     #Inputs = Mass, NeutralHydrogenAbundance, Kernal Length, density, metallicity
     #Unit: Mass (1e10 Msun), .., kpc, 1e10Musn/kpc^3, ...
     #Convert to cgs
-    Gmas *= 1e10*Msun_in_g
-    KernalLengths *= kpc_in_cm
-    density *= 1e10*Msun_in_g/kpc_in_cm/kpc_in_cm/kpc_in_cm
+    Gmas = Gmas*1e10*Msun_in_g
+    KernalLengths = KernalLengths*kpc_in_cm
+    density = density*1e10*Msun_in_g/kpc_in_cm/kpc_in_cm/kpc_in_cm
     Z = Gmetal[:,0] #metal mass fraction (everything not H, He)
     ZHe = Gmetal[:,1] # He mass fraction
     M_H = proton_mass_in_g
@@ -29,13 +29,13 @@ def calnH(Gmas,Gnh,KernalLengths,density,Gmetal):
 
     chi = 3.1 * (1+3.1*np.power(Z/Z_solar,0.365)) / 4.1 #Approximation
 
-    s = np.divide( np.log(1+0.6*chi+0.01*np.square(chi)) , (0.6 *tau) )
-    fH2 = np.divide((1 - 0.5*s) , (1+0.25*s)) #Fraction of Molecular Hydrogen (over total complex mass) from Krumholz & Knedin
+    s = np.divide( np.log(1.0+0.6*chi+0.01*np.square(chi)) , (0.6 *tau) )
+    fH2 = np.divide((1.0 - 0.5*s) , (1+0.25*s)) #Fraction of Molecular Hydrogen (over total complex mass) from Krumholz & Knedin
     fH2[fH2<0] = 0 #Nonphysical negative molecular fractions set to 0
-    fHI = 1-fH2  #Gnh doesn't account for He and metals
+    fHI = 1.0-fH2  #Gnh doesn't account for He and metals
     #nHI =  np.multiply(Gmas,fHI) / M_H #Number of HI atoms in particles
-    mHI =  Gmas*fHI*(1-(Z+ZHe)) #Mass of HI atoms in particles
-    mH2 =  Gmas*fH2*(1-(Z+ZHe)) #Mass of H2 in particles
-    mHII = (1-(Z+ZHe))*Gmas*(1.0-Gnh)
+    mHI =  Gmas*fHI*(1.0-(Z+ZHe))*Gnh #Mass of HI atoms in particles
+    mH2 =  Gmas*fH2*(1.0-(Z+ZHe))*Gnh #Mass of H2 in particles
+    mHII = (1.0-(Z+ZHe))*Gmas*(1.0-Gnh)
     return {'NHI':mHI/M_H, 'NH2':mH2/M_H, 'NHII':mHII/M_H,
         'mHII_in_g':mHII, 'mH2_in_g':mH2, 'mHI_in_g':mHI,'fH2':fH2,'fHI':fHI}

@@ -72,23 +72,32 @@ def avedentestinput(subdict):
             for runtodo in dirneed:
                 if atstarburst==1:
                     if runtodo=='bwsbclr':
-                        Nsnap=523
+                            Nsnap=284
+                            #Nsnap=523
                     if runtodo=='bwsbclrmhd':
-                            Nsnap=589
+                            Nsnap=600
+                            #Nsnap=589
                     if runtodo=='bwsbclrdc0':
-                            Nsnap=590
+                            Nsnap=286
+                            #Nsnap=590
                     if runtodo=='bwsbclrdc27':
-                            Nsnap=138
+                            Nsnap=369
+                            #Nsnap=138
                     if runtodo=='bwsbclrdc28':
-                            Nsnap=520
+                            Nsnap=504
+                            #Nsnap=520
                     if runtodo=='bwsbclrdc29':
-                            Nsnap=433
+                            Nsnap=430
+                            #Nsnap=433
                     if runtodo=='bwsbclrstr':
-                            Nsnap=245
+                            Nsnap=358
+                            #Nsnap=245
                     if runtodo=='bwsbclrdc28mhd':
-                            Nsnap=558
+                            Nsnap=433
+                            #Nsnap=558
                     if runtodo=='bwsbclrdc28str':
-                            Nsnap=370
+                            Nsnap=532
+                            #Nsnap=370
                 for i in [Nsnap]:
                     info=outdirname(runtodo, i)
                     rundir=info['rundir']
@@ -141,8 +150,7 @@ def avedentestinput(subdict):
                     h0=0
                     rotface=0
                     datasup=1;
-                datasup=1
-                G = readsnap(the_snapdir, Nsnapstring, 0, snapshot_name=the_prefix, extension=the_suffix, havecr=havecr)
+                G = readsnapcr(the_snapdir, Nsnapstring, 0, snapshot_name=the_prefix, extension=the_suffix, havecr=havecr,cosmological=cosmo,h0=cosmo)
                 Gp = G['p']
                 Gv = G['v']
                 Gu = G['u']
@@ -160,7 +168,7 @@ def avedentestinput(subdict):
                 dr = withinr/nogrid
                 from crtestfunction import findcenz
                 datasup=1
-                xcen,ycen,zcen = findcennew(runtodo,Nsnap,withinr=2.5,dir='x',datasup=datasup,Gx=Gx,Gy=Gy,Gz=Gz,Gm=Gm)
+                xcen,ycen,zcen = findcennew(runtodo,Nsnap,withinr=2.5,datasup=datasup,Gx=Gx,Gy=Gy,Gz=Gz,Gm=Gm)
                 Gz = Gz-zcen; Gy = Gy-ycen; Gx = Gx-xcen;
                 GEint = Gu*km_in_cm*km_in_cm*Gm*1e10*Msun_in_g
                 cregy = G['cregy'] #cosmic ray energy in 1e10Msun km^2/sec^2

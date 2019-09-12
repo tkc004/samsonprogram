@@ -34,12 +34,22 @@ colortable = [ 'b', 'g', 'r']
 
 #dirneed=['bwmwlrdc27','bwmwlrdc28','bwmwlrdc29','bwmwlrdc28mhd']
 
-dirneed=['bwsmclrstr','bwsmclrdc0','bwsmclrdc27','bwsmclrdc28','bwsmclrdc29','bwsmclrdc28mhd','bwsmclrdc28str',\
+#dirneed=['m12fcr_700hr']
+
+dirneed=[\
+#'bwsmclrstr','bwsmclrdc0','bwsmclrdc27','bwsmclrdc28','bwsmclrdc29','bwsmclrdc28mhd',\
+'bwsmclrstr','bwsmclrdc0','bwsmclrdc27','bwsmclrdc28','bwsmclrdc29','bwsmclrdc28mhd','bwsmclrdc28str',\
+#'bwmwmrdc0','bwmwmrdc27','bwmwmrdc28','bwmwmrdc29','bwmwmrstr','bwmwmrdc28mhd',\
 'bwmwmrdc0','bwmwmrdc27','bwmwmrdc28','bwmwmrdc29','bwmwmrstr','bwmwmrdc28mhd','bwmwmrdc28str',\
+#'bwsbclrdc0','bwsbclrdc27','bwsbclrdc28','bwsbclrdc29','bwsbclrdc28mhd']
 'bwsbclrdc0','bwsbclrdc27','bwsbclrdc28','bwsbclrdc29','bwsbclrstr','bwsbclrdc28mhd','bwsbclrdc28str']
 #]
 
 fmeat=dirneed[-1]
+
+#startno=580
+
+#Nsnap=601
 
 startno=400
 
@@ -221,7 +231,7 @@ if wanted=='gassur_FgFsf':
         print 'labelneed', labelneed
         if haveB>0:
         #if runtodo=='bwmwmrdc28mhd' or runtodo=='bwsmclrdc28mhd' or runtodo=='bwsbclrdc28mhd':
-            fillstyle='top'
+            fillstyle='none'
         else:
             fillstyle='full'
         if not ( runtitle=='MW' or runtitle=='COSMO'):

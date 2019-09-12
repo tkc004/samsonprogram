@@ -23,6 +23,8 @@ from readsnap_samson import *
 from readsnap_cr import readsnapcr
 import matplotlib.pyplot as plt
 import colormaps as cmaps
+import crtestfunction as CRTF
+import readsnipshot as RSS
 plt.register_cmap(name='viridis', cmap=cmaps.viridis)
 plt.register_cmap(name='inferno', cmap=cmaps.inferno)
 plt.register_cmap(name='plasma', cmap=cmaps.plasma)
@@ -33,6 +35,37 @@ pi  = np.pi
 sin = np.sin
 cos = np.cos
 
+
+def mkdir_p(path): #recursively mkdir
+    try:
+        os.makedirs(path)
+    except OSError as exc:  # Python >2.5
+        if exc.errno == errno.EEXIST and os.path.isdir(path):
+            pass
+        else:
+            raise
+
+def ssmkdir(fname):
+    try:
+        os.mkdir(fname)
+    except OSError:
+        print 'directory already exists'
+    return None    
+
+def ssrm(fname):
+    try:
+        os.remove(fname)
+    except OSError:
+        print 'no existing file'
+    return None
+
+def checkkey(dictionary,key):
+    if key in dictionary.keys():
+        return True
+    else:
+        return False
+
+
 def funclinear(x, a, b):
         return a+b*x
 
@@ -41,6 +74,18 @@ def ellipse(u,v):
     y = ry*sin(u)*cos(v)
     z = rz*sin(v)
     return x,y,z
+
+
+def weighted_avg_and_std(values, weights):
+    """
+    Return the weighted average and standard deviation.
+
+    values, weights -- Numpy ndarrays with the same shape.
+    """
+    average = numpy.average(values, weights=weights)
+    # Fast and numerically precise:
+    variance = numpy.average((values-average)**2, weights=weights)
+    return (average, math.sqrt(variance))
 
 
 def mvee(points, tol = 0.001):
@@ -89,7 +134,7 @@ def calLfrompar(Gx,Gy,Gz,Gvx,Gvy,Gvz,Gm,rin=5.):
 
 
 def calLfromrun(runtodo,Nsnap,ptype,rin=5.):
-    G = readsnapfromrun(runtodo,Nsnap,ptype,rotface=0,datasup=0)
+    G = readsnapfromrun(runtodo,Nsnap,ptype,rotface=0,loccen=0)
     Lang = calLfrompar(G['p'][:,0],G['p'][:,1],G['p'][:,2],G['v'][:,0],G['v'][:,1],G['v'][:,2],G['m'],rin=5.)
     return Lang
 
@@ -101,7 +146,8 @@ def calangLfromrun(runtodo,Nsnap,ptype,rin=5.):
     
 
 
-def readsnapfromrun(runtodo,Nsnap,ptype,rotface=0,datasup=0):
+def readsnapfromrun(runtodo,Nsnap,ptype,rotface=0,loccen=0,
+                   importLcen=0,angLin=[0.,0.,1.],cenin=[0.,0.,0.],vcenin=[0.,0.,0.]):
         info=outdirname(runtodo, Nsnap)
         M1speed=info['M1speed']
         rundir=info['rundir']
@@ -129,7 +175,8 @@ def readsnapfromrun(runtodo,Nsnap,ptype,rotface=0,datasup=0):
         snumadd=info['snumadd'] 
         G = readsnapwcen(the_snapdir, Nsnapstring, ptype, snapshot_name=the_prefix, extension=the_suffix,\
          havecr=havecr,h0=h0,cosmo=cosmo, usepep=usepep, maindir=maindir,snumadd=snumadd,rotface=rotface,\
-         datasup=datasup,runtodo=runtodo,rundir=rundir,halostr=halostr,firever=firever)
+         loccen=loccen,runtodo=runtodo,rundir=rundir,halostr=halostr,firever=firever,
+                        importLcen=importLcen,angLin=angLin,cenin=cenin,vcenin=vcenin)
         return G
 
 
@@ -150,8 +197,9 @@ def readcenfromAHF(the_snapdir, Nsnapstring, ptype, snapshot_name='',\
                         halosingle = SF.read_halo_history_pep(rundir, Nsnap, singlesnap=1, firever=firever,halonostr=halostr, hubble=hubble, comoving=0, maindir=maindir)
                         afactor=ascale
                 else:
-                        halosingle = SF.read_halo_history(rundir, halonostr=halostr,hubble=hubble, comoving=0, maindir=maindir, singlesnap=1, atime=ascale,snumadd=snumadd)
+                        halosingle = SF.read_halo_history(rundir,hubble=hubble, halonostr=halostr,comoving=0, maindir=maindir, singlesnap=1, atime=ascale,snumadd=snumadd)
                         afactor=1.0
+                        
                 xcen = halosingle['x']*afactor
                 ycen = halosingle['y']*afactor
                 zcen = halosingle['z']*afactor
@@ -206,13 +254,19 @@ def readcenfromrun(runtodo,Nsnap,ptype,snapshot_name='snapshot', extension='.hdf
         return cendata
 
 def readsnapwcen(the_snapdir, Nsnapstring, ptype, snapshot_name='snapshot', extension='.hdf5',\
-         havecr=0,h0=0,cosmo=0, usepep=0, maindir='',snumadd=0,rotface=0, datasup=0,runtodo='',\
-         rundir='',halostr='',firever=2):           
-        cendata = readcenfromAHF(the_snapdir, Nsnapstring, 0, snapshot_name=snapshot_name,\
-         extension=extension, havecr=havecr,h0=h0,cosmo=cosmo,rundir=rundir,halostr=halostr,\
-         usepep=usepep,maindir=maindir,firever=firever,snumadd=snumadd)
-        xcen = cendata['xcen']; ycen = cendata['ycen']; zcen = cendata['zcen'];
-        xvcen = cendata['xvcen']; yvcen = cendata['yvcen']; zvcen = cendata['zvcen'];
+         havecr=0,h0=0,cosmo=0, usepep=0, maindir='',snumadd=0,rotface=0, loccen=0,runtodo='',\
+         rundir='',halostr='',firever=2,\
+         importLcen=0,angLin=[0.,0.,1.],cenin=[0.,0.,0.],vcenin=[0.,0.,0.]):
+        if importLcen==0:
+            cendata = readcenfromAHF(the_snapdir, Nsnapstring, 0, snapshot_name=snapshot_name,\
+             extension=extension, havecr=havecr,h0=h0,cosmo=cosmo,rundir=rundir,halostr=halostr,\
+             usepep=usepep,maindir=maindir,firever=firever,snumadd=snumadd)
+            xcen = cendata['xcen']; ycen = cendata['ycen']; zcen = cendata['zcen'];
+            xvcen = cendata['xvcen']; yvcen = cendata['yvcen']; zvcen = cendata['zvcen'];
+        else:
+            xcen = cenin[0]; ycen = cenin[1]; zcen = cenin[2];
+            xvcen = vcenin[0]; yvcen = vcenin[1]; zvcen = vcenin[2];
+            
         Nsnap = int(Nsnapstring)
         G = readsnapcr(the_snapdir, Nsnapstring, ptype, snapshot_name=snapshot_name, extension=extension, havecr=havecr,h0=h0,cosmological=cosmo)
         Gpos = G['p']
@@ -229,29 +283,42 @@ def readsnapwcen(the_snapdir, Nsnapstring, ptype, snapshot_name='snapshot', exte
                 Neb = G['ne']
         try:
                 GB = G['B']
+                GBx = GB[:,0]; GBy = GB[:,1]; GBz = GB[:,2];
+                haveB=1
         except KeyError:
                 GB = []
+                haveB=0
         Gx = Gpos[:,0]-xcen
         Gy = Gpos[:,1]-ycen
         Gz = Gpos[:,2]-zcen
         Gvx = Gvel[:,0]-xvcen   #km/s
         Gvy = Gvel[:,1]-yvcen
         Gvz = Gvel[:,2]-zvcen
-        print 'xvcen, yvcen, zvcen', xvcen, yvcen, zvcen   
-        if datasup==1:
-                from crtestfunction import findcennew
-                xcen, ycen, zcen = findcennew(runtodo,Nsnap,withinr=5.,dir='x',datasup=datasup,Gx=Gx,Gy=Gy,Gz=Gz,Gm=Gm)
-                Gx = Gx-xcen
-                Gy = Gy-ycen
-                Gz = Gz-zcen
+        print 'xvcen, yvcen, zvcen', xvcen, yvcen, zvcen
+        G['cen']=np.array([xcen,ycen,zcen])
+        G['vcen']=np.array([xvcen,yvcen,zvcen]);
+        if loccen==1 and importLcen==0:
+                xcennew, ycennew, zcennew = CRTF.findcennew(runtodo,Nsnap,withinr=5.,datasup=1,Gx=Gx,Gy=Gy,Gz=Gz,Gm=Gm)
+                Gx = Gx-xcennew
+                Gy = Gy-ycennew
+                Gz = Gz-zcennew
+                G['cen']+=np.array([xcennew,ycennew,zcennew])
         if rotface==1:
-                Lang = calLfrompar(Gx,Gy,Gz,Gvx,Gvy,Gvz,Gm,rin=5.)
+                if importLcen==0:
+                    Lang = calLfrompar(Gx,Gy,Gz,Gvx,Gvy,Gvz,Gm,rin=5.)
+                    G['angL']=np.array([Lang[0],Lang[1],Lang[2]])
+                else:
+                    Lang = np.array(angLin)
                 Gx, Gy, Gz = SF.rotateL_to_z(Gx,Gy,Gz,Lang[0],Lang[1],Lang[2])
                 Gvx, Gvy, Gvz = SF.rotateL_to_z(Gvx,Gvy,Gvz,Lang[0],Lang[1],Lang[2])
+                if haveB==1:
+                    GBx, GBy, GBz = SF.rotateL_to_z(GBx,GBy,GBz,Lang[0],Lang[1],Lang[2])
+                    G['B'][:,0]=GBx; G['B'][:,1]=GBy; G['B'][:,2]=GBz;
         G['p'][:,0]=Gx; G['p'][:,1]=Gy; G['p'][:,2]=Gz;
         G['v'][:,0]=Gvx; G['v'][:,1]=Gvy; G['v'][:,2]=Gvz;
         return G
 
+        
 
 # This routine uses relative positions of the particles to locate the center. The basic mechanism is to group particles into rectangular grids, and then fit the high density grid with ellipsoidal. 
 
@@ -355,6 +422,9 @@ def outdirname(runtodo, Nsnap=500):
         Msini=0.0
         Mhini=0.0
         newlabel=''
+        reverse=1
+        suffixadd=''
+        runlabel=''
 
 
         if (runtodo=='fm10q'):
@@ -388,6 +458,7 @@ def outdirname(runtodo, Nsnap=500):
                 maindir='oasis/extra'
                 usepep=1
                 cosmo=1
+                newlabel='Hydro no CR'
 
         if (runtodo=='fm12b'):
                 rundir='m12b_ref12/'
@@ -643,6 +714,7 @@ def outdirname(runtodo, Nsnap=500):
                 usepep=1
                 cosmo=1
                 highres=0
+                newlabel='Hydro no CR'
 
         if (runtodo=='fm12fmd'):
                 rundir='m12f_res7100/'
@@ -815,16 +887,18 @@ def outdirname(runtodo, Nsnap=500):
 
 
         if (runtodo=='fm12i'):
-                rundir='m12i_res7000/'
+                #rundir='m12i_res7000/'
+                rundir='m12i_ref13/'
                 halostr='00'
                 beginno=600
                 finalno=600
                 subdir='output'
                 xmax_of_box=60.0
-                halocolor='b'
+                halocolor='k'
                 labelname='m12i'
                 firever=2
-                maindir='oasis'
+                #maindir='oasis'
+                maindir='oasis/extra'
                 multifile='y'
                 icolor=0.93
                 cosmo=1
@@ -833,6 +907,10 @@ def outdirname(runtodo, Nsnap=500):
                 dclabel='m12i hydro'
                 snumadd=1
                 highres=0
+                reverse=0
+                usepep=1
+                #Sheaform=1
+                newlabel='Hydro no CR'
 
 
 
@@ -849,6 +927,7 @@ def outdirname(runtodo, Nsnap=500):
                 subdir='/output/'
                 maindir='oasis'
                 color='b'
+                
         if (runtodo=='mw_cr_lr_dc28_1_23_17_test16chole_bridges'):
                 rundir='mw_cr_lr_dc28_1_23_17_test16chole_bridges'
                 slabel='CR'
@@ -927,6 +1006,7 @@ def outdirname(runtodo, Nsnap=500):
                 subdir='/output/'
                 maindir='oasis'
                 color='g'
+                
         if (runtodo=='mw_cr_lr_dc28_1_23_17_test6'):
                 rundir='mw_cr_lr_dc28_1_23_17_test6'
                 slabel='CR'
@@ -2643,6 +2723,7 @@ def outdirname(runtodo, Nsnap=500):
                 color=cmaps.plasma(0.01)
                 Rvir=234
                 haveB=1
+                newlabel='MHD+'
 
 
         if (runtodo=='bwmwmrmhd'):
@@ -2652,7 +2733,7 @@ def outdirname(runtodo, Nsnap=500):
                 runtitle='MW'
                 snlabel=r'$f_{mec}=1$'
                 dclabel=r'${\bf BnoCR}$'
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
                 resolabel='mr'
                 Fcal=0.1
                 iavesfr = 1.0
@@ -2710,7 +2791,8 @@ def outdirname(runtodo, Nsnap=500):
 
 
         if (runtodo=='bwmwmrstr'):
-                rundir='mw_cr_mr_2_21_purestream'
+                rundir = 'mw_cr_mr_2_21_str_ll_va_evepts'
+                #rundir='mw_cr_mr_2_21_purestream'
                 slabel='CR'
                 havecr=6
                 runtitle='MW'
@@ -2725,7 +2807,8 @@ def outdirname(runtodo, Nsnap=500):
                 kappa=0
                 #color='c'
                 #TK test
-                color='b'
+                color=cmaps.plasma(0.93)
+                #color='b'
                 Rvir=234
                 M1speed=500
                 haveB=1
@@ -2757,6 +2840,35 @@ def outdirname(runtodo, Nsnap=500):
                 M1speed=500
                 haveB=1
                 stron=1
+                
+                
+                
+
+        if (runtodo=='bwmwmrstrevepts'):
+                rundir='mw_cr_mr_2_21_str_ll_va_evepts'
+                slabel='CR'
+                havecr=6
+                runtitle='MW'
+                snlabel=r'$f_{mec}=1$'
+                dclabel=r'${\bf STREAM}$'
+                newlabel='MHD          Streaming'
+                resolabel='mr'
+                Fcal=0.1
+                iavesfr = 1.0
+                subdir='/output/'
+                maindir='oasis/bw/mw'
+                usecalstr=0
+                kappa=0
+                #color='c'
+                #TK test
+                color=cmaps.plasma(0.93)
+                Rvir=234
+                M1speed=500
+                haveB=1
+                stron=1                
+                
+                
+                
 
 
         if (runtodo=='bwmwmrstrts'):
@@ -2876,8 +2988,32 @@ def outdirname(runtodo, Nsnap=500):
                 color=cmaps.plasma(0.7)
                 Rvir=234
                 M1speed=1000
+                newlabel=r'MHD $\kappa$=3e28'
                 haveB=1
 
+                
+
+        if (runtodo=='bwmwlrdc28mhdAd'):
+                rundir='mw_cr_lr_dc28_2_21_testgasAd'
+                slabel='CR'
+                havecr=6
+                runtitle='MW'
+                snlabel=r'$f_{mec}=1$'
+                dclabel=r'${\bf BDC28}$'
+                resolabel='lr'
+                Fcal=0.1
+                iavesfr = 1.0
+                subdir='/output/'
+                maindir='oasis/bw/mw'
+                kappa=10
+                #color='r'
+                newlabel=r'MHD $\kappa$=3e28 no gas Ad'
+                #TK test
+                color=cmaps.plasma(0.7)
+                Rvir=234
+                M1speed=1000
+                haveB=1
+                
 
 
         if (runtodo=='bwmwlrdc28mhdref'):
@@ -3918,7 +4054,7 @@ def outdirname(runtodo, Nsnap=500):
                 runtitle='SMC'
                 snlabel=r'$f_{mec}=1$'
                 dclabel=r'${\bf BnoCR}$'
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
                 resolabel='lr'
                 Fcal=0.01
                 iavesfr = 0.1
@@ -3981,13 +4117,71 @@ def outdirname(runtodo, Nsnap=500):
                 runtitle='SMC'
                 snlabel=r'$f_{mec}=1$'
                 dclabel=r'${\bf STREAM LL}$'
-                strlabel=r'$v_{\rm st}=v_{\rm A+c_s}$;       $\Gamma_{\rm st}\propto v_{\rm A}$'
+                strlabel=r'$v_{\rm st}=v_{\rm A}$'
+                resolabel='lr'
+                Fcal=0.01
+                iavesfr = 0.1
+                subdir='/output/'
+                maindir='oasis/bw/smc'
+                color=cmaps.plasma(0.93)
+                Rvir=63
+                M1speed=500
+                stron=1
+
+        if (runtodo=='bwsmclrcsvastrpts'):
+                rundir='smc_cr_lr_2_21_str_ll_csva_evepts'
+                slabel='CR'
+                havecr=6
+                haveB=1
+                runtitle='SMC'
+                snlabel=r'$f_{mec}=1$'
+                dclabel=r'${\bf STREAM LL}$'
+                strlabel=r'$v_{\rm st}=v_{\rm A+c_{\rm s}}$'
                 resolabel='lr'
                 Fcal=0.01
                 iavesfr = 0.1
                 subdir='/output/'
                 maindir='oasis/bw/smc'
                 color='purple'
+                Rvir=63
+                M1speed=500
+                stron=1
+                
+                
+        if (runtodo=='bwsmclr3vastrpts'):
+                rundir='smc_cr_lr_2_21_str_ll_3va_evepts'
+                slabel='CR'
+                havecr=6
+                haveB=1
+                runtitle='SMC'
+                snlabel=r'$f_{mec}=1$'
+                dclabel=r'${\bf STREAM LL}$'
+                strlabel=r'$v_{\rm st}=3v_{\rm A}$'
+                resolabel='lr'
+                Fcal=0.01
+                iavesfr = 0.1
+                subdir='/output/'
+                maindir='oasis/bw/smc'
+                color='k'
+                Rvir=63
+                M1speed=500
+                stron=1
+                
+        if (runtodo=='bwsmclrstr4vapts'):
+                rundir='smc_cr_lr_2_21_str_ll_4va_evepts'
+                slabel='CR'
+                havecr=6
+                haveB=1
+                runtitle='SMC'
+                snlabel=r'$f_{mec}=1$'
+                dclabel=r'${\bf STREAM LL}$'
+                strlabel=r'$v_{\rm st}=4v_{\rm A}$'
+                resolabel='lr'
+                Fcal=0.01
+                iavesfr = 0.1
+                subdir='/output/'
+                maindir='oasis/bw/smc'
+                color='y'
                 Rvir=63
                 M1speed=500
                 stron=1
@@ -4102,7 +4296,7 @@ def outdirname(runtodo, Nsnap=500):
                 snlabel=r'$f_{mec}=1$'
                 dclabel=r'${\bf STREAM}$'
                 newlabel='MHD          Streaming'
-                strlabel=r'$v_{\rm st}=4 v_{\rm A}$;       $\Gamma_{\rm st}\propto v_{\rm A}$'
+                strlabel=r'$v_{\rm st}=4 v_{\rm A}$'
                 resolabel='lr'
                 Fcal=0.01
                 iavesfr = 0.1
@@ -4124,7 +4318,7 @@ def outdirname(runtodo, Nsnap=500):
                 snlabel=r'$f_{mec}=1$'
                 dclabel=r'${\bf STREAM}$'
                 newlabel='MHD          Streaming'
-                strlabel=r'$v_{\rm st}=v_{\rm A}$;       $\Gamma_{\rm st}\propto v_{\rm A}$'
+                strlabel=r'$v_{\rm st}=v_{\rm A}$'
                 resolabel='lr'
                 Fcal=0.01
                 iavesfr = 0.1
@@ -4134,7 +4328,73 @@ def outdirname(runtodo, Nsnap=500):
                 #TK test
                 color=cmaps.plasma(0.93)
                 Rvir=63
-                M1speed=500
+                M1speed=1000
+                stron=1
+                
+        if (runtodo=='bwsmclrstr3va'):
+                rundir='smc_cr_lr_2_21_str_ll_3va_evepts'
+                slabel='CR'
+                havecr=6
+                haveB=1
+                runtitle='SMC'
+                snlabel=r'$f_{mec}=1$'
+                dclabel=r'${\bf STREAM}$'
+                newlabel='MHD          Streaming'
+                strlabel=r'$v_{\rm st}=3v_{\rm A}$'
+                resolabel='lr'
+                Fcal=0.01
+                iavesfr = 0.1
+                subdir='/output/'
+                maindir='oasis/bw/smc'
+                #color='c'
+                #TK test
+                color=cmaps.plasma(0.7)
+                Rvir=63
+                M1speed=1000
+                stron=1
+                
+        if (runtodo=='bwsmclrstr4va'):
+                rundir='smc_cr_lr_2_21_str_ll_4va_evepts'
+                slabel='CR'
+                havecr=6
+                haveB=1
+                runtitle='SMC'
+                snlabel=r'$f_{mec}=1$'
+                dclabel=r'${\bf STREAM}$'
+                newlabel='MHD          Streaming'
+                strlabel=r'$v_{\rm st}=4v_{\rm A}$'
+                resolabel='lr'
+                Fcal=0.01
+                iavesfr = 0.1
+                subdir='/output/'
+                maindir='oasis/bw/smc'
+                #color='c'
+                #TK test
+                color=cmaps.plasma(0.3)
+                Rvir=63
+                M1speed=1000
+                stron=1
+                
+        if (runtodo=='bwsmclrstrcsva'):
+                rundir='smc_cr_lr_2_21_str_ll_csva_evepts'
+                slabel='CR'
+                havecr=6
+                haveB=1
+                runtitle='SMC'
+                snlabel=r'$f_{mec}=1$'
+                dclabel=r'${\bf STREAM}$'
+                newlabel='MHD          Streaming'
+                strlabel=r'$v_{\rm st}=v_{\rm A+c_{\rm s}}$'
+                resolabel='lr'
+                Fcal=0.01
+                iavesfr = 0.1
+                subdir='/output/'
+                maindir='oasis/bw/smc'
+                #color='c'
+                #TK test
+                color=cmaps.plasma(0.1)
+                Rvir=63
+                M1speed=1000
                 stron=1
 
         if (runtodo=='bwsmclrdc0'):
@@ -5143,13 +5403,14 @@ def outdirname(runtodo, Nsnap=500):
                 runtitle='SBC'
                 snlabel=r'$f_{mec}=1$'
                 dclabel=r'${\bf noCR}$'
-                newlabel='MHD no CR'
+                newlabel='MHD+'
                 resolabel='lr'
                 Fcal=0.01
                 iavesfr = 0.1
                 subdir='/output/'
                 maindir='oasis/bw/sbc'
-                color='k'
+                #color='k'
+                color = cmaps.plasma(0.01)
                 Rvir=140
                 highres=1
 
@@ -5258,7 +5519,7 @@ def outdirname(runtodo, Nsnap=500):
 
 
         if (runtodo=='bwsbclrstr'):
-                rundir='sbc_cr_lr_2_21_str_ll_va_eve'
+                rundir='sbc_cr_lr_2_21_str_ll_va_evepts'
                 #rundir='sbc_cr_lr_2_21_purestream'
                 slabel='CR'
                 havecr=6
@@ -5302,7 +5563,7 @@ def outdirname(runtodo, Nsnap=500):
 
 
         if (runtodo=='bwsbclrdc28str'):
-                rundir='sbc_cr_lr_dc28_2_21_M1_mhd_stream_c1000'
+                rundir='sbc_cr_lr_dc28_2_21_str_ll_va_evepts'
                 slabel='CR'
                 havecr=6
                 haveB=1
@@ -5854,7 +6115,7 @@ def outdirname(runtodo, Nsnap=500):
                 firever=2
                 color='y'
                 highres=1
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
 
         if (runtodo=='m10qcr_b_70'):
@@ -5905,7 +6166,7 @@ def outdirname(runtodo, Nsnap=500):
                 withinRv=1
                 firever=2
                 color='m'
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
 
         if (runtodo=='m09cr_b_70'):
@@ -5956,7 +6217,7 @@ def outdirname(runtodo, Nsnap=500):
                 firever=2
                 color='brown'
                 highres=1
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
 
         if (runtodo=='m10vcr_b_70'):
@@ -6012,7 +6273,7 @@ def outdirname(runtodo, Nsnap=500):
                 firever=2
                 color='brown'
                 highres=3
-                newlabel=r'MHD $\kappa$=3e29'
+                newlabel='CR+'
 
 
         if (runtodo=='m11bcr_b_70'):
@@ -6022,7 +6283,7 @@ def outdirname(runtodo, Nsnap=500):
                 slabel='CR'
                 havecr=1
                 haveB=1
-                galcen=1
+                galcen=0
                 runtitle='COSMO'
                 snlabel=r'$f_{mec}=1$'
                 dclabel='m11b cr'
@@ -6037,7 +6298,7 @@ def outdirname(runtodo, Nsnap=500):
                 usepep=0
                 withinRv=1
                 firever=2
-                color='r'
+                color='b'
                 beginno=520
                 snapsep=10
                 highres=2
@@ -6051,7 +6312,7 @@ def outdirname(runtodo, Nsnap=500):
                 slabel='CR'
                 havecr=1
                 haveB=1
-                galcen=1
+                galcen=0
                 runtitle='COSMO'
                 snlabel=r'$f_{mec}=1$'
                 dclabel='m11b cr dc29'
@@ -6066,11 +6327,11 @@ def outdirname(runtodo, Nsnap=500):
                 usepep=0
                 withinRv=1
                 firever=2
-                color='r'
+                color='g'
                 beginno=520
                 snapsep=10
                 highres=3
-                newlabel=r'MHD $\kappa$=3e29'
+                newlabel='CR+'
 
         if (runtodo=='m11dcr_70va'):
                 rundir='/m11d/cr_70_streamVA/'
@@ -6149,7 +6410,7 @@ def outdirname(runtodo, Nsnap=500):
                 beginno=520
                 snapsep=10
                 highres=3
-                newlabel=r'MHD $\kappa$=3e29'
+                newlabel='CR+'
 
         if (runtodo=='m11hcr_700'):
                 rundir='/m11h/cr_700/'
@@ -6174,7 +6435,7 @@ def outdirname(runtodo, Nsnap=500):
                 firever=2
                 color='c'
                 highres=3
-                newlabel=r'MHD $\kappa$=3e29'
+                newlabel='CR+'
                 
         if (runtodo=='m11hcr_b_70'):
                 rundir='/m11h/cr_b_70/'
@@ -6225,7 +6486,7 @@ def outdirname(runtodo, Nsnap=500):
                 firever=2
                 color='brown'
                 highres=3
-                newlabel=r'MHD $\kappa$=3e29'
+                newlabel='CR+'
 
 
         if (runtodo=='m11fcr_b_70'):
@@ -6277,7 +6538,7 @@ def outdirname(runtodo, Nsnap=500):
                 firever=2
                 color='orange'
                 highres=3
-                newlabel=r'MHD $\kappa$=3e29'
+                newlabel='CR+'
                 
 
         if (runtodo=='m11gcr_b_70'):
@@ -6329,7 +6590,7 @@ def outdirname(runtodo, Nsnap=500):
                 firever=2
                 color='r'
                 highres=1
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
 
         if (runtodo=='m11fmhdcv'):
@@ -6355,7 +6616,7 @@ def outdirname(runtodo, Nsnap=500):
                 firever=2
                 color='r'
                 highres=1
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
         if (runtodo=='m11gmhdcv'):
                 rundir='/m11g/mhdcv/'
@@ -6380,7 +6641,7 @@ def outdirname(runtodo, Nsnap=500):
                 firever=2
                 color='r'
                 highres=1
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
         if (runtodo=='m11dmhdcv'):
                 rundir='/m11d/mhdcv/'
@@ -6404,7 +6665,7 @@ def outdirname(runtodo, Nsnap=500):
                 firever=2
                 color='r'
                 highres=1
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
         if (runtodo=='m11hmhdcv'):
                 rundir='/m11h/mhdcv/'
@@ -6428,9 +6689,393 @@ def outdirname(runtodo, Nsnap=500):
                 firever=2
                 color='r'
                 highres=1
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
+                
+        if (runtodo=='m12bcr_700hr'):
+                rundir='/m12b_res7100/cr_700/'
+                subdir='/output/'
+                maindir='/oasis/philruns/'
+                slabel='CR'
+                havecr=1
+                haveB=1
+                galcen=0
+                runtitle='COSMO'
+                snlabel=r'$f_{mec}=1$'
+                dclabel='m12b cr dc29'
+                crlabel='cr700'
+                resolabel='lr'
+                multifile='y'
+                Fcal=0.1
+                iavesfr = 1.0
+                cosmo=1
+                halostr='00'
+                usesnaplist=0
+                h0=0.702
+                usepep=0
+                withinRv=1
+                firever=2
+                color='g'
+                beginno=100
+                snapsep=10
+                highres=3
+                newlabel='CR+'
+                
+                
+                
+
+        if (runtodo=='m12fmhdcvhr'):
+                rundir='/m12f_mass7000/mhdcv/'
+                subdir='/output/'
+                maindir='/oasis/philruns/'
+                slabel='CR'
+                havecr=0
+                haveB=1
+                galcen=0
+                runtitle='COSMO'
+                snlabel=r'$f_{mec}=1$'
+                dclabel='m12f mhd'
+                runlabel='m12fres7000'
+                crlabel='mhdcv'
+                resolabel='lr'
+                multifile='y'
+                Fcal=0.1
+                iavesfr = 1.0
+                cosmo=1
+                halostr='00'
+                usesnaplist=0
+                h0=0.702
+                usepep=0
+                withinRv=1
+                firever=2
+                #color='r'
+                color='k'
+                beginno=100
+                snapsep=10
+                highres=1
+                newlabel='MHD+'
+                
+                
+                
+        if (runtodo=='m12fcr_b_70hr'):
+                rundir='/m12f_mass7000/cr_b_70/'
+                subdir='/output/'
+                maindir='/oasis/philruns/'
+                slabel='CR'
+                havecr=1
+                haveB=1
+                galcen=0
+                runtitle='COSMO'
+                snlabel=r'$f_{mec}=1$'
+                dclabel='m12f cr dc28'
+                crlabel='cr70'
+                resolabel='lr'
+                multifile='y'
+                Fcal=0.1
+                iavesfr = 1.0
+                cosmo=1
+                halostr='00'
+                usesnaplist=0
+                h0=0.702
+                usepep=0
+                withinRv=1
+                firever=2
+                color='b'
+                beginno=100
+                snapsep=10
+                highres=3
+                newlabel=r'MHD $\kappa$=3e28'
+                
+                
+                
+        if (runtodo=='m12fcr_700hr'):
+                rundir='/m12f_mass7000/cr_700/'
+                subdir='/output/'
+                maindir='/oasis/philruns/'
+                slabel='CR'
+                havecr=1
+                haveB=1
+                galcen=0
+                runtitle='COSMO'
+                snlabel=r'$f_{mec}=1$'
+                dclabel='m12f cr dc29'
+                runlabel='m12fres7000'
+                crlabel='cr700'
+                resolabel='lr'
+                multifile='y'
+                Fcal=0.1
+                iavesfr = 1.0
+                cosmo=1
+                halostr='00'
+                usesnaplist=0
+                h0=0.702
+                usepep=0
+                withinRv=1
+                firever=2
+                #color='g'
+                color='y'
+                beginno=100
+                snapsep=10
+                highres=3
+                newlabel='CR+'
+
+                
+        if (runtodo=='m12imhdcvhr'):
+                rundir='/m12i_mass7000_MHDCR_tkFIX/mhdcv/'
+                subdir='/output/'
+                maindir='/oasis/philruns/'
+                slabel='CR'
+                havecr=0
+                haveB=1
+                galcen=0
+                runtitle='COSMO'
+                snlabel=r'$f_{mec}=1$'
+                dclabel='m12i mhd'
+                runlabel='m12ires7000'
+                crlabel='mhdcv'
+                resolabel='lr'
+                multifile='y'
+                Fcal=0.1
+                iavesfr = 1.0
+                cosmo=1
+                halostr='01'
+                usesnaplist=0
+                h0=0.702
+                usepep=0
+                withinRv=1
+                firever=2
+                #color='r'
+                color='k'
+                beginno=100
+                snapsep=10
+                highres=1
+                newlabel='MHD+'
+                
+                
+                
+        if (runtodo=='m12icr_b_70hr'):
+                rundir='/m12i_mass7000_MHDCR_tkFIX/cr_b_70/'
+                subdir='/output/'
+                maindir='/oasis/philruns/'
+                slabel='CR'
+                havecr=1
+                haveB=1
+                galcen=0
+                runtitle='COSMO'
+                snlabel=r'$f_{mec}=1$'
+                dclabel='m12i cr dc28'
+                crlabel='cr70'
+                resolabel='lr'
+                multifile='y'
+                Fcal=0.1
+                iavesfr = 1.0
+                cosmo=1
+                halostr='00'
+                usesnaplist=0
+                h0=0.702
+                usepep=0
+                withinRv=1
+                firever=2
+                color='b'
+                beginno=100
+                snapsep=10
+                highres=3
+                newlabel=r'MHD $\kappa$=3e28'
+                
+                
+                
+        if (runtodo=='m12icr_700hr'):
+                rundir='/m12i_mass7000_MHDCR_tkFIX/cr_700/'
+                subdir='/output/'
+                maindir='/oasis/philruns/'
+                slabel='CR'
+                havecr=1
+                haveB=1
+                galcen=0
+                runtitle='COSMO'
+                snlabel=r'$f_{mec}=1$'
+                dclabel='m12i cr dc29'
+                runlabel='m12ires7000'
+                crlabel='cr700'
+                resolabel='lr'
+                multifile='y'
+                Fcal=0.1
+                iavesfr = 1.0
+                cosmo=1
+                halostr='01'
+                usesnaplist=0
+                h0=0.702
+                usepep=0
+                withinRv=1
+                firever=2
+                #color='g'
+                color='y'
+                beginno=100
+                snapsep=10
+                highres=3
+                newlabel='CR+'
+                
+
+        if (runtodo=='m12mmhdcvhr'):
+                rundir='/m12m_mass7000/mhdcv/'
+                subdir='/output/'
+                maindir='/oasis/philruns/'
+                slabel='CR'
+                havecr=0
+                haveB=1
+                galcen=0
+                runtitle='COSMO'
+                snlabel=r'$f_{mec}=1$'
+                dclabel='m12m mhd'
+                runlabel='m12mres7000'
+                crlabel='mhdcv'
+                resolabel='lr'
+                multifile='y'
+                Fcal=0.1
+                iavesfr = 1.0
+                cosmo=1
+                halostr='00'
+                usesnaplist=0
+                h0=0.702
+                usepep=0
+                withinRv=1
+                firever=2
+                #color='r'
+                color='k'
+                beginno=100
+                snapsep=10
+                highres=1
+                newlabel='MHD+'
+                
+                
+                
+        if (runtodo=='m12mcr_b_70hr'):
+                rundir='/m12m_mass7000/cr_b_70/'
+                subdir='/output/'
+                maindir='/oasis/philruns/'
+                slabel='CR'
+                havecr=1
+                haveB=1
+                galcen=0
+                runtitle='COSMO'
+                snlabel=r'$f_{mec}=1$'
+                dclabel='m12m cr dc28'
+                crlabel='cr70'
+                resolabel='lr'
+                multifile='y'
+                Fcal=0.1
+                iavesfr = 1.0
+                cosmo=1
+                halostr='00'
+                usesnaplist=0
+                h0=0.702
+                usepep=0
+                withinRv=1
+                firever=2
+                color='b'
+                beginno=100
+                snapsep=10
+                highres=3
+                newlabel=r'MHD $\kappa$=3e28'
+                
+                
+                
+        if (runtodo=='m12mcr_700hr'):
+                rundir='/m12m_mass7000/cr_700/'
+                subdir='/output/'
+                maindir='/oasis/philruns/'
+                slabel='CR'
+                havecr=1
+                haveB=1
+                galcen=0
+                runtitle='COSMO'
+                snlabel=r'$f_{mec}=1$'
+                dclabel='m12m cr dc29'
+                runlabel='m12mres7000'
+                crlabel='cr700'
+                resolabel='lr'
+                multifile='y'
+                Fcal=0.1
+                iavesfr = 1.0
+                cosmo=1
+                halostr='00'
+                usesnaplist=0
+                h0=0.702
+                usepep=0
+                withinRv=1
+                firever=2
+                #color='g'
+                color='y'
+                beginno=100
+                snapsep=10
+                highres=3
+                newlabel='CR+'
+                
 
 
+        if (runtodo=='m12rcr_700hr'):
+                rundir='/m12r_res7100/cr_700/'
+                subdir='/output/'
+                maindir='/oasis/philruns/'
+                slabel='CR'
+                havecr=1
+                haveB=1
+                galcen=0
+                runtitle='COSMO'
+                snlabel=r'$f_{mec}=1$'
+                dclabel='m12r cr dc29'
+                crlabel='cr700'
+                resolabel='lr'
+                multifile='y'
+                Fcal=0.1
+                iavesfr = 1.0
+                cosmo=1
+                halostr='00'
+                usesnaplist=0
+                h0=0.702
+                usepep=0
+                withinRv=1
+                firever=2
+                color='g'
+                beginno=100
+                snapsep=10
+                highres=3
+                newlabel='CR+'
+                
+                
+
+        if (runtodo=='m12wcr_700hr'):
+                rundir='/m12w_res7100/cr_700/'
+                subdir='/output/'
+                maindir='/oasis/philruns/'
+                slabel='CR'
+                havecr=1
+                haveB=1
+                galcen=0
+                runtitle='COSMO'
+                snlabel=r'$f_{mec}=1$'
+                dclabel='m12w cr dc29'
+                crlabel='cr700'
+                resolabel='lr'
+                multifile='y'
+                Fcal=0.1
+                iavesfr = 1.0
+                cosmo=1
+                halostr='00'
+                usesnaplist=0
+                h0=0.702
+                usepep=0
+                withinRv=1
+                firever=2
+                color='g'
+                beginno=100
+                snapsep=10
+                highres=3
+                newlabel='CR+'                
+                
+                
+                
+                
+                
         if (runtodo=='m12mmhdcv'):
                 rundir='/m12m_mass56000/mhdcv/'
                 subdir='/output/'
@@ -6454,17 +7099,17 @@ def outdirname(runtodo, Nsnap=500):
                 usepep=0
                 withinRv=1
                 firever=2
-                color='g'
+                color='r'
                 snapsep=10
                 highres=1
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
         if (runtodo=='m12mcr_b_70'):
                 rundir='/m12m_mass56000/cr_b_70/'
                 subdir='/output/'
                 maindir='/oasis/philruns/'
                 slabel='CR'
-                galcen=1
+                galcen=0
                 havecr=1
                 haveB=1
                 runtitle='COSMO'
@@ -6482,7 +7127,7 @@ def outdirname(runtodo, Nsnap=500):
                 usepep=0
                 withinRv=1
                 firever=2
-                color='g'
+                color='b'
                 snapsep=10
                 newlabel=r'MHD $\kappa$=3e28'
 
@@ -6491,7 +7136,7 @@ def outdirname(runtodo, Nsnap=500):
                 subdir='/output/'
                 maindir='/oasis/philruns/'
                 slabel='CR'
-                galcen=1
+                galcen=0
                 havecr=1
                 haveB=1
                 multifile='y'
@@ -6509,7 +7154,7 @@ def outdirname(runtodo, Nsnap=500):
                 usepep=0
                 withinRv=1
                 firever=2
-                color='g'
+                color='b'
                 snapsep=10
 
 
@@ -6521,7 +7166,7 @@ def outdirname(runtodo, Nsnap=500):
                 slabel='CR'
                 havecr=1
                 haveB=1
-                galcen=1
+                galcen=0
                 runtitle='COSMO'
                 snlabel=r'$f_{mec}=1$'
                 dclabel='m12m cr dc29'
@@ -6541,7 +7186,7 @@ def outdirname(runtodo, Nsnap=500):
                 beginno=100
                 snapsep=10
                 highres=3
-                newlabel=r'MHD $\kappa$=3e29'
+                newlabel='CR+'
                 
 
         if (runtodo=='m12icr_b_70'):
@@ -6549,7 +7194,7 @@ def outdirname(runtodo, Nsnap=500):
                 subdir='/output/'
                 maindir='/oasis/philruns/'
                 slabel='CR'
-                galcen=1
+                galcen=0
                 havecr=1
                 haveB=1
                 runtitle='COSMO'
@@ -6566,7 +7211,7 @@ def outdirname(runtodo, Nsnap=500):
                 usepep=0
                 withinRv=1
                 firever=2
-                color='g'
+                color='b'
                 snapsep=10
                 highres=2
                 newlabel=r'MHD $\kappa$=3e28'
@@ -6577,7 +7222,7 @@ def outdirname(runtodo, Nsnap=500):
                 subdir='/output/'
                 maindir='/oasis/philruns/'
                 slabel='CR'
-                galcen=1
+                galcen=0
                 havecr=1
                 haveB=1
                 runtitle='COSMO'
@@ -6594,7 +7239,7 @@ def outdirname(runtodo, Nsnap=500):
                 usepep=0
                 withinRv=1
                 firever=2
-                color='g'
+                color='b'
                 snapsep=10
                 newlabel=r'MHD $\kappa$=3e28'
 
@@ -6604,7 +7249,7 @@ def outdirname(runtodo, Nsnap=500):
                 subdir='/output/'
                 maindir='/oasis/philruns/'
                 slabel='CR'
-                galcen=1
+                galcen=0
                 havecr=1
                 haveB=1
                 runtitle='COSMO'
@@ -6621,7 +7266,7 @@ def outdirname(runtodo, Nsnap=500):
                 usepep=0
                 withinRv=1
                 firever=2
-                color='g'
+                color='b'
                 snapsep=10
 
 
@@ -6632,7 +7277,7 @@ def outdirname(runtodo, Nsnap=500):
                 slabel='CR'
                 havecr=1
                 haveB=1
-                galcen=1
+                galcen=0
                 runtitle='COSMO'
                 snlabel=r'$f_{mec}=1$'
                 dclabel='m12i cr dc29'
@@ -6650,7 +7295,7 @@ def outdirname(runtodo, Nsnap=500):
                 color='g'
                 beginno=520
                 snapsep=10
-                newlabel=r'MHD $\kappa$=3e29'
+                newlabel='CR+'
 
 
         if (runtodo=='m12fcr_700'):
@@ -6660,7 +7305,7 @@ def outdirname(runtodo, Nsnap=500):
                 slabel='CR'
                 havecr=1
                 haveB=1
-                galcen=1
+                galcen=0
                 runtitle='COSMO'
                 snlabel=r'$f_{mec}=1$'
                 dclabel='m12f cr dc29'
@@ -6679,7 +7324,7 @@ def outdirname(runtodo, Nsnap=500):
                 beginno=520
                 snapsep=10
                 highres=3
-                newlabel=r'MHD $\kappa$=3e29'
+                newlabel='CR+'
 
 
         if (runtodo=='m12imhdcv'):
@@ -6703,8 +7348,8 @@ def outdirname(runtodo, Nsnap=500):
                 usepep=0
                 withinRv=1
                 firever=2
-                color='k'
-                newlabel = 'MHD          no CR'
+                color='r'
+                newlabel = 'MHD+'
 
 
         if (runtodo=='m12fmhdcv'):
@@ -6728,9 +7373,9 @@ def outdirname(runtodo, Nsnap=500):
                 usepep=0
                 withinRv=1
                 firever=2
-                color='k'
+                color='r'
                 highres=1
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
                 
 
 
@@ -6842,6 +7487,8 @@ def outdirname(runtodo, Nsnap=500):
         
         print 'rundir', rundir
         if rundir=='none':
+                print 'rundir directory not found'
+                print 'runtodo', runtodo
                 cosmo=1
                 cosmodata=cosmichalo(runtodo)
                 rundir=cosmodata['rundir']
@@ -6885,7 +7532,7 @@ def outdirname(runtodo, Nsnap=500):
         elif Nsnap<100:
                 Nsnapstring = '0'+str(Nsnap)
         the_snapdir = '/home/tkc004/'+maindir+'/'+rundir+'/'+subdir
-        return {'usecalstr':usecalstr, 'snumadd':snumadd, 'crlabel':crlabel, 'strlabel':strlabel, 'newlabel':newlabel,\
+        return {'suffixadd':suffixadd, 'reverse':reverse, 'usecalstr':usecalstr, 'snumadd':snumadd, 'crlabel':crlabel, 'strlabel':strlabel, 'newlabel':newlabel,\
  'galcen':galcen, 'snapsep':snapsep, 'stron':stron,'correctIa':correctIa, 'multifile':multifile,\
 'the_prefix':the_prefix,'the_suffix':the_suffix, 'M1speed':M1speed,'Rvir':Rvir,\
 'haveB':haveB,'havemetal':havemetal,'kappa':kappa,'exceptcool':exceptcool,\
@@ -6894,7 +7541,7 @@ def outdirname(runtodo, Nsnap=500):
 'color':color,'maindir':maindir,'subdir':subdir,'cosmo':cosmo, 'Nsnapstring':Nsnapstring, 'rundir':rundir,\
 'highres':highres,'Mhini':Mhini,'Msini':Msini,\
 'runtitle':runtitle,'slabel':slabel,'snlabel':snlabel,'dclabel':dclabel,'resolabel':resolabel,\
-'the_snapdir':the_snapdir,'havecr':havecr,'Fcal':Fcal,'iavesfr':iavesfr,'timestep':timestep}
+'the_snapdir':the_snapdir,'havecr':havecr,'Fcal':Fcal,'iavesfr':iavesfr,'timestep':timestep,'runlabel':runlabel}
 
 
 
@@ -7095,6 +7742,9 @@ def cosmichalo(runtodo):
         suffixadd=''
         crlabel=''
         Sheaform=0
+        usecalstr=0
+        newlabel=''
+        reverse=1
         if (runtodo=='m09'):
                 rundir='m09_hr_Dec16_2013/'
                 halostr='00'
@@ -7467,8 +8117,9 @@ def cosmichalo(runtodo):
                 labelname='m12c'
                 firever=2
         if (runtodo=='fm12i'):
-                maindir='oasis'
-                rundir='m12i_res7000/'
+                maindir='oasis/extra'
+                #rundir='m12i_res7000/'
+                rundir='m12i_ref13'
                 halostr='00'
                 subdir='output'
                 beginno=100
@@ -7479,6 +8130,10 @@ def cosmichalo(runtodo):
                 labelname='m12i'
                 firever=2
                 snumadd=1
+                reverse=0
+                usepep=1
+                #Sheaform=1
+                newlabel='Hydro no CR'
 
         if (runtodo=='fm12imd'):
                 rundir='m12i_res7100/'
@@ -8057,13 +8712,14 @@ def cosmichalo(runtodo):
                 finalno=600
                 subdir='output'
                 xmax_of_box=40.0
-                halocolor='b'
+                halocolor='k'
                 labelname='m12fhr'
                 firever=2
                 multifile='y'
                 fileno=4
                 maindir='oasis/extra'
                 usepep=1
+                newlabel='Hydro no CR'
 
 #        if (runtodo=='fm12i'):
  #               rundir='m12i_ref13/'
@@ -8087,13 +8743,14 @@ def cosmichalo(runtodo):
                 finalno=600
                 subdir='output'
                 xmax_of_box=40.0
-                halocolor='b'
+                halocolor='k'
                 labelname='fm12m'
                 firever=2
                 multifile='y'
                 fileno=4
                 maindir='oasis/extra'
                 usepep=1
+                newlabel='Hydro no CR'
 
         if (runtodo=='fm12b'):
                 rundir='m12b_ref12/'
@@ -8212,7 +8869,7 @@ def cosmichalo(runtodo):
                 halocolor='k'
                 firever=2
                 crlabel='mhdcv'
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
 
         if (runtodo=='m12icr_b_70'):
@@ -8266,7 +8923,7 @@ def cosmichalo(runtodo):
                 firever=2
                 crlabel='mhdcv'
                 highres=1
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
 
         if (runtodo=='m09mhdcv'):
@@ -8284,7 +8941,7 @@ def cosmichalo(runtodo):
                 halocolor='k'
                 highres=1
                 crlabel='mhdcv'
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
         if (runtodo=='m09cr_b_70'):
                 rundir='/m09/cr_b_70/'
@@ -8317,7 +8974,7 @@ def cosmichalo(runtodo):
                 halocolor='k'
                 highres=1
                 crlabel='mhdcv'
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
 
         if (runtodo=='m10vcr_700'):
@@ -8335,7 +8992,7 @@ def cosmichalo(runtodo):
                 halocolor='k'
                 highres=3
                 crlabel='cr700'
-                newlabel=r'MHD $\kappa$=3e29'
+                newlabel='CR+'
 
         if (runtodo=='m10vcr_b_70'):
                 rundir='/m10v/cr_b_70/'
@@ -8387,7 +9044,7 @@ def cosmichalo(runtodo):
                 halocolor='k'
                 highres=3
                 crlabel='cr700'
-                newlabel=r'MHD $\kappa$=3e29'
+                newlabel='CR+'
 
         if (runtodo=='m11dcr_b_70'):
                 rundir='/m11d/cr_b_70/'
@@ -8421,7 +9078,7 @@ def cosmichalo(runtodo):
                 halocolor='k'
                 highres=3
                 crlabel='cr700'
-                newlabel=r'MHD $\kappa$=3e29'
+                newlabel='CR+'
 
 
         if (runtodo=='m11hcr_700'):
@@ -8439,7 +9096,7 @@ def cosmichalo(runtodo):
                 halocolor='k'
                 highres=3
                 crlabel='cr700'
-                newlabel=r'MHD $\kappa$=3e29'
+                newlabel='CR+'
 
         if (runtodo=='m11hcr_b_70'):
                 rundir='/m11h/cr_b_70/'
@@ -8472,7 +9129,7 @@ def cosmichalo(runtodo):
                 halocolor='k'
                 highres=3
                 crlabel='cr700'
-                newlabel=r'MHD $\kappa$=3e29'
+                newlabel='CR+'
 
         if (runtodo=='m11fcr_b_70'):
                 rundir='/m11f/cr_b_70/'
@@ -8505,7 +9162,7 @@ def cosmichalo(runtodo):
                 halocolor='k'
                 highres=3
                 crlabel='cr700'
-                newlabel=r'MHD $\kappa$=3e29'
+                newlabel='CR+'
 
         if (runtodo=='m11gcr_b_70'):
                 rundir='/m11g/cr_b_70/'
@@ -8638,7 +9295,7 @@ def cosmichalo(runtodo):
                 firever=2
                 highres=1
                 crlabel='mhdcv'
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
         if (runtodo=='m11cmhdcv'):
                 rundir='/m11c/mhdcv/'
@@ -8655,7 +9312,7 @@ def cosmichalo(runtodo):
                 firever=2
                 highres=1
                 crlabel='mhdcv'
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
 
 
@@ -8676,7 +9333,7 @@ def cosmichalo(runtodo):
                 highres=1
                 h0=0.68
                 crlabel='mhdcv'
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
 
         if (runtodo=='m11hmhdcv'):
@@ -8695,7 +9352,7 @@ def cosmichalo(runtodo):
                 highres=1
                 h0=0.68
                 crlabel='mhdcv'
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
 
         if (runtodo=='m11fmhdcv'):
@@ -8713,7 +9370,7 @@ def cosmichalo(runtodo):
                 firever=2
                 highres=1
                 crlabel='mhdcv'
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
 
         if (runtodo=='m11gmhdcv'):
@@ -8731,7 +9388,7 @@ def cosmichalo(runtodo):
                 firever=2
                 highres=1
                 crlabel='mhdcv'
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
         if (runtodo=='m11vmhdcv'):
                 rundir='/m11v/mhdcv/'
@@ -8749,7 +9406,7 @@ def cosmichalo(runtodo):
                 highres=1
                 crlabel='mhdcv'
                 usepep=1
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
         if (runtodo=='m11v1mhdcv'):
                 rundir='/m11v/mhdcv/'
@@ -8767,7 +9424,7 @@ def cosmichalo(runtodo):
                 highres=1
                 crlabel='mhdcv'
                 usepep=1
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
         if (runtodo=='m11v2mhdcv'):
                 rundir='/m11v/mhdcv/'
@@ -8785,7 +9442,7 @@ def cosmichalo(runtodo):
                 highres=1
                 crlabel='mhdcv'
                 usepep=1
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
         if (runtodo=='m11v3mhdcv'):
                 rundir='/m11v/mhdcv/'
@@ -8803,7 +9460,7 @@ def cosmichalo(runtodo):
                 highres=1
                 crlabel='mhdcv'
                 usepep=1
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
         if (runtodo=='m11v4mhdcv'):
                 rundir='/m11v/mhdcv/'
@@ -8821,7 +9478,7 @@ def cosmichalo(runtodo):
                 highres=1
                 crlabel='mhdcv'
                 usepep=1
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
 
         if (runtodo=='m10qcr_b_70'):
@@ -8855,11 +9512,11 @@ def cosmichalo(runtodo):
                 firever=2
                 highres=1
                 crlabel='mhdcv'
-                newlabel = 'MHD          no CR'
+                newlabel = 'MHD+'
 
 
 
-        return {'usecalstr':usecalstr, 'Sheaform':Sheaform,'crlabel':crlabel,
+        return {'reverse':reverse,'usecalstr':usecalstr, 'Sheaform':Sheaform,'crlabel':crlabel,
                 'suffixadd':suffixadd,'snapsep':snapsep, 'icolor':icolor,
                 'snumadd':snumadd,'h0':h0,'fileno':fileno,'rundir':rundir,'subdir':subdir,
                 'halostr':halostr,'beginno':beginno,'finalno':finalno, 'multifile':multifile,
@@ -9107,3 +9764,717 @@ def findradwnism(Gextra, findradiusatnism):
     radneed = np.interp(findradiusatnism, gasdenlist, radlist)
     print 'radius that has nism = 1cm^-3', radneed
     return radneed
+
+from samson_functions import *
+
+
+
+def samesign(a, b):
+    return a * b > 0
+
+def bisect(func, low, high):
+    'Find root of continuous function where f(low) and f(high) have opposite signs'
+    assert not samesign(func(low), func(high))
+    for i in range(54):
+        midpoint = (low + high) / 2.0
+        if samesign(func(low), func(midpoint)):
+            low = midpoint
+        else:
+            high = midpoint
+    return midpoint
+
+def findscalelength(G, halfmassscale=0, usecylr=0, usecylz=0, cutrout =10., cutzout = 5.):
+    # default is using spherical radius (when usecylr=0, usecylz=0)
+    Gp = G['p']; Gm = G['m']*1e10; #now distance in kpc and mass in Msun
+    Gx = Gp[:,0]; Gy = Gp[:,1]; Gz = Gp[:,2];
+    Gr = np.sqrt(Gx*Gx+Gy*Gy+Gz*Gz)
+    Grxy = np.sqrt(Gx*Gx+Gy*Gy)
+    rlow = 0.
+    if usecylr==1 or usecylz==1:
+        routcut = Grxy < cutrout
+        zoutcut = np.absolute(Gz) < cutzout
+        cut = routcut*zoutcut
+        Gx=Gx[cut]; Gy=Gy[cut]; Gz=Gz[cut]; Gm=Gm[cut];
+        Grxy = Grxy[cut]
+    if usecylr==1:
+        Gcor = Grxy
+        cutout = cutrout
+    elif usecylz==1:
+        Gcor = np.absolute(Gz)
+        cutout = cutzout
+    else:
+        Gcor = Gr 
+        cutout = cutrout
+    Gcorcut = Gcor < cutout
+    Gmtot = np.sum(Gm[Gcorcut])
+    massfraction = 1./np.exp(1)
+    if halfmassscale==1: massfraction = 0.5
+    Gmscale = Gmtot*massfraction
+    def massdiff(rs):
+        return (Gmscale - np.sum(Gm[Gcor<rs]))
+    midpoint = bisect(massdiff,rlow,cutrout)
+    return {'rs':midpoint, 'Mtot':Gmtot}     
+    
+
+    
+    
+# disk potential from Miyamoto and Nagai 1975
+def calMNpot(r_in_kpc,z_in_kpc,M_in_Msun,a_in_kpc,b_in_kpc):
+    print a_in_kpc, b_in_kpc, M_in_Msun
+    #unit: M in solar, length in kpc: converted to cgs
+    M = M_in_Msun*Msun_in_g #total mass
+    r = r_in_kpc*kpc_in_cm  # radius (in cylindrical coordinate)
+    z = z_in_kpc*kpc_in_cm  # vertical distance
+    a = a_in_kpc*kpc_in_cm  # radial scale
+    b = b_in_kpc*kpc_in_cm  # vertical scale
+    cterm = a+np.sqrt(z*z+b*b)
+    deno2 = r*r+np.square(cterm)
+    PhiMN = -NewtonG_in_cgs*M/np.sqrt(deno2)
+    rhoup = a*r*r+(a+3.0*np.sqrt(z*z+b*b))*np.square(cterm)
+    rhodown = np.power(r*r+np.square(cterm),5.0/2.0)*np.power(z*z+b*b,3.0/2.0)
+    rhoMN = b*b*M/4.0/np.pi*rhoup/rhodown
+    dPhidr = -NewtonG_in_cgs*M*r/np.power(deno2,3./2.)
+    dPhidz = -NewtonG_in_cgs*M*z*cterm/np.power(deno2,3./2.)/np.sqrt(b*b+z*z)
+    return {'Phi':PhiMN, 'rho':rhoMN, 'dPhidr':dPhidr, 'dPhidz':dPhidz} #in cgs
+    
+
+def GtoMNpot(G, cutrout =10., cutzout = 5.):
+    rdata = findscalelength(G, halfmassscale=1, usecylr=1, cutrout = cutrout, cutzout = cutzout)
+    zdata = findscalelength(G, halfmassscale=1, usecylz=1, cutrout = cutrout, cutzout = cutzout)
+    a_in_kpc = rdata['rs']; b_in_kpc = zdata['rs']; M_in_Msun = rdata['Mtot']
+    def MNpotwithab(r_in_kpc,z_in_kpc):
+        return calMNpot(r_in_kpc,z_in_kpc,M_in_Msun,a_in_kpc,b_in_kpc)
+    return {'func':MNpotwithab, 'afit':a_in_kpc, 'bfit':b_in_kpc, 'Mfit':M_in_Msun}
+
+def DMtosphpot(DM,cutrout=20., nogrid=20.0):
+    # default is using spherical radius
+    DMp = DM['p']; DMm = DM['m']*1e10; #now distance in kpc and mass in Msun
+    DMx = DMp[:,0]; DMy = DMp[:,1]; DMz = DMp[:,2];
+    DMr = np.sqrt(DMx*DMx+DMy*DMy+DMz*DMz)
+    routcut = DMr<cutrout
+    DMr = DMr[routcut]; DMm = DMm[routcut];
+    rlist = np.linspace(0.1,cutrout,num=nogrid)
+    Mencl = np.array([])
+    for r in rlist:
+        cutr = DMr<r
+        Mencl = np.append(Mencl,np.sum(DMm[cutr]))
+    rlistm = (rlist[1:]+rlist[:-1])/2.
+    pot = -NewtonG_in_cgs*Mencl*Msun_in_g/rlist/kpc_in_cm #in cgs
+    dpotdr = (pot[1:]-pot[:-1])/(rlist[1:]-rlist[:-1])/kpc_in_cm
+    return {'Phi':pot, 'Menc':Mencl, 'rsph':rlistm, 'dPhidr':dpotdr} #pot in cgs; M in Msun; rlist in kpc;
+
+def densityRZ(G, rlist, zlist, dr, dz): #calculate density with r and z (cylindrical) coordinate 
+    #rlist and zlist must have the same size; (r,z) is the coordinate
+    Gp = G['p']; Gm = G['m']*1e10*Msun_in_g; #now cgs
+    Gx = Gp[:,0]; Gy = Gp[:,1]; Gz = Gp[:,2];  #now kpc
+    Grxy = np.sqrt(Gx*Gx+Gy*Gy) 
+    rmax = np.amax(rlist); rmin = np.amin(rlist); 
+    zmax = np.amax(zlist); zmin = np.amin(zlist);
+    cutrminmax = np.logical_and(Grxy>rmin,Grxy<rmax)
+    cutzminmax = np.logical_and(Gz>zmin,Gz<zmax)
+    cutmx = cutrminmax*cutzminmax
+    Gx = Gx[cutmx]; Gy = Gy[cutmx]; Gz = Gz[cutmx]; Grxy = Grxy[cutmx]; Gm = Gm[cutmx];
+    rhol = np.array([])
+    for (r,z) in zip(rlist,zlist):
+        cutr = np.logical_and(Grxy>r-dr/2.,Grxy<r+dr/2.)
+        cutz = np.logical_and(Gz>z-dz/2.,Gz<z+dz/2.)
+        volume = np.pi*(np.square(r+dr/2.)-np.square(r-dr/2.))*(dz)
+        cut = cutr*cutz
+        Gmcut = np.sum(Gm[cut])
+        rho = Gmcut/volume/kpc_in_cm/kpc_in_cm/kpc_in_cm
+        rhol = np.append(rhol,rho)
+    return {'rhol':rhol}
+
+
+def densityXYZ(G, xlist, ylist, zlist, dx, dy, dz): #calculate density with r and z (cylindrical) coordinate 
+    #xlist, ylist and zlist must have the same size; (x,y,z) is the coordinate
+    Gp = G['p']; Gm = G['m']*1e10*Msun_in_g; #now cgs
+    Gx = Gp[:,0]; Gy = Gp[:,1]; Gz = Gp[:,2];  #now kpc 
+    rhol = np.array([])
+    print 'xlist', xlist
+    print 'ylist', ylist
+    print 'zlist', zlist
+    print 'np.amax(Gx), np.amin(Gx)', np.amax(Gx), np.amin(Gx)
+    for (x,y,z) in zip(xlist,ylist,zlist):
+        cutx = np.logical_and(Gx>x-dx/2.,Gx<x+dx/2.)
+        cuty = np.logical_and(Gy>y-dy/2.,Gy<y+dy/2.)
+        cutz = np.logical_and(Gz>z-dz/2.,Gz<z+dz/2.)
+        volume = dx*dy*dz
+        cut = cutx*cuty*cutz
+        Gmcut = np.sum(Gm[cut])
+        rho = Gmcut/volume/kpc_in_cm/kpc_in_cm/kpc_in_cm
+        rhol = np.append(rhol,rho)
+    return {'rhol':rhol}
+
+def fitMNpot(G,rmax=20.,zmax=3.,nogrid=30):
+    import scipy.optimize as opt
+    rlist=np.linspace(0.1,rmax,num=nogrid)
+    zlist=np.linspace(0.1,zmax,num=nogrid)
+    rl, zl = np.meshgrid(rlist,zlist)
+    rf = rl.ravel(); zf = zl.ravel();
+    dr = rlist[1]-rlist[0]
+    dz = zlist[1]-zlist[0]
+    data_real = densityRZ(G, rf, zf, dr, dz)
+    rho_real = data_real['rhol']
+    dataab = GtoMNpot(G, cutrout =rmax, cutzout = zmax)
+    aguess = dataab['afit']; bguess = dataab['bfit']; Mfit = dataab['Mfit']
+    def funcana((r, z), a_in_kpc, b_in_kpc):
+        dataMN = calMNpot(r,z,Mfit,a_in_kpc,b_in_kpc)
+        return dataMN['rho'].ravel()
+    rho_ana = funcana((rf, zf), aguess, bguess)
+    initial_guess = (aguess,bguess)
+    popt, pcov = opt.curve_fit(funcana, (rf, zf), rho_real, p0=initial_guess)
+    rho_fit = funcana((rf, zf), popt[0], popt[1])
+    return {'rhofit':rho_fit, 'afit':popt[0], 'bfit':popt[1], 'Mfit':Mfit, 'rhoreal': rho_real,
+            'rl':rl, 'zl':zl, 'rhoana':rho_ana, 'rlist':rlist, 'zlist':zlist}
+    
+
+    
+    
+def calstraightline(xlist, usepoint2=0, point1=(0.,0.), point2=(1.,1.), slope= 1.0):
+    #y = slope*x + c
+    # if usepoint2, then we calculate slope from point1 and point2, neglecting slope;
+    #otherwise, we use point1 and slope, neglecting point2
+    if usepoint2==1:
+        slope = (point2[1]-point1[1])/(point2[0]-point1[0])
+    c = point1[1]-slope*point1[0]
+    ylist = xlist*slope+c
+    return ylist
+
+def calBmin(Lnu, #radio luminosity in W/Hz
+            V, #volume in kpc^3
+            nu, #radio frequency in GHz
+            eta=100.0): # fraction of CRp energy to CRe 
+    # from Longair 1994 vol II 19.30
+    Bmin = 6.9e-12*np.power(eta*Lnu/V,2./7.)*np.power(nu,1./7.)
+    return Bmin #in G
+
+def calLnufromBmin(Bmin, #in G
+            V, #volume in kpc^3
+            nu, #radio frequency in GHz
+            eta=100.0): # fraction of CRp energy to CRe 
+    # from Longair 1994 vol II 19.30
+    Lnu = 1.2e39*np.power(Bmin,7./2.)*np.power(nu,1./2.)*V/eta
+    return Lnu #radio luminosity in W/Hz
+
+def depositandcor(x,y,weights,xlist,ylist):
+    # deposit weight onto a mesh and then output flattened cordinates and weight values
+    meshweights, xedges, yedges = np.histogram2d(x, y, bins=(xlist, ylist),weights=weights)
+    meshweights = np.ravel(meshweights)
+    xlistm = (xlist[1:]+xlist[:-1])/2.
+    ylistm = (ylist[1:]+ylist[:-1])/2.
+    meshx, meshy = np.meshgrid(xlistm,ylistm)
+    meshx = np.ravel(meshx); meshy = np.ravel(meshy)
+    return meshx,meshy,meshweights
+
+def depositandcor3d(x,y,z,weights,xlist,ylist,zlist):
+    # deposit weight onto a mesh and then output flattened cordinates and weight values
+    meshweights, (xedges, yedges, zedges) = np.histogramdd((x, y, z), bins=(xlist, ylist, zlist),weights=weights)
+    meshweights = np.ravel(meshweights)
+    xlistm = (xlist[1:]+xlist[:-1])/2.
+    ylistm = (ylist[1:]+ylist[:-1])/2.
+    zlistm = (zlist[1:]+zlist[:-1])/2.
+    meshx, meshy, meshz = np.meshgrid(xlistm,ylistm,zlistm)
+    meshx = np.ravel(meshx); meshy = np.ravel(meshy); meshz = np.ravel(meshz)
+    return meshx,meshy,meshz,meshweights
+
+def shrinkarray2d(data, rows, cols):
+    return data.reshape(rows, data.shape[0]/rows, cols, data.shape[1]/cols).sum(axis=1).sum(axis=2)
+
+
+def calsurden(Gextra,radlist,maxlength):
+    gasdenlist=radlist*0.0
+    Gp = Gextra['p']; Gx = Gp[:,0]; Gy = Gp[:,1]; Gz = Gp[:,2];
+    Gv = Gextra['v']; Gvx = Gv[:,0]; Gvy = Gv[:,1]; Gvz = Gv[:,2]; Gm = Gextra['m'];
+    for irad in range(len(radlist)-1):
+        cutxy = ((Gx)*(Gx)+(Gy)*(Gy) > radlist[irad]*radlist[irad]) & ((Gx)*(Gx)+(Gy)*(Gy) < radlist[irad+1]*radlist[irad+1])
+        cutz = (Gz)*(Gz) < maxlength*maxlength/4.
+        cut = cutxy*cutz
+        Gm_in_Msun=Gm[cut]*1e10
+        cylarea_in_pc2 = np.pi*(-np.power(radlist[irad],2)+np.power(radlist[irad+1],2))*1e6
+        Gsurden_in_Msun_pc2 = np.sum(Gm_in_Msun)/cylarea_in_pc2
+        gasdenlist[irad] += Gsurden_in_Msun_pc2
+    return gasdenlist
+
+
+def calSFRsurdenxy(sfrl,Sxl,Syl,Szl,xlist,ylist,maxlength): #length in kpc
+    xx, yy = np.meshgrid(xlist, ylist)
+    SFRdenlist = 0.0*xx
+    for ix in range(len(xlist)-1):
+        for iy in range(len(ylist)-1):
+            cutx = (Sxl > xlist[ix])*(Sxl < xlist[ix+1])
+            cuty = (Syl > ylist[iy])*(Syl < ylist[iy+1])
+            cutz = (Szl)*(Szl) < maxlength*maxlength/4.
+            cut = cutx*cuty*cutz
+            sfrcutl=sfrl[cut]
+            area_in_kpc2 = (xlist[ix+1]-xlist[ix])*(ylist[iy+1]-ylist[iy])
+            SFRsurden_in_Msun_yr_kpc2 = np.sum(sfrcutl)/area_in_kpc2
+            SFRdenlist[ix,iy] += SFRsurden_in_Msun_yr_kpc2
+    return SFRdenlist # in Msun/yr/kpc^2
+
+def calSFRsurdenxynew(sfrl,Sxl,Syl,Szl,xlist,ylist,maxlength): #length in kpc
+    sigmaHIlosgrid = np.array([])
+    xpos = np.array([])
+    ypos = np.array([])
+    areagrid = np.array([])
+    SFRgrid = np.array([])
+    SFRdengrid = np.array([])
+    for i in range(len(xlist)-1):
+        for j in range(len(ylist)-1):
+            xmax = xlist[i+1]
+            xmin = xlist[i]
+            ymax = ylist[j+1]
+            ymin = ylist[j]
+            cutz = (Szl<maxlength/2.0)*(Szl>-maxlength/2.0)
+            cutx = (Sxl<xmax)*(Sxl>xmin)
+            cuty = (Syl<ymax)*(Syl>ymin)
+            cut = cutx*cuty*cutz
+            sfrcutl=sfrl[cut]
+            SFR = np.sum(sfrcutl)
+            area_in_kpc2 = np.absolute((xmax-xmin)*(ymax-ymin))
+            SFRsurden_in_Msun_yr_kpc2 = SFR/area_in_kpc2
+            SFRgrid = np.append(SFRgrid,SFR)
+            SFRdengrid = np.append(SFRdengrid,SFRsurden_in_Msun_yr_kpc2)
+            areagrid = np.append(areagrid,area_in_kpc2)
+            xpos = np.append(xpos,(xmax+xmin)/2.0)
+            ypos = np.append(ypos,(ymax+ymin)/2.0)            
+    pos = np.column_stack((xpos,ypos))
+    outdata = {'SFRgrid':SFRgrid, 'SFRdengrid':SFRdengrid, 'areagrid':areagrid, 'pos':pos}
+    return outdata
+
+def calsurdenxy(Gextra,xlist,ylist,maxlength): #length in kpc
+    xx, yy = np.meshgrid(xlist, ylist)
+    gasdenlist = 0.0*xx
+    Gp = Gextra['p']; Gx = Gp[:,0]; Gy = Gp[:,1]; Gz = Gp[:,2];
+    Gm = Gextra['m'];
+    for ix in range(len(xlist)-1):
+        for iy in range(len(ylist)-1):
+            cutx = (Gx > xlist[ix])*(Gx < xlist[ix+1])
+            cuty = (Gy > ylist[iy])*(Gy < ylist[iy+1])
+            cutz = (Gz)*(Gz) < maxlength*maxlength/4.
+            cut = cutx*cuty*cutz
+            Gm_in_Msun=Gm[cut]*1e10
+            area_in_pc2 = (xlist[ix+1]-xlist[ix])*(ylist[iy+1]-ylist[iy])*kpc_in_pc*kpc_in_pc
+            Gsurden_in_Msun_pc2 = np.sum(Gm_in_Msun)/area_in_pc2
+            gasdenlist[ix,iy] += Gsurden_in_Msun_pc2
+    return gasdenlist
+
+
+def ascaletoyear(time_in_ascale):
+    readtimelist=readtime(firever=2)
+    snap2list=readtimelist['snaplist']
+    time2list=readtimelist['timelist']
+    a2list=readtimelist['alist']
+    time_in_yr = np.interp(time_in_ascale,a2list,time2list)*1e9
+    return time_in_yr
+
+def yeartoascale(time_in_yr):
+    readtimelist=readtime(firever=2)
+    snap2list=readtimelist['snaplist']
+    time2list=readtimelist['timelist']
+    a2list=readtimelist['alist']
+    time_in_ascale = np.interp(time_in_yr/1e9,time2list,a2list)
+    return time_in_ascale
+
+def calsfr(S,tintval=0.01, # time interval in Gyr
+           cosmo=0,withinr=20):
+    #timenow: the time of the snapshot
+    # if cosmo==1, we use scale factor for time; otherwise, it is cosmic time in yr
+    timenow = S['header'][2]
+    timenow_in_yr = ascaletoyear(timenow)
+    pretime = yeartoascale(timenow_in_yr-tintval*1e9)
+    Sdata = calsfr_from_pretime(S,timenow,pretime,cosmo=cosmo,withinr=withinr)
+    return Sdata
+
+def calsfr_from_pretime(S,timenow,pretime,cosmo=0,withinr=20):
+    #timenow: the time of the snapshot
+    # if cosmo==1, we use scale factor for time (input); otherwise, it is cosmic time in yr
+    if cosmo==1:
+        readtimelist=readtime(firever=2)
+        snap2list=readtimelist['snaplist']
+        time2list=readtimelist['timelist']
+        a2list=readtimelist['alist']
+        tnow = np.interp(timenow,a2list,time2list)*1e9
+        pret = np.interp(pretime,a2list,time2list)*1e9
+    else:
+        tnow = timenow
+        pret = pretime
+    Smi=S['m']
+    Sage=S['age']
+    Sp = S['p']
+    Sx = Sp[:,0]
+    Sy = Sp[:,1]
+    Sz = Sp[:,2]
+    Sr = np.sqrt(Sx*Sx+Sy*Sy+Sz*Sz)
+    cutr = Sr<withinr    
+    Smi = Smi[cutr]
+    Sage = Sage[cutr]
+    Sxl = Sx[cutr]; Syl = Sy[cutr]; Szl = Sz[cutr]; 
+    tcut=Sage>pretime
+    Nsml = Smi[tcut]*1e10 #in solar mass
+    Nsm = np.sum(Nsml)
+    sfrl = Nsml/(tnow-pret)
+    sfr = Nsm/(tnow-pret)
+    Sxl = Sxl[tcut]; Syl = Syl[tcut]; Szl = Szl[tcut];
+    #mass loss correction: 10Myr 0.85; 100Myr 0.7; from starburst 99
+    muml = 1
+    if (tnow-pret)>0.0099:
+        muml = 0.85
+    if (tnow-pret)>0.099:
+        muml = 0.7
+    sfr = sfr/muml
+    Nsm = Nsm/muml
+    return {'sfr':sfr, 'Nsm':Nsm, 'sfrl':sfrl, 'Sxl':Sxl, 'Syl':Syl, 'Szl':Szl}
+
+
+def calgfromparlist(G,pos=[[0.0,0.0,0.0]],spno=100,withinr=100):
+    gxl = np.array([]); gyl = np.array([]); gzl = np.array([]);
+    for inpos in pos:
+        Gp = G['p']; Gx = Gp[:,0]; Gy = Gp[:,1]; Gz = Gp[:,2]; 
+        Gm = G['m']*1e10*Msun_in_g; #cgs
+        #consider only particles within withinr
+        Gr = np.sqrt(Gx*Gx+Gy*Gy+Gz*Gz);
+        cutr = Gr<withinr;
+        Gx=Gx[cutr]; Gy=Gy[cutr]; Gz=Gz[cutr]; Gm=Gm[cutr]; Gr=Gr[cutr];
+        #skip some particles to reduce the computation time (spno); 
+        #but we will boost the masses of the remaining accordingly;
+        if spno>1:
+            Gx=Gx[::spno]; Gy=Gy[::spno]; Gz=Gz[::spno]; Gm=Gm[::spno]*spno
+        Gx=Gx-inpos[0]; Gy=Gy-inpos[1]; Gz=Gz-inpos[2]; 
+        Gr = np.sqrt(Gx*Gx+Gy*Gy+Gz*Gz);
+        gmag = NewtonG_in_cgs*Gm/Gr/Gr/kpc_in_cm/kpc_in_cm
+        gx = -np.sum(gmag*Gx/Gr); gy = -np.sum(gmag*Gy/Gr); gz = -np.sum(gmag*Gz/Gr);
+        gxl = np.append(gxl,gx); gyl = np.append(gyl,gy); gzl = np.append(gzl,gz); 
+    return {'gx':gxl,'gy':gyl,'gz':gzl}
+
+
+def calgfrompar(G,pos=[0.0,0.0,0.0],spno=100,withinr=100):
+    Gp = G['p']; Gx = Gp[:,0]; Gy = Gp[:,1]; Gz = Gp[:,2]; 
+    Gm = G['m']*1e10*Msun_in_g; #cgs
+    #consider only particles within withinr
+    Gr = np.sqrt(Gx*Gx+Gy*Gy+Gz*Gz);
+    cutr = Gr<withinr;
+    Gx=Gx[cutr]; Gy=Gy[cutr]; Gz=Gz[cutr]; Gm=Gm[cutr]; Gr=Gr[cutr];
+    #skip some particles to reduce the computation time (spno); 
+    #but we will boost the masses of the remaining accordingly;
+    if spno>1:
+        Gx=Gx[::spno]; Gy=Gy[::spno]; Gz=Gz[::spno]; Gm=Gm[::spno]*spno
+    Gx=Gx-pos[0]; Gy=Gy-pos[1]; Gz=Gz-pos[2]; 
+    Gr = np.sqrt(Gx*Gx+Gy*Gy+Gz*Gz);
+    gmag = NewtonG_in_cgs*Gm/Gr/Gr/kpc_in_cm/kpc_in_cm
+    gx = -np.sum(gmag*Gx/Gr); gy = -np.sum(gmag*Gy/Gr); gz = -np.sum(gmag*Gz/Gr);
+    #print 'Gm', Gm
+    return {'gx':gx,'gy':gy,'gz':gz}
+
+
+def cal2dclustering(x,y,weights,xlist,ylist):
+    totvalue = np.sum(weights)
+    meshx,meshy,meshweights = depositandcor(x,y,weights,xlist,ylist)
+    meanvalue = totvalue/len(meshx)
+    sqweight = np.square(meshweights-meanvalue)
+    clustering = np.sqrt(np.sum(sqweight))/totvalue
+    return clustering
+
+def cal3dclustering(x,y,z,weights,xlist,ylist,zlist):
+    totvalue = np.sum(weights)
+    meshx,meshy,meshz,meshweights = depositandcor3d(x,y,z,weights,xlist,ylist,zlist)
+    meanvalue = totvalue/len(meshx)
+    sqweight = np.square(meshweights-meanvalue)
+    clustering = np.sqrt(np.sum(sqweight))/totvalue
+    return clustering
+
+
+def calrhogfrompar(runtodo,Nsnap,withinr,maxlength,nogrid,havecr=0,haveB=0,usehalfz=1,cutcold=0):
+    zmax=maxlength/2.;
+    rneed = withinr
+    if usehalfz==1:
+        zlist = np.linspace(0.01,zmax,num=nogrid)
+    else:
+        zlist = np.linspace(-zmax,zmax,num=nogrid)
+    S=readsnapfromrun(runtodo,Nsnap,4,rotface=1,loccen=1)
+    cenin = S['cen']; vcenin = S['vcen']; angLin = S['angL'];
+    G = readsnapfromrun(runtodo,Nsnap,0,rotface=1,loccen=1,\
+                           importLcen=1,angLin=angLin,cenin=cenin,vcenin=vcenin)
+    
+    DM = readsnapfromrun(runtodo,Nsnap,1,rotface=1,\
+                           importLcen=1,angLin=angLin,cenin=cenin,vcenin=vcenin)
+    gzlist=[]
+    for zcor in zlist:
+        Gdata = calgfrompar(G,pos=[0.0,rneed,zcor],withinr=200) 
+        Ggz = Gdata['gz']
+        Sdata = calgfrompar(S,pos=[0.0,rneed,zcor],withinr=200) 
+        Sgz = Sdata['gz']
+        DMdata = calgfrompar(DM,pos=[0.0,rneed,zcor],withinr=200) 
+        DMgz = DMdata['gz']
+        gz = Ggz+Sgz+DMgz
+        gzlist=np.append(gzlist,gz)
+    ylist=zlist*0.0+rneed
+    xlist=zlist*0.0
+    dx=dy=dz=np.absolute(zlist[1]-zlist[0])
+    dendata = CRTF.pressureXYZ(G, xlist, ylist, zlist, dx, dy, dz,\
+                               havecr=havecr,haveB=haveB,cutcold=cutcold)
+    rhol = dendata['rhol']; pthl = dendata['pthl']
+    pturl = dendata['pturl']; pcrl = dendata['pcrl']
+    pBl = dendata['pBl']
+    rhog = rhol*gzlist
+    rhol[~np.isfinite(rhol)] = 0; pthl[~np.isfinite(pthl)] = 0;
+    pturl[~np.isfinite(pturl)] = 0; pcrl[~np.isfinite(pcrl)] = 0;
+    pBl[~np.isfinite(pBl)] = 0; rhol[~np.isfinite(rhol)] = 0;
+    rhog[~np.isfinite(rhog)] = 0;
+    del G,S,DM
+    return {'xlist':xlist,'ylist':ylist,'zlist':zlist,'rhog':rhog,'dPhidz':gz,'rhol':rhol,\
+           'pthl':pthl, 'pturl':pturl, 'pcrl':pcrl, 'pBl':pBl,'gzlist':gzlist}
+
+
+
+def readpreexist(runtodo,Nsnap,griddir,cutcold=0,outHI=0):
+    info=outdirname(runtodo, Nsnap)
+    rundir=info['rundir']
+    Nsnapstring=info['Nsnapstring']
+    haveB=info['haveB']
+    havecr=info['havecr']
+    commonpath='/home/tkc004/scratch/snipshot/philruns/'
+    gfname=commonpath+rundir+'/deriveddata/'+griddir+'/gfield/snipshot_'+Nsnapstring+'.hdf5'
+    gfdata = RSS.readgeneralhdf5(gfname)
+    if cutcold==1:
+        denname=commonpath+rundir+'/deriveddata/'+griddir+'/cutcold/pressure/snipshot_'+Nsnapstring+'.hdf5'
+    else:    
+        denname=commonpath+rundir+'/deriveddata/'+griddir+'/pressure/snipshot_'+Nsnapstring+'.hdf5'
+    dendata = RSS.readgeneralhdf5(denname)
+    xlist = gfdata['xlist']; ylist = gfdata['ylist']; zlist = gfdata['zlist'];
+    arrayshape = (len(xlist),len(ylist),len(zlist))
+    #print 'gfdata[gzl]', gfdata['gzl']
+    #print 'gfdata[gzl].shape', gfdata['gzl'].shape
+    gzgrid = gfdata['gzl'].reshape(arrayshape); 
+    rhogrid = dendata['rhol'].reshape(arrayshape);
+    #print 'rhogrid', rhogrid
+    if outHI==1:
+        rhohotgrid = dendata['rhohotl'].reshape(arrayshape);
+        rhocoldgrid = dendata['rhocoldl'].reshape(arrayshape);
+        rhoHIgrid = dendata['rhoHIl'].reshape(arrayshape);
+    if haveB>0:
+        pBgrid = dendata['pBl'].reshape(arrayshape);
+        pBtgrid = dendata['pBtl'].reshape(arrayshape);
+    else:
+        pBgrid = rhogrid*0.0
+        pBtgrid = rhogrid*0.0
+    pthgrid = dendata['pthl'].reshape(arrayshape);
+    if outHI==1:
+        pthHIgrid = dendata['pthHIl'].reshape(arrayshape);
+    pturgrid = dendata['pturl'].reshape(arrayshape);
+    if outHI==1:
+        pturHIgrid = dendata['pturHIl'].reshape(arrayshape);
+        pturhotgrid = dendata['pturhotl'].reshape(arrayshape);
+        pturcoldgrid = dendata['pturcoldl'].reshape(arrayshape);
+    if havecr>0:
+        pcrgrid = dendata['pcrl'].reshape(arrayshape);
+    else:
+        pcrgrid = rhogrid*0.0
+    volgrid = dendata['voll'].reshape(arrayshape);
+    kezgrid = dendata['kezl'].reshape(arrayshape);
+    vzgrid = dendata['vzavel'].reshape(arrayshape);
+    #print 'rhogrid', rhogrid
+    #print 'vzgrid', vzgrid
+    pkezgrid = kezgrid/volgrid*2.0
+    pkezgrid[~np.isfinite(pkezgrid)]=0.0
+    outdict = {'xlist':xlist, 'ylist':ylist, 'zlist':zlist, 'gzgrid':gzgrid, 'rhogrid':rhogrid,\
+            'pBgrid':pBgrid, 'pBtgrid':pBtgrid, 'pthgrid':pthgrid, 'pturgrid':pturgrid, 'pkezgrid':pkezgrid,\
+            'pcrgrid':pcrgrid,'vzgrid':vzgrid,\
+            'volgrid':volgrid,'havecr':havecr, 'haveB':haveB}
+    if outHI==1:
+        outdict['rhohotgrid']=rhohotgrid
+        outdict['rhocoldgrid']=rhocoldgrid
+        outdict['rhoHIgrid']=rhoHIgrid
+        outdict['pturHIgrid']=pturHIgrid
+        outdict['pturhotgrid']=pturhotgrid
+        outdict['pturcoldgrid']=pturcoldgrid
+        outdict['pthHIgrid']=pthHIgrid
+    return outdict
+
+
+def calrhofrompredata(predata,withinr,maxlength,\
+                        usehalfz=0,cutcold=0,vertical=1,horizontal=0,withoutr=-1.0,dr=1.0,outHI=0):
+    zmax=maxlength/2.;
+    xlist = predata['xlist'];ylist = predata['ylist'];
+    zlist = predata['zlist'];
+    havecr=predata['havecr']; haveB=predata['haveB'];
+    vardict={}
+    namelist=['gzlist','rhol','pthl','pturl','pkezl','pvzl']
+    if havecr>0:
+        namelist=np.append(namelist,['pcrl'])
+    if haveB>0:
+        namelist=np.append(namelist,['pBl','pBtl'])
+    if outHI==1:
+        namelist=np.append(namelist,['rhohotl','rhocoldl','rhoHIl',\
+                                     'pturhotl','pturcoldl','pturHIl','pthHIl'])
+    griddict={}
+    griddict['gzlist'] = predata['gzgrid'];
+    griddict['rhol'] = predata['rhogrid']; 
+    griddict['pthl'] = predata['pthgrid'];
+    griddict['pBl'] = predata['pBgrid'];
+    griddict['pBtl'] = predata['pBtgrid'];
+    griddict['pturl'] = predata['pturgrid'];
+    griddict['pkezl'] = predata['pkezgrid']; 
+    griddict['pvzl'] = predata['vzgrid']*predata['vzgrid']*predata['rhogrid'];
+    griddict['pcrl'] = predata['pcrgrid']; 
+    griddict['volll'] = predata['volgrid'];
+    if outHI==1:
+        griddict['rhohotl'] = predata['rhohotgrid'];
+        griddict['rhocoldl'] = predata['rhocoldgrid'];
+        griddict['rhoHIl'] = predata['rhoHIgrid'];
+        griddict['pturhotl'] = predata['pturhotgrid'];
+        griddict['pturcoldl'] = predata['pturcoldgrid'];
+        griddict['pturHIl'] = predata['pturHIgrid'];
+        griddict['pthHIl'] = predata['pthHIgrid'];
+    if horizontal==1:
+        if withoutr>0:
+            smallr=withoutr
+        else:
+            smallr=0.1
+        needlist = np.linspace(smallr,withinr+dr,num=withinr/dr)
+    if vertical==1: 
+        dr = np.absolute(zlist[1]-zlist[0])
+        dz = dr
+        needlist = zlist
+        #needlist = np.linspace(-maxlength/2.,maxlength/2.,num=maxlength/dz)
+    vardict['volll']=needlist*0.0
+    for namel in namelist:
+        vardict[namel]=needlist*0.0;
+    for i in range(len(xlist)):
+        for j in range(len(ylist)):
+            rxy = np.sqrt(xlist[i]*xlist[i]+ylist[j]*ylist[j])
+            for k in range(len(zlist)):
+                z = zlist[k]
+                for l in range(len(needlist)):
+                    if vertical==1:
+                        if withoutr>0:
+                            smallr = withoutr; bigr = withinr
+                        else:
+                            smallr = withinr-dr; bigr = withinr+dr;
+                        smallz=needlist[l]-dz/2.0; bigz=needlist[l]+dz/2.0;
+                    if horizontal==1:
+                        smallr = needlist[l]; bigr = needlist[l]+dr;
+                        smallz = -zmax; bigz = zmax;
+                    if ((rxy<bigr) and (rxy>smallr) and (z>smallz) and (z<bigz)):
+                        for namel in namelist:
+                            vardict[namel][l]+=griddict[namel][i,j,k]*griddict['volll'][i,j,k]
+                        vardict['volll'][l]+=griddict['volll'][i,j,k]
+    avedict={}
+    for namel in namelist:
+        avedict[namel]=vardict[namel]/vardict['volll']
+    rhog = avedict['gzlist']*avedict['rhol']
+    for namel in namelist:
+        avedict[namel][~np.isfinite(avedict[namel])]=0.0;
+    rhog[~np.isfinite(rhog)] = 0;
+    if usehalfz==1:
+        rhog=rhog[zlist>0];
+        for namel in namelist:
+            avedict[namel]=avedict[namel][zlist>0];
+    outdict = {'zlist':zlist, 'xlist':xlist,'ylist':ylist,'rhog':rhog, 'volll':vardict['volll']}
+    if horizontal==1: 
+        outdict['rlist']=needlist
+    for namel in namelist:
+        outdict[namel]=avedict[namel]
+    return outdict
+
+
+def calrhogfrompreexist(runtodo,Nsnap,withinr,maxlength,griddir='grid1kpc',\
+                        usehalfz=1,cutcold=0,vertical=1,horizontal=0,withoutr=-1.0,dr=1.0,outHI=0):
+    predata = readpreexist(runtodo,Nsnap,griddir,cutcold=cutcold,outHI=outHI)
+    #for key in predata:
+    #    print 'key', key
+    outdict = calrhofrompredata(predata,withinr,maxlength,\
+                        usehalfz=usehalfz,cutcold=cutcold,vertical=vertical,\
+                      horizontal=horizontal,withoutr=withoutr,dr=dr,outHI=outHI)
+    return outdict
+
+    
+    
+    
+def smooth_convolve(y, box_pts):
+    box = np.ones(box_pts)/box_pts
+    y_smooth = np.convolve(y, box, mode='same')
+    return y_smooth
+
+def moving_average(a, n) :
+    ret = np.cumsum(a, dtype=float)
+    ret[n:] = ret[n:] - ret[:-n]
+    return ret[n - 1:] / n
+
+def fromxytorad(quan,pos,area,rlist):
+    quaninrl = rlist*0.0
+    areal = rlist*0.0
+    for i in range(len(rlist)-1):
+        for j, ep in enumerate(pos):
+            x = ep[0]; y = ep[1];
+            r = np.sqrt(x*x+y*y)
+            if (r>rlist[i]) and (r<rlist[i+1]):
+                quaninrl[i] += quan[j]*area[j]
+                areal[i] += area[j]  
+    return quaninrl/areal
+    
+
+       
+def symlogspace(stop,onum, base=10.0,halfz=0): #onum is the number of element in one side, excluding zero
+    basespace = np.logspace(0,1,num=onum+1, base=base)-1
+    if halfz==1:
+        symspace = basespace/(base-1)*stop
+    else:
+        basespace = basespace/(base-1)
+        leftspace = basespace[1:]
+        leftspace = leftspace[::-1]
+        symspace = np.append(-leftspace, basespace)*stop
+    return symspace
+
+
+def calGmatT(Gextra,withinr=10.0,nbin=10,withoutr=0.01):
+    #use spherical r
+    rlist = np.linspace(0.01,withinr,num=nbin) # show not enclosed mass, but mass within shell
+    mgr = 0.0*rlist;
+    mgrcold=0.0*rlist;
+    mgrwarm=0.0*rlist;
+    mgrwim=0.0*rlist;
+    mgrwnm=0.0*rlist;
+    mgrhot=0.0*rlist;
+    vgr = 0.0*rlist;
+    Gx = Gextra['p'][:,0]; Gy = Gextra['p'][:,1]; Gz = Gextra['p'][:,2];
+    Gr = np.sqrt(Gx*Gx+Gy*Gy+Gz*Gz)
+    Gvx = Gextra['v'][:,0]; Gvy = Gextra['v'][:,1]; Gvz = Gextra['v'][:,2];
+    Grho = Gextra['rho']; Gu = Gextra['u']; Gm = Gextra['m']; Neb = Gextra['ne'];
+    Nnh = Gextra['nh']
+    TrueTemp, converted_rho = SF.convertTemp(Gu, Neb, Grho)
+    for ir in range(len(rlist)-1):
+        cutr = (Gr < rlist[ir+1]) & (Gr > rlist[ir])
+        Gmcutr = Gm[cutr]*m_codetocgs #in g
+        Grhocutr = Grho[cutr]*rho_codetocgs #in g/cm^3
+        Tcutr = TrueTemp[cutr]
+        Nnhcutr = Nnh[cutr]
+        hotcut = Tcutr>1e5 #K
+        warmcut = (Tcutr>1e3)&(Tcutr<1e5)
+        coldcut = Tcutr<1e3
+        mgr[ir] = np.sum(Gmcutr)
+        vgr[ir] = np.sum(Gmcutr/Grhocutr)
+        mgrcold[ir] = np.sum(Gmcutr[coldcut])
+        mgrwarm[ir] = np.sum(Gmcutr[warmcut])
+        mgrwim[ir] = np.sum(Gmcutr[warmcut]*(1.0-Nnhcutr[warmcut]))
+        mgrwnm[ir] = np.sum(Gmcutr[warmcut]*Nnhcutr[warmcut])
+        mgrhot[ir] = np.sum(Gmcutr[hotcut])
+    rhogr = mgr/vgr #in g/cm^3
+    rhocoldgr = mgrcold/vgr #in g/cm^3
+    rhowarmgr = mgrwarm/vgr #in g/cm^3
+    rhowimgr = mgrwim/vgr #in g/cm^3
+    rhownmgr = mgrwnm/vgr #in g/cm^3
+    rhohotgr = mgrhot/vgr #in g/cm^3
+    mgr = mgr/Msun_in_g    
+    mgrwarm = mgrwarm/Msun_in_g
+    mgrcold = mgrcold/Msun_in_g
+    mgrwim = mgrwim/Msun_in_g
+    mgrwnm = mgrwnm/Msun_in_g
+    mgrhot = mgrhot/Msun_in_g
+    return {'rlist':rlist,'mgr':mgr, 'vgr':vgr, 'rhogr':rhogr, 'mgrcold':mgrcold,\
+            'mgrwarm':mgrwarm, 'mgrwim':mgrwim, 'mgrwnm':mgrwnm, 'mgrhot':mgrhot, 'rhocoldgr':rhocoldgr,\
+           'rhowarmgr':rhowarmgr, 'rhowimgr':rhowimgr, 'rhownmgr':rhownmgr, 'rhohotgr':rhohotgr}
+
+
+
+

@@ -33,14 +33,17 @@ import collections
 
 
 
-dirneed=['bwsbclrmhd','bwsbclrdc0','bwsbclrdc27','bwsbclrdc28']
+#dirneed=['bwsbclrmhd','bwsbclrdc0','bwsbclrdc27','bwsbclrdc28']
 
 #dirneed=['bwsbclrdc29','bwsbclrstr','bwsbclrdc28mhd','bwsbclrdc28str']
-#dirneed=['bwsbclr','bwsbclrmhd','bwsbclrdc0','bwsbclrdc27','bwsbclrdc28','bwsbclrdc29','bwsbclrstr','bwsbclrdc28mhd','bwsbclrdc28str']
+dirneed=['bwsbclrdc0']
+#dirneed=['bwsbclr','bwsbclrmhd','bwsbclrdc0']
+#dirneed=['bwsbclrdc27','bwsbclrdc28','bwsbclrdc29']
+#dirneed=['bwsbclrstr','bwsbclrdc28mhd','bwsbclrdc28str']
 wanted='avedenr'
 print 'wanted', wanted
 startno=200
-Nsnap=651
+Nsnap=650
 snapsep=1
 the_prefix='snapshot'
 the_suffix='.hdf5'
@@ -76,6 +79,7 @@ or wanted=='avekedenr':
         snapshot_list=np.array([])
         avedenlist=np.array([])
         for i in range(startno,Nsnap,snapsep):
+            print 'snapshot no', i
             info=outdirname(runtodo, i)
             rundir=info['rundir']
             maindir=info['maindir']
@@ -144,9 +148,8 @@ or wanted=='avekedenr':
             Gx = Gp[:,0]
             Gy = Gp[:,1]
             dr = withinr/nogrid
-            from crtestfunction import findcenz
             datasup=1
-            xcen,ycen,zcen = findcennew(runtodo,Nsnap,withinr=2.5,dir='x',datasup=datasup,Gx=Gx,Gy=Gy,Gz=Gz,Gm=Gm)
+            xcen,ycen,zcen = findcennew(runtodo,Nsnap,withinr=2.5,datasup=datasup,Gx=Gx,Gy=Gy,Gz=Gz,Gm=Gm)
             Gz = Gz-zcen; Gy = Gy-ycen; Gx = Gx-xcen;
             GEint = Gu*km_in_cm*km_in_cm*Gm*1e10*Msun_in_g
             cregy = G['cregy'] #cosmic ray energy in 1e10Msun km^2/sec^2
@@ -163,7 +166,7 @@ or wanted=='avekedenr':
         indexmax = np.argmax(avedenlist)
         avedenmax = avedenlist[indexmax]
         snapshotmax = snapshot_list[indexmax]
-        filename = programdir+'/data/'+runtodo+'.txt'
+        filename = plotloc+'/tempdata/'+runtodo+'.txt'
         fh = open(filename, "w")
         fh.write('avedenmax  '+str(avedenmax)+'\n')
         fh.write('snapshotmax  '+str(snapshotmax)+'\n')

@@ -32,7 +32,7 @@ def coordinates_rotate_Sasha(x_all, y_all, z_all, theta, phi):
 
 def convertTemp(Tb, Neb, rho):
         #converts temperature and density to physical units (direct from readsnap.py, so no h factor)
-        
+        #print 'np.amax(Neb)', np.amax(Neb)
         #print 'it is Sasha in tools'
         UnitLength_in_cm=kpc_in_cm
         UnitMass_in_g=Msun_in_g*1e10
@@ -200,7 +200,7 @@ def check_Rvir_growth(halocount, a, Rvir, Vsig, Mass):
         print 'instead of meager ',Rvir
         return (history_Rvirs[maxindex], history_Vsig[maxindex], history_M[maxindex])
 
-def read_halo_history(rundir, halonostr='00', multifile='n',suffixadd='', hubble=1,comoving=1, maindir='scratch', singlesnap=0, atime=1, snumadd=0): #to output comoving distance comoving = 1
+def read_halo_history(rundir, halonostr='00', multifile='n',suffixadd='', hubble=1,comoving=1, maindir='scratch', singlesnap=0, atime=1, snumadd=0, reverse=1): #to output comoving distance comoving = 1
         redlist = []
         halolist = []
         xlist = []
@@ -328,7 +328,7 @@ def read_halo_history(rundir, halonostr='00', multifile='n',suffixadd='', hubble
         Lxstarlist=np.array(Lxstarlist)
         Lystarlist=np.array(Lystarlist)
         Lzstarlist=np.array(Lzstarlist)
-        if snumadd==1:
+        if snumadd==1 and reverse==1:
                 redlist=redlist[::-1]
                 halolist=halolist[::-1]
                 mvirlist=mvirlist[::-1]

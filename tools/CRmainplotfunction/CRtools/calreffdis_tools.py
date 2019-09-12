@@ -71,10 +71,10 @@ def stellarveldis(runtodo,Nsnap):
         the_suffix = '.hdf5'
         rotface=0;
         if cosmo==1:
-            datasup=0;
+            loccen=0;
         else:
-            datasup=1;
-        S = SSF.readsnapfromrun(runtodo,Nsnap,4,rotface=rotface,datasup=datasup)
+            loccen=1;
+        S = SSF.readsnapfromrun(runtodo,Nsnap,4,rotface=rotface,loccen=loccen)
         dataS = calveldis(S,r12=-1.)
         Swithinm = dataS['withinm']; xdis = dataS['xdis']; ydis = dataS['ydis']; zdis = dataS['zdis'];
         r12 = dataS['r12']; reff = dataS['reff']
@@ -83,7 +83,7 @@ def stellarveldis(runtodo,Nsnap):
         print 'z dispersion', zdis
         del S
 
-        G = SSF.readsnapfromrun(runtodo,Nsnap,0,rotface=rotface,datasup=datasup)
+        G = SSF.readsnapfromrun(runtodo,Nsnap,0,rotface=rotface,loccen=loccen)
         dataG = calveldis(G,r12=r12)
         xgdis = dataG['xdis']; ygdis = dataG['ydis']; zgdis = dataG['zdis']; Gwithinm = dataG['withinm']
         print 'xgdis', xgdis
@@ -91,7 +91,7 @@ def stellarveldis(runtodo,Nsnap):
         print 'zgdis', zgdis
         del G
         
-        DM = SSF.readsnapfromrun(runtodo,Nsnap,1,rotface=rotface,datasup=datasup)
+        DM = SSF.readsnapfromrun(runtodo,Nsnap,1,rotface=rotface,loccen=loccen)
         dataDM = calveldis(DM,r12=r12)
         DMwithinm = dataDM['withinm']
         masswithin = Gwithinm+Swithinm+DMwithinm

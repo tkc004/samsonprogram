@@ -31,13 +31,13 @@ def eturtimefunc(ssdict):
     withinr=5. #withinr will change according to the above
     dr=2.
     
-    if wanted=='etur_mtime':
+    if wanted=='etur_mtime' or wanted=='eturtime':
         ncount=0
         ncrcount=0
         nbcount=0
         energylabel=1
         usesolarcircle=0
-        usecentral=1
+        usecentral=0
         if usesolarcircle==1:
             fmeat+='_usesolarcircle'
         elif usecentral==1:
@@ -79,34 +79,36 @@ def eturtimefunc(ssdict):
         timel=[]
         Gmt=[]
         for i in range(startno,Nsnap,snapsep):
-            try:
-                egydata=CRTF.energyoutput(runtodo,i,usesolarcircle=usesolarcircle,usecentral=usecentral)
-                Begycutz=egydata['Begyl']
-                cregycutz=egydata['cregyl']
-                GEintcutz=egydata['therml']
-                turl=egydata['turl']
-                Gxpl=egydata['Gxpl']
-                Gypl=egydata['Gypl']
-                Gzpl=egydata['Gzpl']
-                Gxcl=egydata['xcell']
-                Gycl=egydata['ycell']
-                Gzcl=egydata['zcell']
-                gminl=egydata['gminl']
-                timen=egydata['timen']
-                cylrin=egydata['cylrin']
-                cylr=egydata['cylr']
-                cylz=egydata['cylz']
-                nbin=egydata['nbin']
-                Gmt = np.append(Gmt, np.sum(gminl))
-                turt=np.append(turt, np.sum(turl))
-                thermt=np.append(thermt,np.sum(GEintcutz))
-                if havecr>0:
-                    crt = np.append(crt,np.sum(cregycutz))
-                if haveB>0:
-                    bt = np.append(bt,np.sum(Begycutz))
-                timel = np.append(timel,timen/1e6) #Myr 
-            except (ZeroDivisionError,IndexError):
-                continue
+            #try:
+            egydata=CRTF.energyoutput(runtodo,i,usesolarcircle=usesolarcircle,usecentral=usecentral)
+            Begycutz=egydata['Begyl']
+            cregycutz=egydata['cregyl']
+            GEintcutz=egydata['therml']
+            turl=egydata['turl']
+            Gxpl=egydata['Gxpl']
+            Gypl=egydata['Gypl']
+            Gzpl=egydata['Gzpl']
+            Gxcl=egydata['xcell']
+            Gycl=egydata['ycell']
+            Gzcl=egydata['zcell']
+            gminl=egydata['gminl']
+            timen=egydata['timen']
+            cylrin=egydata['cylrin']
+            cylr=egydata['cylr']
+            cylz=egydata['cylz']
+            nbin=egydata['nbin']
+            print 'gml', np.sum(egydata['gml'])
+            print 'gminl', np.sum(gminl)
+            Gmt = np.append(Gmt, np.sum(gminl))
+            turt=np.append(turt, np.sum(turl))
+            thermt=np.append(thermt,np.sum(GEintcutz))
+            if havecr>0:
+                crt = np.append(crt,np.sum(cregycutz))
+            if haveB>0:
+                bt = np.append(bt,np.sum(Begycutz))
+            timel = np.append(timel,timen/1e6) #Myr 
+            #except (ZeroDivisionError,IndexError):
+            #    continue
             turt=np.array(turt)
             thermt=np.array(thermt)
             crt=np.array(crt)
@@ -125,17 +127,21 @@ def eturtimefunc(ssdict):
             plotdict[wanted]['ylab'] = r'$E/m {\rm [erg/g]}$'
             plotdict[wanted]['labelneed'] = labelneed
             plotdict[wanted]['xnl']['turt'] = timel
+            print 'turt', turt
+            print 'Gmt', Gmt
             plotdict[wanted]['ynl']['turt'] = turt/Gmt
             plotdict[wanted]['lw']['turt'] = 2
             plotdict[wanted]['lsn']['turt'] = ls
             plotdict[wanted]['marker']['turt'] = 'None'    
             plotdict[wanted]['linelab']['turt'] = tlb
+            plotdict[wanted]['color']['turt'] = 'g'
             plotdict[wanted]['xnl']['thermt'] = timel
             plotdict[wanted]['ynl']['thermt'] = thermt/Gmt
             plotdict[wanted]['lw']['thermt'] = 2
             plotdict[wanted]['lsn']['thermt'] = ls
             plotdict[wanted]['marker']['thermt'] = 'None'    
-            plotdict[wanted]['linelab']['thermt'] = thlb 
+            plotdict[wanted]['linelab']['thermt'] = thlb
+            plotdict[wanted]['color']['thermt'] = 'r'            
             if havecr>0:
                 plotdict[wanted]['xnl']['crt'] = timel
                 plotdict[wanted]['ynl']['crt'] = crt/Gmt
@@ -143,6 +149,7 @@ def eturtimefunc(ssdict):
                 plotdict[wanted]['lsn']['crt'] = ls
                 plotdict[wanted]['marker']['crt'] = 'None'    
                 plotdict[wanted]['linelab']['crt'] = clb
+                plotdict[wanted]['color']['crt'] = 'y'
             if haveB>0:
                 plotdict[wanted]['xnl']['bt'] = timel
                 plotdict[wanted]['ynl']['bt'] = bt/Gmt
@@ -150,11 +157,51 @@ def eturtimefunc(ssdict):
                 plotdict[wanted]['lsn']['bt'] = ls
                 plotdict[wanted]['marker']['bt'] = 'None'    
                 plotdict[wanted]['linelab']['bt'] = Blb
+                plotdict[wanted]['color']['bt'] = 'b'
             plotdict[wanted]['runtodo'] = runtodo
             plotdict[wanted]['labelneed'] = labelneed
-            plotdict[wanted]['color'] = color
             plotdict[wanted]['runtitle'] = runtitle
-            plotdict[wanted]['ptitle'] = ptitle
+            plotdict[wanted]['ptitle'] = labelneed
             figname=plotloc+'CRplot/etur_mtime/etur_mtime_'+fmeat+'_sn'+str(startno)+'_'+str(Nsnap)+'.pdf'
+            plotdict[wanted]['filename'] = figname
+        if wanted =='eturtime': 
+            plotdict[wanted]['xlab'] = r'$t\;{\rm Myr}$'
+            plotdict[wanted]['ylab'] = r'$E {\rm [erg]}$'
+            plotdict[wanted]['labelneed'] = labelneed
+            plotdict[wanted]['xnl']['turt'] = timel
+            plotdict[wanted]['ynl']['turt'] = turt
+            plotdict[wanted]['lw']['turt'] = 2
+            plotdict[wanted]['lsn']['turt'] = ls
+            plotdict[wanted]['marker']['turt'] = 'None'    
+            plotdict[wanted]['linelab']['turt'] = tlb
+            plotdict[wanted]['color']['turt'] = 'g'
+            plotdict[wanted]['xnl']['thermt'] = timel
+            plotdict[wanted]['ynl']['thermt'] = thermt
+            plotdict[wanted]['lw']['thermt'] = 2
+            plotdict[wanted]['lsn']['thermt'] = ls
+            plotdict[wanted]['marker']['thermt'] = 'None'    
+            plotdict[wanted]['linelab']['thermt'] = thlb
+            plotdict[wanted]['color']['thermt'] = 'r'            
+            if havecr>0:
+                plotdict[wanted]['xnl']['crt'] = timel
+                plotdict[wanted]['ynl']['crt'] = crt
+                plotdict[wanted]['lw']['crt'] = 2
+                plotdict[wanted]['lsn']['crt'] = ls
+                plotdict[wanted]['marker']['crt'] = 'None'    
+                plotdict[wanted]['linelab']['crt'] = clb
+                plotdict[wanted]['color']['crt'] = 'y'
+            if haveB>0:
+                plotdict[wanted]['xnl']['bt'] = timel
+                plotdict[wanted]['ynl']['bt'] = bt
+                plotdict[wanted]['lw']['bt'] = 2
+                plotdict[wanted]['lsn']['bt'] = ls
+                plotdict[wanted]['marker']['bt'] = 'None'    
+                plotdict[wanted]['linelab']['bt'] = Blb
+                plotdict[wanted]['color']['bt'] = 'b'
+            plotdict[wanted]['runtodo'] = runtodo
+            plotdict[wanted]['labelneed'] = labelneed
+            plotdict[wanted]['runtitle'] = runtitle
+            plotdict[wanted]['ptitle'] = labelneed
+            figname=plotloc+'CRplot/etur_mtime/eturtime_'+fmeat+'_sn'+str(startno)+'_'+str(Nsnap)+'.pdf'
             plotdict[wanted]['filename'] = figname
     return plotdict

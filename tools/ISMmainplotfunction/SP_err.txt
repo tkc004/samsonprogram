@@ -1,0 +1,2689 @@
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1856: RuntimeWarning: invalid value encountered in double_scalars
+  pth = Gthcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1859: RuntimeWarning: invalid value encountered in double_scalars
+  pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1881: RuntimeWarning: invalid value encountered in double_scalars
+  pB = Begy_2Bzcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1883: RuntimeWarning: invalid value encountered in double_scalars
+  pBt = Begycut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1886: RuntimeWarning: invalid value encountered in double_scalars
+  rho = Gmcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1890: RuntimeWarning: invalid value encountered in double_scalars
+  rhoHI = GmHIcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1892: RuntimeWarning: invalid value encountered in double_scalars
+  rhoc = Gmccut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1894: RuntimeWarning: invalid value encountered in double_scalars
+  rhoh = Gmhcut/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1897: RuntimeWarning: invalid value encountered in double_scalars
+  ptur = Gztur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1900: RuntimeWarning: invalid value encountered in double_scalars
+  pturHI = GzHItur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1902: RuntimeWarning: invalid value encountered in double_scalars
+  pturh = Gzhtur/Gvolcut
+/home/tkc004/samsonprogram/tools/crtestfunction.py:1904: RuntimeWarning: invalid value encountered in double_scalars
+  pturc = Gzctur/Gvolcut
+=>> PBS: job killed: walltime 28807 exceeded limit 28800

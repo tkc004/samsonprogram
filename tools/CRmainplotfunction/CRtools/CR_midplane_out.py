@@ -86,14 +86,14 @@ def CR_midplane_out(runtodo,wanted,startno,Nsnap,snapsep,fmeat):
             else:
                 h0=0
             if cosmo==1:
-                datasup=0;
+                loccen=0;
             else:
-                datasup=1;
+                loccen=1;
             if wanted=='crdenmidplane' or wanted == 'gasdenmidplane': ptype=0;
             if wanted == 'stardenmidplane': ptype=4;
             Gextra = SSF.readsnapwcen(the_snapdir, Nsnapstring, ptype, snapshot_name=the_prefix, extension=the_suffix,\
              havecr=havecr,h0=h0,cosmo=cosmo, usepep=usepep, maindir=maindir,snumadd=snumadd,rotface=rotface,\
-             datasup=datasup,runtodo=runtodo,rundir=rundir,halostr=halostr)
+             loccen=loccen,runtodo=runtodo,rundir=rundir,halostr=halostr)
             Gx = Gextra['p'][:,0]; Gy = Gextra['p'][:,1]; Gz = Gextra['p'][:,2];
             Gvx = Gextra['v'][:,0]; Gvy = Gextra['v'][:,1]; Gvz = Gextra['v'][:,2];
             Gm = Gextra['m']

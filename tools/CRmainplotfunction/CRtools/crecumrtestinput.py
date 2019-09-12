@@ -128,10 +128,10 @@ def crecumrtestinput(subdict):
                         labelneed="\n".join(wrap(strlabel,17)) 
                     print 'labelneed,newlabel', labelneed,newlabel
                     if cosmo==1:
-                        datasup=0;
+                        loccen=0;
                     else:
-                        datasup=1;
-                    G = readsnapfromrun(runtodo,Nsnap,0,rotface=rotface,datasup=datasup)
+                        loccen=1;
+                    G = readsnapfromrun(runtodo,Nsnap,0,rotface=rotface,loccen=loccen)
                     Gp = G['p']
                     Gv = G['v']
                     Gu = G['u']

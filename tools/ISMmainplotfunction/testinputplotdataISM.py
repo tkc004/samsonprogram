@@ -1,0 +1,26 @@
+import collections
+from inputplotdataISM import inputplotdict
+plotlist=['figTztrackstart_m12i_580']
+#plotlist=['figTztrackstart_m12i']
+#plotlist=['figTztrack_m12i']
+#plotlist=['figTvznologgrid_m12i_50_100']
+#plotlist=['figvzzgrid_m12']
+#plotlist=['figTvznologgrid_m12i']
+#plotlist=['figgasdenTz_m12i']
+#plotlist=['figsfrhotgasmass_m12_20kpc']
+#plotlist=['figsfrhotgasmass_m12']
+#plotlist=['figrealpr_m12ihr0_25kpc']
+#plotlist=['figer_m12ihr0_25kpc']
+#plotlist=['gpm12fcr_700grid2kpc']
+#plotlist=['outssm12i']
+#plotlist=['gpm12imhdcvgrid2kpc']
+#plotlist=['gpm12fcr_700grid2kpc']
+#plotlist=['gpm12fmhdcvgrid0_5kpc']
+#plotlist=['figintrhogfrompardist_m12ihrceng0_5kpc']
+#plotlist=['gpm12imhdcvgrid2kpccc']
+#plotlist=['gpm12icr_700grid2kpccc']
+#plotlist=['gf12icr_700grid2kpc']
+#plotlist=['gpm12fcr_700grid1kpccc']
+#plotlist=['figintrhogfrompardist_m12ihr']
+for plotneed in plotlist:
+    inputplotdict[plotneed]['_plotfunction'](inputplotdict[plotneed])

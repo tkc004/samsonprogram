@@ -69,14 +69,15 @@ def cratmulttestinput(subdict):
             legendneed=subdict['legendneed']
             runlabelneed=subdict['runlabelneed']
             withincr=subdict['withincr']
-            checkcr=0
-            twolegend=0
+            checkcr=subdict['checkcr']
+            twolegend=subdict['twolegend']
+            print 'twolegend', twolegend
             rateneed=subdict['rateneed']
             #withincr=0
             snon=1
             coolon=1
             adon=1
-            numon=0
+            numon=subdict['numon']
             stroff=0
             avetime=0 #number of time bins
             outputcrout=0
@@ -354,20 +355,21 @@ def cratmulttestinput(subdict):
                             xcrain = np.average(xcrain.reshape((noelement,avetime)),axis=1)
                     timel = np.average(timel.reshape((noelement,avetime)),axis=1)
                 if runlabelneed==1:
-                    if snon==1:
-                        plt.plot(timel, xcrg, lw=2,ls=ls, label=labelneed,color=cmaps.inferno(0.1))
-                    if coolon==1:
-                        plt.plot(timel, xcrl, lw=2,ls=ls, color=cmaps.inferno(0.4))
-                    if adon==1:
-                        plt.plot(timel, xcra, lw=2, ls=ls, color=cmaps.inferno(0.7))
-                    if checkcr==1:
-                        plt.plot(timel, xcr, lw=2, ls=ls, color='k')
-                    if stron ==1 and stroff==0:
-                            plt.plot(timel, xcrp, lw=2, ls=ls,color=cmaps.inferno(0.9))
-                    if numon ==1:
-                        plt.plot(timel, xcrp, lw=2, ls=ls,color='g')
-                    if (withincr==1 or outputcrout==1) and ratiocrout_sn==0 and ratiocrout_sou==0:
-                        plt.plot(timel, xcresc, lw=2, ls=ls,color='m')
+                    if ratiocrout_sou==0:
+                        if snon==1:
+                            plt.plot(timel, xcrg, lw=2,ls=ls, label=labelneed,color=cmaps.inferno(0.1))
+                        if coolon==1:
+                            plt.plot(timel, xcrl, lw=2,ls=ls, color=cmaps.inferno(0.4))
+                        if adon==1:
+                            plt.plot(timel, xcra, lw=2, ls=ls, color=cmaps.inferno(0.7))
+                        if checkcr==1:
+                            plt.plot(timel, xcr, lw=2, ls=ls, color='k')
+                        if stron ==1 and stroff==0:
+                                plt.plot(timel, xcrp, lw=2, ls=ls,color=cmaps.inferno(0.9))
+                        if numon ==1:
+                            plt.plot(timel, xcrp, lw=2, ls=ls,color='g')
+                        if (withincr==1 or outputcrout==1) and ratiocrout_sn==0 and ratiocrout_sou==0:
+                            plt.plot(timel, xcresc, lw=2, ls=ls,color='m')
                     if ratiocrout_sn==1:
                         plt.plot(timel, np.absolute(xcresc/xcrg), lw=2, ls=ls,label=labelneed,color='k')
                     if ratiocrout_sou==1:
@@ -376,20 +378,21 @@ def cratmulttestinput(subdict):
                                     ls='dashed'
                             plt.plot(timel, np.absolute(xcresc/(xcrg+xcrain+xcrn)), lw=2, ls=ls, label=labelneed,color=color)
                 else:
-                    if snon==1:
-                        plt.plot(timel, xcrg, lw=2,ls=ls, label=snelabel,color=cmaps.inferno(0.1))
-                    if coolon==1:
-                        plt.plot(timel, xcrl, lw=2,ls=ls, label=losslabel,color=cmaps.inferno(0.4))
-                    if adon==1:
-                        plt.plot(timel, xcra, lw=2, ls=ls, label=crecumalabel,color=cmaps.inferno(0.7))
-                    if checkcr==1:
-                        plt.plot(timel, xcr, lw=2, ls=ls,color='k')
-                    if stron ==1 and stroff==0:
-                        plt.plot(timel, xcrp, lw=2, ls=ls, label=strlabel,color=cmaps.inferno(0.9))
-                    if numon==1:
-                            plt.plot(timel, xcrn, lw=2,ls=ls, label=numlabel,color='g')
-                    if (withincr==1 or outputcrout==1) and ratiocrout_sn==0 and ratiocrout_sou==0:
-                            plt.plot(timel, xcresc, lw=2, ls=ls,label=esclabel,color='m')
+                    if ratiocrout_sou==0:
+                        if snon==1:
+                            plt.plot(timel, xcrg, lw=2,ls=ls, label=snelabel,color=cmaps.inferno(0.1))
+                        if coolon==1:
+                            plt.plot(timel, xcrl, lw=2,ls=ls, label=losslabel,color=cmaps.inferno(0.4))
+                        if adon==1:
+                            plt.plot(timel, xcra, lw=2, ls=ls, label=crecumalabel,color=cmaps.inferno(0.7))
+                        if checkcr==1:
+                            plt.plot(timel, xcr, lw=2, ls=ls,color='k')
+                        if stron ==1 and stroff==0:
+                            plt.plot(timel, xcrp, lw=2, ls=ls, label=strlabel,color=cmaps.inferno(0.9))
+                        if numon==1:
+                                plt.plot(timel, xcrn, lw=2,ls=ls, label=numlabel,color='g')
+                        if (withincr==1 or outputcrout==1) and ratiocrout_sn==0 and ratiocrout_sou==0:
+                                plt.plot(timel, xcresc, lw=2, ls=ls,label=esclabel,color='m')
                     if ratiocrout_sn==1:
                             plt.plot(timel, np.absolute(xcresc/xcrg), lw=2, ls=ls,color='k')
                     if ratiocrout_sou==1:
@@ -409,7 +412,7 @@ def cratmulttestinput(subdict):
                 if twolegend==1:
                     legend1 = plt.legend(lxlist, dclablist, loc=2,fontsize=8,ncol=2)
                     plt.gca().add_artist(legend1)
-                    plt.legend(loc=3, fontsize=8)
+                    plt.legend(loc=1, fontsize=8)
                 else:
                     plt.legend(loc='best', ncol=2, fontsize=10)
         if rateneed==1:

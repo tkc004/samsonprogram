@@ -110,10 +110,10 @@ if wanted=='gammasph':
             else:
                 lsn='dashed'
             if cosmo==1:
-                datasup=0;
+                loccen=0;
             else:
-                datasup=1;
-            G = readsnapfromrun(runtodo,Nsnap,1,rotface=0,datasup=datasup)
+                loccen=1;
+            G = readsnapfromrun(runtodo,Nsnap,1,rotface=0,loccen=loccen)
             Gp = G['p']; Grho = G['rho']; Gu = G['u']; Gm = G['m']; cregy = G['cregy']; Neb=G['ne'] #cosmic ray energy in 1e10Msun km^2/sec^2
             #Gnism = (0.78+0.22*Neb*0.76)/1.67e-24*Grho*1e10*1.99e33/3.086e21/3.086e21/3.086e21 #gas number density in ISM 
             Gz = Gp[:,2]; Gx = Gp[:,0]; Gy = Gp[:,1];

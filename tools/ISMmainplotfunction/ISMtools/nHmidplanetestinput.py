@@ -20,7 +20,6 @@ def nHmidplanetestinput(subdict):
     noplots=len(dirdict.keys())
     print 'noplots', noplots
     fig, ax = PS.setupfig(nrows=noplots, ncols=1,sharex=True,sharey=False)
-
     for i, key in enumerate(keylist):
         items=dirdict[key]
         for j, runtodo in enumerate(items):
@@ -33,20 +32,19 @@ def nHmidplanetestinput(subdict):
             ylab = plotdict[wanted]['ylab'];
             ptitle = plotdict[wanted]['ptitle']
             filename = plotdict[wanted]['filename'];
-            for k,inkey in enumerate(plotdict[wanted]['xnl']):
+            linelist=plotdict[wanted]['linelist']
+            for k,inkey in enumerate(linelist):
                 xnl = plotdict[wanted]['xnl'][inkey];
                 ynl = plotdict[wanted]['ynl'][inkey];
                 labelneed = plotdict[wanted]['labelneed'];
-                color = plotdict[wanted]['color'];
+                color = plotdict[wanted]['color'][inkey];
                 lsn = plotdict[wanted]['lsn'][inkey];
-                lw = plotdict[wanted]['lw'];
-                marker = plotdict[wanted]['marker'];
+                lw = plotdict[wanted]['lw'][inkey];
+                marker = plotdict[wanted]['marker'][inkey];
                 linelabel = plotdict[wanted]['linelab'][inkey];
                 legendneed = 1
                 if i==0 and j==0: 
                     label = linelabel
-                elif i==1 and k==0:
-                    label = labelneed
                 else:
                     label = '_nolegend_' 
                 if noplots==1:

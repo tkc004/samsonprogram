@@ -2,6 +2,7 @@ from readsnap_samson import *
 from Sasha_functions import *
 import sys
 import matplotlib as mpl
+from pathloc import *
 mpl.use('Agg')
 import matplotlib.pyplot as plt
 from gadget_lib.cosmo import *
@@ -38,16 +39,17 @@ dirhr=[]
 #dirnr = ['f553','f476']
 #dirnr = ['fm10qmd','fm10vmd','fm11dmd','fm11emd', 'fm11hmd','fm11imd', 'fm11qmd','fm12fmd','fm12imd'\
 #,'fm10q','f476','f383','f553','fm11q','fm11v','f1146','f61','fm12b']
-dirnr = [
+#dirnr = [
 #'fm10qmd','fm10vmd','fm11dmd','fm11emd', 'fm11hmd','fm11imd', 'fm11qmd','fm12fmd','fm12imd',\
 #'m10qmhdcv','m12imhdcv','m10vmhdcv', 'm11bmhdcv','m11cmhdcv','m11dmhdcv','m11fmhdcv',\
 #'m11hmhdcv','m11gmhdcv','m11v1mhdcv','m11v2mhdcv',\
 #'m10qcr_b_70','m10vcr_b_70', 'm11bcr_b_70','m11dcr_b_70','m11vcr_b_70','m11v1cr_b_70',\
 #'m12icr_b_70','m11fcr_b_70','m11hcr_b_70','m11gcr_b_70',\
-'m10vcr_700', 'm11bcr_700','m11dcr_700','m11fcr_700','m11gcr_700','m11hcr_700','m12icr_700',\
-'fm10q','f553','f573','f476','f383','fm11q','fm11v','fm11v1','fm11v2','f1146','f46','f61'
-,'f476','f383'
-]
+#'m10vcr_700', 'm11bcr_700','m11dcr_700','m11fcr_700','m11gcr_700','m11hcr_700','m12icr_700',\
+#'fm10q','f553','f573','f476','f383','fm11q','fm11v','fm11v1','fm11v2','f1146','f46','f61'
+#,'f476','f383'
+#]
+dirnr = ['fm12c', 'fm12f', 'fm12i', 'fm12m', 'fm12q']
 #dirnr = ['m10vcr_b_70', 'm11bcr_b_70','m11dcr_b_70','m12icr_b_70','m11fcr_b_70','m11hcr_b_70','m11gcr_b_70',\
 #'m10qmhdcv','m12imhdcv','m10vmhdcv', 'm11bmhdcv','m11dmhdcv','m12imhdcv','m11fmhdcv','m11hmhdcv','m11gmhdcv',\
 #'m10vcr_700', 'm11bcr_700','m11dcr_700','m11fcr_700','m11gcr_700','m11hcr_700','m12icr_700',\
@@ -67,9 +69,9 @@ dirneed = np.concatenate((dirnr,dirhr),axis=0)
 #todo='alpha37'
 todo='Malpha1251'
 #xaxis='mv'
-xaxis='ms'
-#xaxis='ms_mv'
-outputlist=0
+#xaxis='ms'
+xaxis='ms_mv'
+outputlist=1
 alpha12only=1
 needanno=1
 
@@ -352,7 +354,7 @@ if todo=='Malpha1251':
 			text_positions = get_text_positions(text, x_data, y_data, txt_width, txt_height)
 			text_plotter(text, x_data, y_data, text_positions, txt_width, txt_height)
 	plt.legend(fontsize=8)
-        finname = 'figures/'+plotname+'.pdf'
+        finname = plotloc+'figures/'+plotname+'.pdf'
         plt.savefig(finname)
         plt.clf()
 

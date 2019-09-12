@@ -9,7 +9,7 @@ def readsnapcr(sdir,snum,ptype,
     extension='.hdf5',
     readflux=0,
     h0=0,cosmological=0,skip_bh=0,four_char=0,
-    header_only=0,loud=0,havecr=0, ic=0,exceptcool=0,havemetal=1):
+    header_only=0, oheader_only=0,loud=0,havecr=0, ic=0,exceptcool=0,havemetal=1,needchildid=0):
     loud=1 
     if (ptype<0): return {'k':-1};
     if (ptype>5): return {'k':-1};
@@ -21,9 +21,9 @@ def readsnapcr(sdir,snum,ptype,
         fname = snapshot_name+extension
         fname_ext = extension
     if(fname=='NULL'): 
-	print 'file name is null'
-	return {'k':-1}
-	
+        print 'file name is null'
+        return {'k':-1}
+        
     if(loud==1): print 'loading file : '+fname
 
     ## open file and parse its header information
@@ -69,7 +69,7 @@ def readsnapcr(sdir,snum,ptype,
     if (npartTotal[ptype]<=0): file.close(); return {'k':-1};
     if (header_only==1): file.close(); return {'k':0,'time':time,
         'boxsize':boxsize,'hubble':hubble,'npart':npart,'npartTotal':npartTotal,'omega_matter':omega_matter};
-
+    if (oheader_only==1): file.close(); return newheader
 
     # initialize variables to be read
     pos=np.zeros([npartTotal[ptype],3],dtype=float)
@@ -85,14 +85,15 @@ def readsnapcr(sdir,snum,ptype,
             numh=np.copy(mass)
         if (flag_sfr>0): 
             sfr=np.copy(mass)
-	cregy=np.copy(mass)
-	crflux=np.copy(pos)
-	cregyl=np.copy(mass)
-	cregyg=np.copy(mass)
-	cregyd=np.copy(mass)
-	cregyp=np.copy(mass)
-	cregya=np.copy(mass)
+        cregy=np.copy(mass)
+        crflux=np.copy(pos)
+        cregyl=np.copy(mass)
+        cregyg=np.copy(mass)
+        cregyd=np.copy(mass)
+        cregyp=np.copy(mass)
+        cregya=np.copy(ids)
         bfield=np.copy(pos)
+        cids=np.copy(mass)
     if (ptype==0 or ptype==4) and (flag_metals > 0):
         metal=np.zeros([npartTotal[ptype],flag_metals],dtype=float)
     if (ptype==4) and (flag_sfr>0) and (flag_stellarage>0):
@@ -142,24 +143,26 @@ def readsnapcr(sdir,snum,ptype,
                     sfr[nL:nR]=input_struct[bname+"StarFormationRate"]
                 if(fname_ext=='.hdf5'):
                     if("MagneticField" in input_struct[bname].keys()):
-			haveB =1
+                        haveB =1
                         bfield[nL:nR,:]=input_struct[bname+"MagneticField"]
                     else:
                         haveB=0
-		if (havecr > 0):
-		    cregy[nL:nR]=input_struct[bname+"CosmicRayEnergy"]
-		if (readflux==1):
-                   crflux[nL:nR,:]=input_struct[bname+"CosmicRayFlux"]
-		if (havecr > 1):
-		    cregyl[nL:nR]=input_struct[bname+"CosmicRayEnergyLoss"]
-		if (havecr > 2):
-		    cregyg[nL:nR]=input_struct[bname+"CosmicRayEnergyGain"]
-		if (havecr > 3):
-		    cregyd[nL:nR]=input_struct[bname+"CosmicRayEnergyDt"]
-		if (havecr > 4):
-		    cregyp[nL:nR]=input_struct[bname+"CosmicRayEnergyDtp"]
-		if (havecr > 5):
-		    cregya[nL:nR]=input_struct[bname+"CosmicRayEnergyDta"]
+                if (havecr > 0):
+                    cregy[nL:nR]=input_struct[bname+"CosmicRayEnergy"]
+                if (readflux==1):
+                    crflux[nL:nR,:]=input_struct[bname+"CosmicRayFlux"]
+                if (havecr > 1):
+                    cregyl[nL:nR]=input_struct[bname+"CosmicRayEnergyLoss"]
+                if (havecr > 2):
+                    cregyg[nL:nR]=input_struct[bname+"CosmicRayEnergyGain"]
+                if (havecr > 3):
+                    cregyd[nL:nR]=input_struct[bname+"CosmicRayEnergyDt"]
+                if (havecr > 4):
+                    cregyp[nL:nR]=input_struct[bname+"CosmicRayEnergyDtp"]
+                if (havecr > 5):
+                    cregya[nL:nR]=input_struct[bname+"CosmicRayEnergyDta"]
+                if needchildid==1:
+                    cids[nL:nR]=input_struct[bname+"ParticleChildIDsNumber"]
             if (ptype==0 or ptype==4) and (flag_metals > 0):
                 metal_t=input_struct[bname+"Metallicity"]
                 if (flag_metals > 1):
@@ -173,9 +176,9 @@ def readsnapcr(sdir,snum,ptype,
             if (ptype==5) and (skip_bh==0):
                 bhmass[nL:nR]=input_struct[bname+"BH_Mass"]
                 bhmdot[nL:nR]=input_struct[bname+"BH_Mdot"]
-            nL = nR # sets it for the next iteration	
+            nL = nR # sets it for the next iteration    
 
-	## correct to same ID as original gas particle for new stars, if bit-flip applied
+        ## correct to same ID as original gas particle for new stars, if bit-flip applied
     if ((np.min(ids)<0) | (np.max(ids)>1.e9)):
         bad = (ids < 0) | (ids > 1.e9)
         ids[bad] += (1L << 31)
@@ -187,18 +190,18 @@ def readsnapcr(sdir,snum,ptype,
     if (ptype==0):
         rho *= (hinv/((ascale*hinv)**3))
         hsml *= hinv*ascale
-	if (havecr > 0):
-	    cregy *= hinv
-	if (havecr > 1):
-	    cregyl *= hinv
-	if (havecr > 2):
-	    cregyg *= hinv
-	if (havecr > 3):
-	    cregyd *= hinv
-	if (havecr > 4):
-	    cregyp *= hinv
-	if (havecr > 5):
-	    cregya *= hinv
+        if (havecr > 0):
+            cregy *= hinv
+        if (havecr > 1):
+            cregyl *= hinv
+        if (havecr > 2):
+            cregyg *= hinv
+        if (havecr > 3):
+            cregyd *= hinv
+        if (havecr > 4):
+            cregyp *= hinv
+        if (havecr > 5):
+            cregya *= hinv
     if (ptype==4) and (flag_sfr>0) and (flag_stellarage>0) and (cosmological==0):
         stellage *= hinv
     if (ptype==5) and (skip_bh==0):
@@ -207,27 +210,30 @@ def readsnapcr(sdir,snum,ptype,
     file.close();
     if (ptype==0):
         if flag_cooling > 0:
-		if havemetal > 0:
-			return {'k':1,'B':bfield,'p':pos,'v':vel,'m':mass,'id':ids,'u':ugas,'rho':rho,'h':hsml,'ne':nume,'nh':numh,'sfr':sfr,'z':metal,'cregy':cregy,'cregyl':cregyl, 'cregyg':cregyg, 'cregyd':cregyd, 'cregyp':cregyp, 'cregya':cregya, 'header':newheader};
-		else:
-			return {'k':1,'B':bfield,'p':pos,'v':vel,'m':mass,'id':ids,'u':ugas,'rho':rho,'h':hsml,'ne':nume,'nh':numh,'sfr':sfr,'cregy':cregy,'cregyl':cregyl, 'cregyg':cregyg, 'cregyd':cregyd, 'cregyp':cregyp, 'cregya':cregya, 'header':newheader};
-	elif exceptcool==1:
-		return {'k':1,'B':bfield,'p':pos,'v':vel,'m':mass,'id':ids,'u':ugas,'rho':rho,'h':hsml,'sfr':sfr,'z':metal,'cregy':cregy,'cregyl':cregyl, 'cregyg':cregyg, 'cregyd':cregyd, 'cregyp':cregyp, 'cregya':cregya, 'header':newheader};
-	elif havecr==1:
+                if havemetal > 0:
+                    returndict = {'k':1,'B':bfield,'p':pos,'v':vel,'m':mass,'id':ids,'u':ugas,'rho':rho,'h':hsml,'ne':nume,'nh':numh,'sfr':sfr,'z':metal,'cregy':cregy,'cregyl':cregyl, 'cregyg':cregyg, 'cregyd':cregyd, 'cregyp':cregyp, 'cregya':cregya,'cids':cids, 'header':newheader}
+                else:
+                    returndict = {'k':1,'B':bfield,'p':pos,'v':vel,'m':mass,'id':ids,'u':ugas,'rho':rho,'h':hsml,'ne':nume,'nh':numh,'sfr':sfr,'cregy':cregy,'cregyl':cregyl, 'cregyg':cregyg, 'cregyd':cregyd, 'cregyp':cregyp, 'cregya':cregya,'cids':cids, 'header':newheader};
+        elif exceptcool==1:
+                    returndict = {'k':1,'B':bfield,'p':pos,'v':vel,'m':mass,'id':ids,'u':ugas,'rho':rho,'h':hsml,'sfr':sfr,'z':metal,'cregy':cregy,'cregyl':cregyl, 'cregyg':cregyg, 'cregyd':cregyd, 'cregyp':cregyp, 'cregya':cregya,'cids':cids, 'header':newheader};
+        elif havecr==1:
                 if readflux==1:
-                        return {'k':1,'B':bfield,'p':pos,'v':vel,'m':mass,'id':ids,'u':ugas,'rho':rho,'h':hsml,'cregy':cregy,'crflux':crflux, 'header':newheader};
-		return {'k':1,'B':bfield,'p':pos,'v':vel,'m':mass,'id':ids,'u':ugas,'rho':rho,'h':hsml,'cregy':cregy, 'header':newheader};
+                        returndict= {'k':1,'B':bfield,'p':pos,'v':vel,'m':mass,'id':ids,'u':ugas,'rho':rho,'h':hsml,'cregy':cregy,'crflux':crflux,'cids':cids, 'header':newheader};
+                else:
+                    returndict= {'k':1,'B':bfield,'p':pos,'v':vel,'m':mass,'id':ids,'u':ugas,'rho':rho,'h':hsml,'cregy':cregy,'cids':cids, 'header':newheader};
         elif havecr>4:
-		return {'k':1,'B':bfield,'p':pos,'v':vel,'m':mass,'id':ids,'u':ugas,'rho':rho,'h':hsml,'cregy':cregy,'cregyl':cregyl, 'cregyg':cregyg, 'cregyd':cregyd, 'cregyp':cregyp, 'cregya':cregya, 'header':newheader};
-	else:
-                return {'k':1,'B':bfield,'p':pos,'v':vel,'m':mass,'id':ids,'u':ugas,'rho':rho,'h':hsml, 'header':newheader};
-	if readflux==1:
-		return {'k':1,'B':bfield,'p':pos,'v':vel,'m':mass,'id':ids,'u':ugas,'rho':rho,'h':hsml,'cregy':cregy,'crflux':crflux,'cregyl':cregyl, 'cregyg':cregyg, 'cregyd':cregyd, 'cregyp':cregyp, 'cregya':cregya, 'header':newheader};
-    if (ptype==4):
-        return {'k':1,'p':pos,'v':vel,'m':mass,'id':ids,'z':metal,'age':stellage, 'header':newheader}
-    if (ptype==5) and (skip_bh==0):
-        return {'k':1,'p':pos,'v':vel,'m':mass,'id':ids,'mbh':bhmass,'mdot':bhmdot, 'header':newheader}
-    return {'k':1,'p':pos,'v':vel,'m':mass,'id':ids, 'header':newheader}
+                returndict= {'k':1,'B':bfield,'p':pos,'v':vel,'m':mass,'id':ids,'u':ugas,'rho':rho,'h':hsml,'cregy':cregy,'cregyl':cregyl, 'cregyg':cregyg, 'cregyd':cregyd, 'cregyp':cregyp, 'cregya':cregya,'cids':cids, 'header':newheader};
+        else:
+                returndict= {'k':1,'B':bfield,'p':pos,'v':vel,'m':mass,'id':ids,'u':ugas,'rho':rho,'h':hsml,'cids':cids, 'header':newheader};
+        if readflux==1:
+                returndict= {'k':1,'B':bfield,'p':pos,'v':vel,'m':mass,'id':ids,'u':ugas,'rho':rho,'h':hsml,'cregy':cregy,'crflux':crflux,'cregyl':cregyl, 'cregyg':cregyg, 'cregyd':cregyd, 'cregyp':cregyp, 'cregya':cregya,'cids':cids, 'header':newheader};
+    elif (ptype==4):
+        returndict - {'k':1,'p':pos,'v':vel,'m':mass,'id':ids,'z':metal,'age':stellage,'cids':cids, 'header':newheader}
+    elif (ptype==5) and (skip_b==0):
+        returndict= {'k':1,'p':pos,'v':vel,'m':mass,'id':ids,'mbh':bhmass,'mdot':bhmdot,'cids':cids, 'header':newheader}
+    else:
+        returndict = {'k':1,'p':pos,'v':vel,'m':mass,'id':ids,'cids':cids, 'header':newheader}
+    return returndict
 
 
 

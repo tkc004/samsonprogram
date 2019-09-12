@@ -81,13 +81,13 @@ def calrhog(runtodo,wanted,startno,Nsnap,snapsep,fmeat):
                 usepep=info['usepep']
                 snumadd=info['snumadd']
                 h0=cosmo
-                datasup=0
+                loccen=0
                 Mdict = collections.defaultdict(dict)
                 ptlist = np.array([])
                 ptypelist=[1,2,3,4] #gas is special
                 G = SSF.readsnapwcen(the_snapdir, Nsnapstring, 0, snapshot_name=snapshot_name, extension=extension,\
                  havecr=havecr,h0=h0,cosmo=cosmo, usepep=usepep, maindir=maindir,snumadd=snumadd,rotface=rotface,\
-                 datasup=datasup,runtodo=runtodo,rundir=rundir,halostr=halostr)
+                 loccen=loccen,runtodo=runtodo,rundir=rundir,halostr=halostr)
                 Mdict[0]=G
                 ptlist=np.append(ptlist,0)
                 Gp = G['p']; Gx = Gp[:,0]; Gy = Gp[:,1]; Gz = Gp[:,2];
@@ -97,7 +97,7 @@ def calrhog(runtodo,wanted,startno,Nsnap,snapsep,fmeat):
                     try:
                         Pt = SSF.readsnapwcen(the_snapdir, Nsnapstring, ptype, snapshot_name=snapshot_name, extension=extension,\
                          havecr=havecr,h0=h0,cosmo=cosmo, usepep=usepep, maindir=maindir,snumadd=snumadd,rotface=rotface,\
-                         datasup=datasup,runtodo=runtodo,rundir=rundir,halostr=halostr)
+                         loccen=loccen,runtodo=runtodo,rundir=rundir,halostr=halostr)
                         Mdict[ptype]=Pt
                         ptlist=np.append(ptlist,ptype)
                     except KeyError:

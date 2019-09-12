@@ -132,12 +132,12 @@ if wanted=='crez' or wanted=='dpcrz' or wanted=='dpcrz_rhog' or wanted=='rhog'\
                         snumadd=info['snumadd']
                         h0=cosmo
                         if cosmo==1:
-                                datasup=0
+                                loccen=0
                         else:
-                                datasup=1
+                                loccen=1
                         G = readsnapwcen(the_snapdir, Nsnapstring, 0, snapshot_name=the_prefix, extension=the_suffix,\
                          havecr=havecr,h0=h0,cosmo=cosmo, usepep=usepep, maindir=maindir,snumadd=snumadd,rotface=rotface,\
-                         datasup=datasup,runtodo=runtodo,rundir=rundir,halostr=halostr)
+                         loccen=loccen,runtodo=runtodo,rundir=rundir,halostr=halostr)
                         Gp = G['p']; Gx = Gp[:,0]; Gy = Gp[:,1]; Gz = Gp[:,2];
                         Gv = G['v']; Gvx = Gv[:,0]; Gvy = Gv[:,1]; Gvz = Gv[:,2];
                         Grho = G['rho']; Gu = G['u']; Gm = G['m']
@@ -159,7 +159,7 @@ if wanted=='crez' or wanted=='dpcrz' or wanted=='dpcrz_rhog' or wanted=='rhog'\
                                         try:
                                                 Pextra = readsnapwcen(the_snapdir, Nsnapstring, ipd, snapshot_name=the_prefix, extension=the_suffix,\
                                                  havecr=havecr,h0=h0,cosmo=cosmo, usepep=usepep, maindir=maindir,snumadd=snumadd,rotface=rotface,\
-                                                 datasup=datasup,runtodo=runtodo,rundir=rundir,halostr=halostr)
+                                                 loccen=loccen,runtodo=runtodo,rundir=rundir,halostr=halostr)
                                                 Px = Pextra['x']; Py = Pextra['y']; Pz = Pextra['z'];   
                                                 Pm = Pextra['m']
                                                 Prxy = np.sqrt(Px*Px+Py*Py)
@@ -191,7 +191,7 @@ if wanted=='crez' or wanted=='dpcrz' or wanted=='dpcrz_rhog' or wanted=='rhog'\
                                                 try:
                                                         Pextra = readsnapwcen(the_snapdir, Nsnapstring, ipd, snapshot_name=the_prefix, extension=the_suffix,\
                                                          havecr=havecr,h0=h0,cosmo=cosmo, usepep=usepep, maindir=maindir,snumadd=snumadd,rotface=rotface,\
-                                                         datasup=datasup,runtodo=runtodo,rundir=rundir,halostr=halostr)
+                                                         loccen=loccen,runtodo=runtodo,rundir=rundir,halostr=halostr)
                                                         Px = Pextra['x']; Py = Pextra['y']; Pz = Pextra['z'];
                                                         Pm = Pextra['m']
                                                         Pr = np.sqrt(Px*Px+Py*Py+Pz*Pz)

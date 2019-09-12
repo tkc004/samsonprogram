@@ -48,7 +48,7 @@ wanted='SFRLg'
 title='MW'
 ptitle='LSG'
 nolegend=0
-
+convertfromChabtoKrou=1 #conversion according to Crain 2010 and Hayward 2014
 
 print 'wanted', wanted
 print 'fmeat', fmeat
@@ -173,7 +173,7 @@ if wanted=='SFRLg':
                 print 'labelneed', labelneed
                 if haveB>0:
                 #if runtodo=='bwmwmrdc28mhd' or runtodo=='bwsmclrdc28mhd' or runtodo=='bwsbclrdc28mhd':
-                        fillstyle='top'
+                        fillstyle='none'
                 else:
                         fillstyle='full'
                 if not ( runtitle=='MW' or runtitle=='COSMO'):
@@ -193,6 +193,24 @@ if wanted=='SFRLg':
                 print 'SFRmed, Lmed', SFRmed, Lmed
                 plt.errorbar(SFRmed, Lmed, xerr=[[SFR1sigd],[SFR1sigu]], yerr=[[L1sigd],[L1sigu]]\
                 ,color=color,fmt=marker,markersize=7,label=labelneed, fillstyle=fillstyle)
+#        obsdatal = [[0.2,0.2,0.2,1.7e37,1.3e37,2.1e37]\
+        #LMC
+#        ,[0.068,0.036,0.1,4.3e36,4.3e36,4.3e36]\
+        #SMC
+#        ,[2.0,1.2,3.4,6.5e38,6.5e38,6.5e38]\
+        #MW
+#        ,[1.0,1.0,1.0,1.9e38,1.5e38,2.3e38]\
+    #M31
+#        ,[6.18,6.18,6.18,2e40,1.6e40,2.4e40]\
+    #M82
+#        ,[2.82,2.82,2.82,9.5e39,6.0e39,14.0e39]\
+    #NGC253
+#        ,[3.49,3.49,3.49,1.7e40,1.2e40,2.2e40]\
+    #NGC4945
+#        ,[37,37,37,8e40,6e40,10e40]]
+    #NGC1068
+    
+    
         obsdatal = [[0.2,0.2,0.2,1.7e37,1.3e37,2.1e37]\
         #LMC
         ,[0.068,0.036,0.1,4.3e36,4.3e36,4.3e36]\
@@ -201,13 +219,13 @@ if wanted=='SFRLg':
         #MW
         ,[1.0,1.0,1.0,1.9e38,1.5e38,2.3e38]\
     #M31
-        ,[6.18,6.18,6.18,2e40,1.6e40,2.4e40]\
+        ,[7.83,7.83,7.83,2e40,1.6e40,2.4e40]\
     #M82
-        ,[2.82,2.82,2.82,9.5e39,6.0e39,14.0e39]\
+        ,[4.66,4.66,4.66,9.5e39,6.0e39,14.0e39]\
     #NGC253
-        ,[3.49,3.49,3.49,1.7e40,1.2e40,2.2e40]\
+        ,[4.00,4.00,4.00,1.7e40,1.2e40,2.2e40]\
     #NGC4945
-        ,[37,37,37,8e40,6e40,10e40]]
+        ,[24.74,24.74,24.74,8e40,6e40,10e40]]
     #NGC1068
     
         ftxt = open(programdir+'/data/nondetectGammaray.txt', 'r')
@@ -220,11 +238,12 @@ if wanted=='SFRLg':
 
         for line in dars:
             xsd = line.split()
-            SFRlnd =np.append(SFRlnd, float(xsd[0]))
+            if convertfromChabtoKrou==1: #conversion according to Crain 2010 and Hayward 2014
+                SFRlnd =np.append(SFRlnd, float(xsd[0])/0.79/1.5)
             LGRl=np.append(LGRl, float(xsd[1]))
         
-        plt.plot(np.power(10.,SFRlnd),np.power(10.,LGRl),markersize=4,mfc='None'\
-                 ,markeredgecolor='red', marker='s',ls='None')
+        #plt.plot(np.power(10.,SFRlnd),np.power(10.,LGRl),markersize=4,mfc='None'\
+        #         ,markeredgecolor='red', marker='s',ls='None')
 
         for data in obsdatal:
                 plt.errorbar(data[0], data[3],\
@@ -232,13 +251,16 @@ if wanted=='SFRLg':
                 yerr=[[data[3]-data[4]],[data[5]-data[3]]],\
                 fmt='s', color='0.5',ls='dashed', mfc='0.9',markersize=6)
 
-        ndpoint = plt.errorbar([],[], fmt='s', color='red', mfc='None',markersize=6)        
+#        ndpoint = plt.errorbar([],[], fmt='s', color='red', mfc='None',markersize=6)        
         obsbar = plt.errorbar([],[], fmt='s', color='0.5', mfc='0.9',markersize=6)
         dwarfpoint = plt.errorbar([],[], fmt='o', color='g', mfc='g',markersize=6)
         lstarpoint = plt.errorbar([],[], fmt='^', color='g', mfc='g',markersize=6)
         sbpoint    = plt.errorbar([],[], fmt='D', color='g', mfc='g',markersize=6)
-        lxlist = [ndpoint,obsbar,dwarfpoint,lstarpoint,sbpoint]
-        dclablist = ['Non detection','Observations','Dwarf',r'L$\star$ Galaxy', 'Starburst']
+        import matplotlib.lines as mlines
+        calline = mlines.Line2D([], [], color='k', ls='dashed')
+        lxlist = [obsbar,dwarfpoint,lstarpoint,sbpoint,calline]
+#        dclablist = ['Non detection','Observations','Dwarf',r'L$\star$ Galaxy', 'Starburst']
+        dclablist = ['Observations','Dwarf',r'L$\star$ Galaxy', 'Starburst','Calorimetric']
         legend1 = plt.legend(lxlist, dclablist, loc=2,fontsize=10,ncol=3)
         plt.gca().add_artist(legend1)
         #calorimetric line:

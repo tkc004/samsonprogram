@@ -7,9 +7,10 @@ import gas_temperature as GT
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import LogNorm
-from samson_functions import *
+import samson_functions as SSF
 from matplotlib import rcParams
 from pylab import *
+import cameron_functions as CAMF
 
 
 
@@ -63,7 +64,7 @@ def dirout(runtodo,startno,Nsnap,snapsep, Rfrac,\
         Lgamma_sfr=[]
         Lgamma_sfr_noIa=[]
         for i in range(startno,Nsnap, snapsep):
-                info=outdirname(runtodo, i)
+                info=SSF.outdirname(runtodo, i)
                 rundir=info['rundir']
                 maindir=info['maindir']
                 halostr=info['halostr']
@@ -148,7 +149,7 @@ def dirout(runtodo,startno,Nsnap,snapsep, Rfrac,\
                                         halosA = SF.read_halo_history_pep(rundir, finalno, snapsep=snapsep, beginno=beginno, singlesnap=0, firever=firever,halonostr=halostr, hubble=h0, comoving=0, maindir=maindir)
                                         afactor=atime
                                 else:
-                                        halosA = read_halo_history(rundir, maindir=maindir, halonostr=halostr, hubble=h0, comoving=0)
+                                        halosA = SF.read_halo_history(rundir, maindir=maindir, halonostr=halostr, hubble=h0, comoving=0)
                                         afactor=1.0
                                 redlist = halosA['redshift']
                                 haloid = halosA['ID']
@@ -217,7 +218,7 @@ def dirout(runtodo,startno,Nsnap,snapsep, Rfrac,\
                                         halosA = SF.read_halo_history_pep(rundir, finalno, beginno=beginno, snapsep=snapsep, singlesnap=0, firever=firever,halonostr=halostr, hubble=h0, comoving=0, maindir=maindir)
                                         afactor=atime
                                 else:
-                                        halosA = read_halo_history(rundir, maindir=maindir, halonostr=halostr, hubble=h0, comoving=0)
+                                        halosA = SF.read_halo_history(rundir, maindir=maindir, halonostr=halostr, hubble=h0, comoving=0)
                                         afactor=1.0
                                 redlist = halosA['redshift']
                                 haloid = halosA['ID']
@@ -260,9 +261,7 @@ def dirout(runtodo,startno,Nsnap,snapsep, Rfrac,\
                                         Sx = Sp[:,0]
                                         Sy = Sp[:,1]
                                         Sz = Sp[:,2]
-                                        xcen = findcenz(runtodo,Nsnap,withinr=3.0,dir='x',datasup=datasup,Gx=Sx,Gy=Sy,Gz=Sz,Gm=Sm)
-                                        ycen = findcenz(runtodo,Nsnap,withinr=3.0,dir='y',datasup=datasup,Gx=Sx,Gy=Sy,Gz=Sz,Gm=Sm)
-                                        zcen = findcenz(runtodo,Nsnap,withinr=3.0,dir='z',datasup=datasup,Gx=Sx,Gy=Sy,Gz=Sz,Gm=Sm)
+                                        xcen, ycen, zcen = findcennew(runtodo,Nsnap,withinr=5.,datasup=datasup,Gx=Sx,Gy=Sy,Gz=Sz,Gm=Sm)
                                 Rvir=Rvirguess
                         Gxrel = Gx-xcen
                         Gyrel = Gy-ycen
@@ -281,7 +280,7 @@ def dirout(runtodo,startno,Nsnap,snapsep, Rfrac,\
                                 cregyl = cregyl[cutrv]
                                 cregyg = cregyg[cutrv]
                 if cosmo==1:
-                        readtimelist=readtime(firever=2)
+                        readtimelist=SSF.readtime(firever=2)
                         snap2list=readtimelist['snaplist']
                         time2list=readtimelist['timelist']
                         a2list=readtimelist['alist']
@@ -292,7 +291,7 @@ def dirout(runtodo,startno,Nsnap,snapsep, Rfrac,\
                         cregylt=np.sum(cregyl)
                 if havecr>0:
                         cregyt =np.sum(cregy)
-                        Lout = outLgamma_nism(Grho,Neb,cregy_codeunit)
+                        Lout = SSF.outLgamma_nism(Grho,Neb,cregy_codeunit)
                         Lgcal = np.sum(Lout['Lgamma'])
                         print 'Lgcal', Lgcal
                 snaplist.append(float(i))
@@ -357,7 +356,7 @@ def gassurout(runtodo,Nsnap,projection,shiftz=1):
         withinr=10.0
         nogrid=100
         maxlength=10.0
-        info=outdirname(runtodo, Nsnap)
+        info=SSF.outdirname(runtodo, Nsnap)
         rundir=info['rundir']
         maindir=info['maindir']
         halostr=info['halostr']
@@ -396,7 +395,7 @@ def gassurout(runtodo,Nsnap,projection,shiftz=1):
                          singlesnap=1, beginno=beginno, firever=firever,halonostr=halostr, hubble=h0, comoving=0, maindir=maindir)
                         afactor=atime
                 else:
-                        halosA = read_halo_history(rundir, maindir=maindir, halonostr=halostr, hubble=h0, comoving=0)
+                        halosA = SF.read_halo_history(rundir, maindir=maindir, halonostr=halostr, hubble=h0, comoving=0)
                         afactor=1.0
                 redlist = halosA['redshift']
                 haloid = halosA['ID']
@@ -421,9 +420,7 @@ def gassurout(runtodo,Nsnap,projection,shiftz=1):
                 xcen=ycen=zcen=0;
                 if shiftz==1:
                         datasup=1
-                        xcen = findcenz(runtodo,Nsnap,withinr=3.0,dir='x',datasup=datasup,Gx=Gx,Gy=Gy,Gz=Gz,Gm=Gm)
-                        ycen = findcenz(runtodo,Nsnap,withinr=3.0,dir='y',datasup=datasup,Gx=Gx,Gy=Gy,Gz=Gz,Gm=Gm)
-                        zcen = findcenz(runtodo,Nsnap,withinr=3.0,dir='z',datasup=datasup,Gx=Gx,Gy=Gy,Gz=Gz,Gm=Gm)
+                        xcen, ycen, zcen = findcennew(runtodo,Nsnap,withinr=5.,datasup=1,Gx=Gx,Gy=Gy,Gz=Gz,Gm=Gm)
         Gpos = G['p']
         Gx = Gpos[:,0]-xcen
         Gy = Gpos[:,1]-ycen
@@ -475,318 +472,6 @@ def gassurlout(runtodo,startno,Nsnap,snapsep, rad, projection,shiftz=1):
         return {'snapl': snapl, 'gassurl': gassurl}
 
 
-def energyoutput(runtodo,Nsnap,shiftz=1,usesolarcircle=0,rotface=1,usecentral=0):
-        #see Su 2016 for the definition of turbulent energy
-        #cylr=10. #kpc
-        #cylz=2. #kpc #thickness of the cylinder we consider
-        
-        cylrin=0.01
-        #cylrin=7.0
-        #cylr=5.0
-        cylr=9.0
-        cylz=0.5
-        #cylz=0.5
-        nbin = 5
-        if usesolarcircle==1:
-                cylrin=7.0; cylr=9.0
-        if usecentral==1:
-                cylrin=0.01; cylr=3.0
-        #cylr = 1 #kpc
-        #cylz = 0.5 #kpc
-        #ncyl = 1
-        #fraccut = 100
-        fraccut = 68 #in percentage
-        turl = []
-        gml = []
-        gminl = []
-        cregyl = []
-        therml = []
-        Begyl = []
-        xcell = []
-        ycell = []
-        zcell = []
-        info=outdirname(runtodo, Nsnap)
-        rundir=info['rundir']
-        runtitle=info['runtitle']
-        slabel=info['slabel']
-        snlabel=info['snlabel']
-        dclabel=info['dclabel']
-        resolabel=info['resolabel']
-        the_snapdir=info['the_snapdir']
-        Nsnapstring=info['Nsnapstring']
-        havecr=info['havecr']
-        Fcal=info['Fcal']
-        iavesfr=info['iavesfr']
-        timestep=info['timestep']
-        maindir=info['maindir']
-        haveB=info['haveB']
-        the_prefix=info['the_prefix']
-        the_suffix=info['the_suffix']
-        usepep=info['usepep']
-        print 'the_snapdir', the_snapdir
-        print 'Nsnapstring', Nsnapstring
-        print 'havecr', havecr
-        cosmo=info['cosmo']
-        if cosmo==1:
-                h0=1
-        #       cylrin=0.01
-        #       cylr=2.0
-        #       cylz=2.0
-        #       nbin = 1
-        else:
-                h0=0
-        header = readsnapcr(the_snapdir, Nsnapstring, 0, snapshot_name=the_prefix, extension=the_suffix, havecr=havecr,h0=h0,cosmological=cosmo, header_only=1)
-        ascale = header['time']
-        #print 'this time', ascale
-        thisred = 1./ascale-1.
-        hubble = header['hubble']
-        #print 'hubble', hubble
-        G = readsnapcr(the_snapdir, Nsnapstring, 0, snapshot_name=the_prefix, extension=the_suffix, havecr=havecr,h0=h0,cosmological=cosmo)
-        if cosmo==1:
-                if usepep==0:
-                        halosingle = SF.read_halo_history(rundir, halonostr='00',hubble=hubble, comoving=0, maindir=maindir, singlesnap=1, atime=ascale)
-                        afactor=1.0
-                else:
-                        halosingle = SF.read_halo_history_pep(rundir, Nsnap, singlesnap=1,comoving=1, halonostr='00', maindir=maindir,firever=2)
-                        afactor=atime
-                xcen = halosingle['x']*afactor
-                ycen = halosingle['y']*afactor
-                zcen = halosingle['z']*afactor
-                xvcen = halosingle['xv']
-                yvcen = halosingle['yv']
-                zvcen = halosingle['zv']
-                Rvirnow = halosingle['R']*afactor
-                MgAHF = halosingle['Mg']
-                Lxstar = halosingle['Lxstar']
-                Lystar = halosingle['Lystar']
-                Lzstar = halosingle['Lzstar']
-                print 'xvcen', xvcen
-                print 'xcen', xcen
-        #       print 'xcenl[0]', xcenl[0]
-        #       print 'thisred', thisred
-                #print 'cen', xcen, ycen, zcen
-                #print 'MgAHF', MgAHF
-                #print 'Rvir', Rvirnow
-        else:
-                xcen=0
-                ycen=0
-                if shiftz==1:
-                        zcen=findcenz(runtodo,Nsnap)
-                else:
-                        zcen=0.
-                xvcen=0
-                yvcen=0
-                zvcen=0
-        Gpos = G['p']
-        Gvel = G['v']*km_in_cm #now in cm/s
-
-        Gx = Gpos[:,0]-xcen
-        Gy = Gpos[:,1]-ycen
-        Gz = Gpos[:,2]-zcen
-        Gvx = Gvel[:,0]-xvcen
-        Gvy = Gvel[:,1]-yvcen
-        Gvz = Gvel[:,2]-zvcen
-
-
-        
-        Grho = G['rho']
-        if havecr>0:
-                cregy  = G['cregy']*1e10*solar_mass_in_g*km_in_cm*km_in_cm
-        Gm = G['m']*1e10*solar_mass_in_g #in g
-        #print 'np.average(Gvx)', np.average(Gvx)
-        #print 'np.average(Gx)', np.average(Gx)
-        Gtotm = np.sum(Gm)
-        GEint = G['u']*km_in_cm*km_in_cm*Gm #in erg
-        if haveB>0:
-                GB = G['B']
-                Bx = GB[:,0]
-                By = GB[:,1]
-                Bz = GB[:,2]
-                B2 = Bx*Bx+By*By+Bz*Bz
-                Begy = B2/np.pi/8.*Gm/(Grho*1e10*solar_mass_in_g/kpc_in_cm/kpc_in_cm/kpc_in_cm)
-
-        if rotface==1:
-                Gr =  np.sqrt(Gx*Gx+Gy*Gy+Gz*Gz)
-                cutr = Gr < 5. #kpc
-                Gxcutr = Gx[cutr]; Gycutr = Gy[cutr]; Gzcutr = Gz[cutr];
-                Gvxcutr = Gvx[cutr]; Gvycutr = Gvy[cutr]; Gvzcutr = Gvz[cutr];
-                Lang = [0.,0.,0.]
-                for i in range(len(Gxcutr)):
-                        Lang += np.cross([Gxcutr[i],Gycutr[i],Gzcutr[i]],[Gvxcutr[i],Gvycutr[i],Gvzcutr[i]])
-                Gx, Gy, Gz = SF.rotateL_to_z(Gx,Gy,Gz,Lang[0],Lang[1],Lang[2])
-                Gvx, Gvy, Gvz = SF.rotateL_to_z(Gvx,Gvy,Gvz,Lang[0],Lang[1],Lang[2])
-                
-        Grxy = np.sqrt(Gx*Gx+Gy*Gy)
-        dr = (cylr-cylrin)/float(nbin)
-        cutz = np.absolute(Gz)<cylz/2.
-        radl=[]
-        for nrad in range(nbin+1):
-                radl = np.append(radl,cylrin+nrad*dr)
-        for nrad in range(nbin):
-                cutr = (Grxy<radl[nrad+1]) & (Grxy>radl[nrad])
-                #print 'radl[nrad+1]', radl[nrad+1]
-                #print 'radl[nrad]', radl[nrad]
-                cut=cutr*cutz
-                Gmc=Gm[cut]
-                Grc=Grxy[cut]
-                Gxc=Gx[cut]
-                Gyc=Gy[cut]
-                Gzc=Gz[cut]
-                Gvxc = Gvx[cut]
-                Gvyc = Gvy[cut]
-                Gvzc = Gvz[cut]
-                #print 'len(Gmc)', len(Gmc)
-                Gvzcave = np.average(Gvz[cut],weights=Gmc)
-                #calculate average rotational velocity:
-                #theta hat dot v = vtheta
-                Grxyc = np.sqrt(Gxc*Gxc+Gyc*Gyc)
-                vth = -Gyc/Grxyc*Gvxc+Gxc/Grxyc*Gvyc
-                vthave = np.average(vth,weights=Gmc)
-                #print 'Gvxc', Gvxc
-                Gvxc = Gvxc+Gyc/Grxyc*vthave
-                Gvyc = Gvyc-Gxc/Grxyc*vthave
-                vzlog = np.log10(np.absolute(Gvzc-Gvzcave))
-                #logvzsigma = np.percentile(vzlog,fraccut)
-                logvzsigma = weighted_quantile(vzlog,fraccut,sample_weight=Gmc)
-                cutvz = np.log10(vzlog)<logvzsigma
-                Grcz = Grc[cutvz]
-                Gmcz = Gmc[cutvz]
-                Gzcz = Gzc[cutvz]
-                Gxcz = Gxc[cutvz]
-                Gycz = Gyc[cutvz]
-                Gvzcz = Gvzc[cutvz]
-                Gvxcz = Gvxc[cutvz]
-                Gvycz = Gvyc[cutvz]
-                totnum = len(Gmcz)
-                print 'totnum', totnum
-                vol = np.pi*(radl[nrad+1]*radl[nrad+1]-radl[nrad]*radl[nrad])*cylz
-                numden = totnum/vol
-                vol15 = 15.0/numden #TK test
-                dl = np.power(vol15,1./3.)
-                print 'dl', dl
-                #print 'int(dr/dl)+1', int(cylz/dl)+1
-                numcount=0
-                rscl = []
-                for nrs in range(int(dr/dl)+2):
-                        prsc = 100.0/(int(dr/dl)+1)*nrs
-                        if prsc>100.0:
-                                prsc =100.0
-                        rsc = np.percentile(Grcz,prsc)
-                        rscl = np.append(rscl,rsc)
-                for nrs in range(int(dr/dl)+1):
-                        rcyls = (nrad)*dr+nrs*dl
-                        cutrs = (Grcz<rscl[nrs+1]) & (Grcz>rscl[nrs])
-                        Gmcrs = Gmcz[cutrs]
-                        Gzcrs = Gzcz[cutrs]
-                        Gxcrs = Gxcz[cutrs]
-                        Gycrs = Gycz[cutrs]
-                        Gvzcrs = Gvzcz[cutrs]
-                        Gvxcrs = Gvxcz[cutrs]
-                        Gvycrs = Gvycz[cutrs]
-                        #numcount+=len(Gmcrs)
-                        #print 'numcount', numcount
-                        #print 'len(Gmcrs)', len(Gmcrs)
-                        #print 'int(cylz/dl)+1', int(cylz/dl)+1
-                        rzscl = []
-                        for nzs in range(int(cylz/dl)+2):
-                                przsc = 100.0/(int(cylz/dl)+1)*nzs
-                                if przsc>100.0:
-                                        przsc=100.0
-                                rzsc = np.percentile(Gzcrs,przsc)
-                                rzscl = np.append(rzscl,rzsc)
-                        for nzs in range(int(cylz/dl)+1):
-                                cutzs = (Gzcrs<rzscl[nzs+1]) & (Gzcrs>rzscl[nzs])
-                                Gmcrzs = Gmcrs[cutzs]
-                                Gxcrzs = Gxcrs[cutzs]
-                                Gycrzs = Gycrs[cutzs]
-                                Gzcrzs = Gzcrs[cutzs]
-                                Gvxcrzs = Gvxcrs[cutzs]
-                                Gvycrzs = Gvycrs[cutzs]
-                                Gvzcrzs = Gvzcrs[cutzs]
-                                totnphi=2.0*np.pi*rcyls/dl
-                                phi = np.arctan2(Gycrzs,Gxcrzs)
-                                phi[phi<0] += 2.0*np.pi
-                                phil=[]
-                                for nphi in range(int(totnphi)+2):
-                                        pphi = 100.0*nphi/(int(totnphi)+1)
-                                        if pphi>100.0:
-                                                pphi=100.0
-                                        phineed = np.percentile(phi,pphi)
-                                        phil = np.append(phil, phineed)
-                                #print 'phil', phil
-                                for nphi in range(int(totnphi)+1):
-                                        phis = nphi*2.0*np.pi/totnphi
-                                        cutphi = (phi>phil[nphi]) & (phi<phil[nphi+1])
-                                        Gms = Gmcrzs[cutphi]
-                                        Gvxs = Gvxcrzs[cutphi]
-                                        Gvys = Gvycrzs[cutphi]
-                                        Gvzs = Gvzcrzs[cutphi]
-                                        Gvxsrel = Gvxs-np.average(Gvxs,weights=Gms)
-                                        Gvysrel = Gvys-np.average(Gvys,weights=Gms)
-                                        Gvzsrel = Gvzs-np.average(Gvzs,weights=Gms)
-                                        logGv2s = np.log10(Gvxsrel*Gvxsrel+Gvysrel*Gvysrel+Gvzsrel*Gvzsrel)
-                                        if len(Gms)<2:
-                                                Gmcell = Gms
-                                                Gvxcell = Gvxsrel
-                                                Gvycell = Gvysrel
-                                                Gvzcell = Gvzsrel
-                                        else:
-                                                logv2sigma = weighted_quantile(logGv2s,fraccut,sample_weight=Gms)
-                                                cutv2 = logGv2s<logv2sigma
-                                                Gmcell = Gms[cutv2]
-                                                Gvxcell = Gvxsrel[cutv2]
-                                                Gvycell = Gvysrel[cutv2]
-                                                Gvzcell = Gvzsrel[cutv2]
-                                        turenergy = np.sum(0.5*Gmcell*(Gvxcell*Gvxcell+Gvycell*Gvycell+Gvzcell*Gvzcell)) #in erg
-                                        turl = np.append(turl,turenergy)
-                                        gml = np.append(gml,np.sum(Gmcell))
-                                        xcell = np.append(xcell,0.5*(rscl[nrs+1]+rscl[nrs])*np.cos(0.5*(phil[nphi]+phil[nphi+1])))
-                                        ycell = np.append(ycell,0.5*(rscl[nrs+1]+rscl[nrs])*np.sin(0.5*(phil[nphi]+phil[nphi+1])))
-                                        zcell = np.append(zcell,0.5*(rzscl[nzs+1]+rzscl[nzs]))
-        #print 'xcell', xcell
-        #print 'ycell', ycell
-        #print 'zcell', zcell
-        Gxcutz = Gx[cutz]
-        Gycutz = Gy[cutz]
-        Gzcutz = Gz[cutz]
-        if havecr>0:
-                cregyl = cregy[cutz]
-        therml = GEint[cutz]
-        if haveB>0:
-                Begyl = Begy[cutz]
-        Gmcutz = Gm[cutz]
-        Grxycz = np.sqrt(Gxcutz*Gxcutz+Gycutz*Gycutz)
-        rxycell = np.sqrt(xcell*xcell+ycell*ycell)
-        print 'np.amax(radl)', np.amax(radl)
-        print 'np.amax(rscl)', np.amax(rscl)
-        print 'np.amax(xcell)', np.amax(xcell)
-        print 'np.amax(rxycell)', np.amax(rxycell)
-        cutr = (Grxycz<cylr) & (Grxycz>cylrin)
-        Gmcutzr = Gmcutz[cutr]
-        print 'Gmcutzr', np.sum(Gmcutzr)
-        if haveB>0:
-                Begyl=Begyl[cutr]
-        therml=therml[cutr]
-        if havecr>0:
-                cregyl=cregyl[cutr]
-        Gxpl=Gxcutz[cutr]
-        Gypl=Gycutz[cutr]
-        Gzpl=Gzcutz[cutr]
-        if cosmo==1:
-                readtimelist=readtime(firever=2)
-                snap2list=readtimelist['snaplist']
-                time2list=readtimelist['timelist']
-                a2list=readtimelist['alist']
-                tnow = np.interp(ascale,a2list,time2list)*1e9
-        if cosmo==1:
-                timen = tnow
-        else:
-                timen = float(Nsnap)*0.98*1e6
-        return {'turl':turl,'therml':therml,'Begyl':Begyl,'cregyl':cregyl,\
-        'cylrin':cylrin,'cylr':cylr,'cylz':cylz,'nbin':nbin,\
-        'Gxpl':Gxpl, 'Gypl':Gypl, 'Gzpl':Gzpl, 'xcell':xcell,\
-         'ycell':ycell, 'zcell':zcell, 'gminl':Gmcutzr, 'timen':timen}
-
 
 def outcrdata(runtodo, Nsnap, startno,snapsep,shiftz=1):
         withinr=10.0
@@ -804,7 +489,7 @@ def outcrdata(runtodo, Nsnap, startno,snapsep,shiftz=1):
         gassurden=0.
         crden=0.
         for ino in range(startno,Nsnap,snapsep):
-                info=outdirname(runtodo, ino)
+                info=SSF.outdirname(runtodo, ino)
                 haveB=info['haveB']
                 rundir=info['rundir']
                 runtitle=info['runtitle']
@@ -835,7 +520,7 @@ def outcrdata(runtodo, Nsnap, startno,snapsep,shiftz=1):
                 header = readsnapcr(the_snapdir, Nsnapstring, 0, snapshot_name=the_prefix, extension=the_suffix, havecr=havecr,h0=h0,cosmological=cosmo, header_only=1)
                 G = readsnapcr(the_snapdir, Nsnapstring, 0, snapshot_name=the_prefix, extension=the_suffix, havecr=havecr,h0=h0,cosmological=cosmo)
                 if cosmo==1:
-                        halosingle = read_halo_history(rundir, halonostr='00',hubble=hubble, comoving=0, maindir=maindir, singlesnap=1, atime=ascale)
+                        halosingle = SF.read_halo_history(rundir, halonostr='00',hubble=hubble, comoving=0, maindir=maindir, singlesnap=1, atime=ascale)
                         xcen = halosingle['x']
                         ycen = halosingle['y']
                         zcen = halosingle['z']
@@ -864,12 +549,13 @@ def outcrdata(runtodo, Nsnap, startno,snapsep,shiftz=1):
                 Gvx = Gvel[:,0]-xvcen   #km/s
                 Gvy = Gvel[:,1]-yvcen
                 Gvz = Gvel[:,2]-zvcen
-                Grho = G['rho']*1e10*Msun_in_g/kpc_in_cm/kpc_in_cm/kpc_in_cm #g/cm^3
+                Grhocode = G['rho']
+                Grho = Grhocode*1e10*Msun_in_g/kpc_in_cm/kpc_in_cm/kpc_in_cm #g/cm^3
                 Gm = G['m']*1e10 #Msun
                 Neb = G['ne']
                 if havecr>0:
                         cregy = G['cregy']*1e10*Msun_in_g*km_in_cm*km_in_cm #erg
-                TrueTemp, converted_rho  = SF.convertTemp(Gu, Neb, Grho)
+                TrueTemp, converted_rho  = SF.convertTemp(Gu, Neb, Grhocode)
                 cutxy = Gx*Gx+Gy*Gy < withinr*withinr
                 cutz = Gz*Gz < maxlength*maxlength
                 cut = cutxy*cutz
@@ -983,7 +669,7 @@ def outcrdata(runtodo, Nsnap, startno,snapsep,shiftz=1):
 def findcenz(runtodo,Nsnap,dir='z',withinr=15.,datasup=0,Gx=[],Gy=[],Gz=[],Gm=[]):
         maxlength = 10.
         nogrid = 50
-        info=outdirname(runtodo, Nsnap)
+        info=SSF.outdirname(runtodo, Nsnap)
         rundir=info['rundir']
         maindir=info['maindir']
         halostr=info['halostr']
@@ -1046,10 +732,10 @@ def findcenz(runtodo,Nsnap,dir='z',withinr=15.,datasup=0,Gx=[],Gy=[],Gz=[],Gm=[]
         return zcen
     
     
-def findcennew(runtodo,Nsnap,dir='z',withinr=15.,datasup=0,Gx=[],Gy=[],Gz=[],Gm=[]):
+def findcennew(runtodo,Nsnap,withinr=15.,datasup=0,Gx=[],Gy=[],Gz=[],Gm=[]):
         maxlength = 10.
         nogrid = 50
-        info=outdirname(runtodo, Nsnap)
+        info=SSF.outdirname(runtodo, Nsnap)
         rundir=info['rundir']
         maindir=info['maindir']
         halostr=info['halostr']
@@ -1087,12 +773,6 @@ def findcennew(runtodo,Nsnap,dir='z',withinr=15.,datasup=0,Gx=[],Gy=[],Gz=[],Gm=
         Gr = np.sqrt(Gx*Gx+Gy*Gy+Gz*Gz)
         cutr = Gr<withinr
         Gx=Gx[cutr]; Gy=Gy[cutr]; Gz=Gz[cutr]; Gm=Gm[cutr];
-        if dir=='z':
-                px=Gx;py=Gy;pz=Gz
-        if dir=='y':
-                px=Gz;py=Gx;pz=Gy
-        if dir=='x':
-                px=Gy;py=Gz;pz=Gx
         H, (xedges, yedges, zedges) = np.histogramdd((Gx, Gy, Gz), weights=Gm, bins = nogrid)
         maxindex = np.unravel_index(H.argmax(), H.shape)
         xcor = (xedges[:-1]+xedges[1:])/2.; ycor = (yedges[:-1]+yedges[1:])/2.; zcor = (zedges[:-1]+zedges[1:])/2.
@@ -1100,8 +780,9 @@ def findcennew(runtodo,Nsnap,dir='z',withinr=15.,datasup=0,Gx=[],Gy=[],Gz=[],Gm=
         return xmax, ymax, zmax
 
 
-def gaswindphase(runtodo,Nsnap,rotface=1,Tcut=1.0,highTcut=1e10,vcut=0.0,vhcut=1e10,withinr=20.0,zup=25.0,zdown=20.0,userad=0):
-        info=outdirname(runtodo, Nsnap)
+def gaswindphase(runtodo,Nsnap,rotface=1,Tcut=1.0,highTcut=1e10,vcut=0.0,
+                 vhcut=1e10,withinr=20.0,zup=25.0,zdown=20.0,userad=0):
+        info=SSF.outdirname(runtodo, Nsnap)
         rundir=info['rundir']
         maindir=info['maindir']
         halostr=info['halostr']
@@ -1142,45 +823,9 @@ def gaswindphase(runtodo,Nsnap,rotface=1,Tcut=1.0,highTcut=1e10,vcut=0.0,vhcut=1
                 vmax = 9.0
                 vmin=-1.0
         if cosmo==1:
-                print 'the_snapdir', the_snapdir
-                print 'Nsnapstring', Nsnapstring
-                G = readsnapcr(the_snapdir, Nsnapstring, 0, snapshot_name=the_prefix, extension=the_suffix, havecr=havecr,h0=1,cosmological=1)
-                header=readsnapcr(the_snapdir, Nsnapstring, 0, snapshot_name=the_prefix, extension=the_suffix, havecr=havecr,h0=1,cosmological=1,header_only=1)
-                h0 = header['hubble']
-                atime = header['time']
-                if usepep==1:
-                        halosA = SF.read_halo_history_pep(rundir, finalno, snapsep=snapsep,\
-                        beginno=beginno, singlesnap=0, firever=firever,halonostr=halostr, hubble=h0, comoving=1, maindir=maindir)
-                        afactor=atime
-                else:
-                        halosA = SF.read_halo_history(rundir, maindir=maindir, halonostr=halostr, hubble=h0, comoving=0)
-                        afactor=1.0
-                redlist = halosA['redshift']
-                haloid = halosA['ID']
-                a_scale = 1.0/(1.0+redlist)
-                xcenl = halosA['x']*afactor
-                ycenl = halosA['y']*afactor
-                zcenl = halosA['z']*afactor
-                xvcenl = halosA['xv']
-                yvcenl = halosA['yv']
-                zvcenl = halosA['zv']
-                Rvirl = halosA['R']*afactor
-                Lxstarl = halosA['Lxstar']
-                Lystarl = halosA['Lystar']
-                Lzstarl = halosA['Lzstar']
-                xcen = np.interp(atime,a_scale,xcenl)
-                ycen = np.interp(atime,a_scale,ycenl)
-                zcen = np.interp(atime,a_scale,zcenl)
-                xvcen = np.interp(atime,a_scale,xvcenl)
-                yvcen = np.interp(atime,a_scale,yvcenl)
-                zvcen = np.interp(atime,a_scale,zvcenl)
-                Rvir = np.interp(atime,a_scale,Rvirl)
-                Lxstar = np.interp(atime,a_scale,Lxstarl)
-                Lystar = np.interp(atime,a_scale,Lystarl)
-                Lzstar = np.interp(atime,a_scale,Lzstarl)
+                G = SSF.readsnapfromrun(runtodo,Nsnap,0,rotface=rotface,loccen=1)
         else:
                 G = readsnapcr(the_snapdir, Nsnapstring, 0, snapshot_name=the_prefix, extension=the_suffix, havecr=havecr)
-                xcen =0; ycen=0; zcen=0; xvcen=0; yvcen=0; zvcen=0;
         Gpos = G['p']
         Gmass = G['m'][:]
         Gvel = G['v'][:,:]
@@ -1190,24 +835,13 @@ def gaswindphase(runtodo,Nsnap,rotface=1,Tcut=1.0,highTcut=1e10,vcut=0.0,vhcut=1
         Gid = G['id'][:]
         if havecr>0:
                 cregy=G['cregy']
-        partX = Gpos[:,0]-xcen
-        partY = Gpos[:,1]-ycen
-        partZ = Gpos[:,2]-zcen
+        partX = Gpos[:,0]
+        partY = Gpos[:,1]
+        partZ = Gpos[:,2]
         partR = np.sqrt(partX*partX+partY*partY+partZ*partZ)
-        vx = Gvel[:,0]-xvcen
-        vy = Gvel[:,1]-yvcen
-        vz = Gvel[:,2]-zvcen
-        if rotface==1:
-                Gr =  np.sqrt(partX*partX+partY*partY+partZ*partZ)
-                cutr = Gr < 6. #kpc
-                Gmcutr = Gmass[cutr]
-                Gxcutr = partX[cutr]; Gycutr = partY[cutr]; Gzcutr = partZ[cutr];
-                Gvxcutr = vx[cutr]; Gvycutr = vy[cutr]; Gvzcutr = vz[cutr];
-                Lang = [0.,0.,0.]
-                for i in range(len(Gxcutr)):
-                        Lang += Gmcutr[i]*np.cross([Gxcutr[i],Gycutr[i],Gzcutr[i]],[Gvxcutr[i],Gvycutr[i],Gvzcutr[i]])
-                partX,partY,partZ = SF.rotateL_to_z(partX,partY,partZ,Lang[0],Lang[1],Lang[2])
-                vx, vy, vz = SF.rotateL_to_z(vx,vy,vz,Lang[0],Lang[1],Lang[2])
+        vx = Gvel[:,0]
+        vy = Gvel[:,1]
+        vz = Gvel[:,2]
         vr = (vx*partX+vy*partY+vz*partZ)/partR
         header = G['header'][:]
         redshift = header[3]
@@ -1217,10 +851,11 @@ def gaswindphase(runtodo,Nsnap,rotface=1,Tcut=1.0,highTcut=1e10,vcut=0.0,vhcut=1
                 cutv = (vr>vcut)*(vr<vhcut)
                 cut = cutr*cutv
         else:
-                cutz = (np.absolute(partZ)>zdown) & (np.absolute(partZ)<zup) #kpc
+                cutz = (partZ>zdown) & (partZ<zup) #kpc
                 cutxy = partX*partX+partY*partY<withinr*withinr
-                absvz = vz*partZ/np.absolute(partZ)
-                cutv = (absvz>vcut)*(absvz<vhcut) #outflowing gas
+                #absvz = vz*partZ/np.absolute(partZ)
+                #cutv = (absvz>vcut)*(absvz<vhcut) #outflowing gas
+                cutv = (vz>vcut)*(vz<vhcut)
                 cut = cutz*cutxy*cutv
         if Tcut>0.0:
                 TrueTemp, converted_rho  = SF.convertTemp(Gu, Neb, rho)
@@ -1250,56 +885,10 @@ def gaswindphase(runtodo,Nsnap,rotface=1,Tcut=1.0,highTcut=1e10,vcut=0.0,vhcut=1
 
 
 
-def gastrack(runtodo,snaptrack,snapstart,Tcut_t=1.0,highTcut_t=1e10,\
-        vcut_t=0.0,vhcut_t=1e10,withinr_t=20.0,zup_t=25.0,zdown_t=20.0,userad=0):
-        data = gaswindphase(runtodo,snaptrack,Tcut=Tcut_t,highTcut=highTcut_t,\
-        vcut=vcut_t,vhcut=vhcut_t,withinr=withinr_t,zup=zup_t,zdown=zdown_t)
-        Gid_t = data['Gid']
-        #print 'Gid_t', np.sort(Gid_t)
-        vcut = -1e10 #if we track gas particles, we should consider all velocities, temp, etc
-        withinr=1e10
-        zup=1e10
-        zdown=0.001
-        Tcut = 1.0
-        highTcut =1e15
-        vhcut = 1e15
-        data = gaswindphase(runtodo,snapstart,Tcut=Tcut,highTcut=highTcut,\
-        vcut=vcut,vhcut=vhcut,withinr=withinr,zup=zup,zdown=zdown,userad=userad)
-        partX = data['partX']
-        partY = data['partY']
-        partZ = data['partZ']
-        partR = data['partR']
-        vx = data['vx']
-        vy = data['vy']
-        vz = data['vz']
-        vr = data['vr']
-        TrueTemp = data['TrueTemp']
-        converted_rho = data['convertedrho']
-        Gmass = data['Gmass']
-        vmax = data['vmax']
-        vmin = data['vmin']
-        Gid = data['Gid']
-        idint0=np.in1d(Gid,Gid_t)
-        partR=partR[idint0]
-        vr=vr[idint0]
-        partX=partX[idint0]
-        partY=partY[idint0]
-        partZ=partZ[idint0]
-        vx=vx[idint0]
-        vy=vy[idint0]
-        vz=vz[idint0]
-        TrueTemp=TrueTemp[idint0]
-        converted_rho=converted_rho[idint0]
-        Gmass = Gmass[idint0]
-        Gid = Gid[idint0]
-        #print 'Gid_after', np.sort(Gid)
-        return {'vmax':vmax,'vmin':vmin,'Gid':Gid,'TrueTemp':TrueTemp,'convertedrho':converted_rho,\
- 'vx':vx, 'vy':vy, 'vz':vz, 'vr':vr, 'partX':partX,'partY':partY, 'partZ':partZ, 'partR':partR, 'Gmass':Gmass}
-
 
 
 def outsfr(runtodo, Nsnap, tsep=10.0):
-        info=outdirname(runtodo, Nsnap)
+        info=SSF.outdirname(runtodo, Nsnap)
         rundir=info['rundir']
         maindir=info['maindir']
         halostr=info['halostr']
@@ -1356,7 +945,7 @@ def outsfr(runtodo, Nsnap, tsep=10.0):
                 Sage=S['age']
                 apre = timeneed-1.0e-3*tsep
                 if cosmo==1:
-                        readtimelist=readtime(firever=2)
+                        readtimelist=SSF.readtime(firever=2)
                         snap2list=readtimelist['snaplist']
                         time2list=readtimelist['timelist']
                         a2list=readtimelist['alist']
@@ -1375,7 +964,7 @@ def outsfr(runtodo, Nsnap, tsep=10.0):
                                 halosA = SF.read_halo_history_pep(rundir, finalno, snapsep=snapsep, beginno=beginno, singlesnap=0, firever=firever,halonostr=halostr, hubble=h0, comoving=0, maindir=maindir)
                                 afactor=atime
                         else:
-                                halosA = read_halo_history(rundir, maindir=maindir, halonostr=halostr, hubble=h0, comoving=0)
+                                halosA = SF.read_halo_history(rundir, maindir=maindir, halonostr=halostr, hubble=h0, comoving=0)
                                 afactor=1.0
                         redlist = halosA['redshift']
                         haloid = halosA['ID']
@@ -1427,9 +1016,9 @@ def outsfr(runtodo, Nsnap, tsep=10.0):
     
     
 def gasphase(runtodo,Nsnap,rotface=1,Tcut=1.0,highTcut=1e10,vcut=0.0,vhcut=1e10,withinr=20.0,
-             withoutr=0.01,zup=25.0,zdown=20.0,userad=0):
-        datasup=0
-        info=outdirname(runtodo, Nsnap)
+             withoutr=0.01,zup=25.0,zdown=20.0,userad=0,usehalfz=0):
+        loccen=0
+        info=SSF.outdirname(runtodo, Nsnap)
         rundir=info['rundir']
         maindir=info['maindir']
         halostr=info['halostr']
@@ -1458,7 +1047,9 @@ def gasphase(runtodo,Nsnap,rotface=1,Tcut=1.0,highTcut=1e10,vcut=0.0,vhcut=1e10,
         snapsep=info['snapsep'] 
         snumadd=info['snumadd']
         if havecr==0:
-                cregy=[]
+            cregy=[]
+        if haveB==0:
+            Brms=[]
         vmax=8.5
         vmin=0
         if runtitle=='MW':
@@ -1473,11 +1064,15 @@ def gasphase(runtodo,Nsnap,rotface=1,Tcut=1.0,highTcut=1e10,vcut=0.0,vhcut=1e10,
         if cosmo==1:
                 print 'the_snapdir', the_snapdir
                 print 'Nsnapstring', Nsnapstring
-        G = readsnapwcen(the_snapdir, Nsnapstring, 0, snapshot_name=the_prefix, extension=the_suffix,\
+        G = SSF.readsnapwcen(the_snapdir, Nsnapstring, 0, snapshot_name=the_prefix, extension=the_suffix,\
          havecr=havecr,h0=h0,cosmo=cosmo, usepep=usepep, maindir=maindir,snumadd=snumadd,rotface=rotface,\
-         datasup=datasup,runtodo=runtodo,rundir=rundir,halostr=halostr)
+         loccen=loccen,runtodo=runtodo,rundir=rundir,halostr=halostr)
         if havecr>0:
-                cregy=G['cregy']
+            cregy=G['cregy']
+        if haveB>0:
+            GB = G['B']
+            Bx = GB[:,0]; By = GB[:,1]; Bz = GB[:,2];
+            Brms = np.sqrt(Bx*Bx+By*By+Bz*Bz)
         Gpos = G['p']
         Gvel = G['v']
         Gu = G['u']
@@ -1502,6 +1097,8 @@ def gasphase(runtodo,Nsnap,rotface=1,Tcut=1.0,highTcut=1e10,vcut=0.0,vhcut=1e10,
                 cut = cutr*cutv
         else:
                 cutz = (np.absolute(partZ)>zdown) & (np.absolute(partZ)<zup) #kpc
+                if usehalfz==1:
+                    cutz=cutz*(partZ>0.0)
                 cutxyin = partX*partX+partY*partY<withinr*withinr
                 cutxyout = partX*partX+partY*partY>withoutr*withoutr
                 cutxy = cutxyin*cutxyout
@@ -1527,12 +1124,14 @@ def gasphase(runtodo,Nsnap,rotface=1,Tcut=1.0,highTcut=1e10,vcut=0.0,vhcut=1e10,
         vr = vr[cut]
         Gid = Gid[cut]
         if havecr>0:
-                cregy = cregy[cut]
+            cregy = cregy[cut]
+        if haveB>0:
+            Brms = Brms[cut]
         TrueTemp, converted_rho  = SF.convertTemp(Gu, Neb, rho)
         del G, Gpos, Gvel
         return {'vmax':vmax,'vmin':vmin,'Gid':Gid,'TrueTemp':TrueTemp,'convertedrho':converted_rho,\
  'vx':vx, 'vy':vy, 'vz':vz, 'vr':vr, 'partX':partX,'partY':partY, 'partZ':partZ, 'partR':partR,\
-'Gu':Gu, 'Gmass':Gmass,'rho':rho,'cregy':cregy}
+'Gu':Gu, 'Gmass':Gmass,'rho':rho,'cregy':cregy, 'Brms':Brms}
     
     
     
@@ -1582,5 +1181,646 @@ def calstrloss(G, withinr = 20., nobin = 30):
 
 
 
+def energyoutput(runtodo,Nsnap,shiftz=1,usesolarcircle=0,rotface=1,usecentral=0,cylr=9.0,cylrin=0.01,cylz=0.5,nbin = 5,useSu=0,skiptur=0,HIonly=0):
+        #see Su 2016 for the definition of turbulent energy
+        #cylr=10. #kpc
+        #cylz=2. #kpc #thickness of the cylinder we consider
+        
+        info=SSF.outdirname(runtodo, Nsnap)
+        rundir=info['rundir']
+        runtitle=info['runtitle']
+        slabel=info['slabel']
+        snlabel=info['snlabel']
+        dclabel=info['dclabel']
+        resolabel=info['resolabel']
+        the_snapdir=info['the_snapdir']
+        Nsnapstring=info['Nsnapstring']
+        havecr=info['havecr']
+        Fcal=info['Fcal']
+        iavesfr=info['iavesfr']
+        timestep=info['timestep']
+        maindir=info['maindir']
+        haveB=info['haveB']
+        the_prefix=info['the_prefix']
+        the_suffix=info['the_suffix']
+        usepep=info['usepep']
+        snumadd=info['snumadd']
+        halostr=info['halostr']
+        print 'the_snapdir', the_snapdir
+        print 'Nsnapstring', Nsnapstring
+        print 'havecr', havecr
+        cosmo=info['cosmo']
+        if cosmo==1:
+                h0=1
+        else:
+                h0=0
+        header = readsnapcr(the_snapdir, Nsnapstring, 0, snapshot_name=the_prefix, extension=the_suffix, havecr=havecr,h0=h0,cosmological=cosmo, header_only=1)
+        ascale = header['time']
+        #print 'this time', ascale
+        thisred = 1./ascale-1.
+        hubble = header['hubble']
+        #print 'hubble', hubble
+        G = SSF.readsnapwcen(the_snapdir, Nsnapstring, 0, snapshot_name=the_prefix, extension=the_suffix,\
+        havecr=havecr,h0=h0,cosmo=cosmo, usepep=usepep, maindir=maindir,snumadd=snumadd,rotface=rotface,\
+        loccen=shiftz,runtodo=runtodo,rundir=rundir,halostr=halostr)
+        egydata = calenergyoutput(G, usesolarcircle=usesolarcircle,usecentral=usecentral,cylr=cylr,cylrin=cylrin,cylz=cylz,nbin = nbin,havecr=havecr,haveB=haveB,cosmo=cosmo,Nsnap=Nsnap,ascale=ascale,useSu=useSu,skiptur=skiptur,HIonly=HIonly)
+        del G
+        return egydata
+        
+def calenergyoutput(G, usesolarcircle=0,usecentral=0,cylr=9.0,cylrin=0.01,cylz=0.5,nbin = 5,havecr=0, haveB=0,cosmo=0,Nsnap=600,ascale=1.0,useSu=0,skiptur=0, HIonly=0):        
+        if usesolarcircle==1:
+                cylrin=7.0; cylr=9.0
+        if usecentral==1:
+                cylrin=0.01; cylr=3.0
+        fraccut = 68.0 #in percentage
+        turl = []
+        gml = []
+        gvl = []
+        gminl = []
+        cregyl = []
+        therml = []
+        Begyl = []
+        Begy_2Bzl = []
+        Evzl = []
+        xcell = []
+        ycell = []
+        zcell = []
+        Omegal = [] #angular rotation frequency in rad/s
+        Gpos = G['p']
+        Gvel = G['v']*km_in_cm #now in cm/s
+        Gx = Gpos[:,0]
+        Gy = Gpos[:,1]
+        Gz = Gpos[:,2]
+        Gvx = Gvel[:,0]
+        Gvy = Gvel[:,1]
+        Gvz = Gvel[:,2]
+        Grho = G['rho']*1e10*solar_mass_in_g/kpc_in_cm/kpc_in_cm/kpc_in_cm
+        if havecr>0:
+                cregy  = G['cregy']*1e10*solar_mass_in_g*km_in_cm*km_in_cm
+        Gm = G['m']*1e10*solar_mass_in_g #in g
+        Gtotm = np.sum(Gm)
+        GEint = G['u']*km_in_cm*km_in_cm*Gm #in erg
+        Gvol = Gm/Grho #in cm3
+        if haveB>0:
+                GB = G['B']
+                Bx = GB[:,0]
+                By = GB[:,1]
+                Bz = GB[:,2]
+                B2 = Bx*Bx+By*By+Bz*Bz
+                Begy = B2/np.pi/8.*Gm/Grho
+                Begy_2Bz = Begy-Bz*Bz/np.pi/4.*Gm/Grho
+        Evz = Gm*Gvz*Gvz        
+        Grxy = np.sqrt(Gx*Gx+Gy*Gy)
+        dr = (cylr-cylrin)/float(nbin)
+        cutz = np.absolute(Gz)<cylz/2.                                        
+        Gxcutz = Gx[cutz]
+        Gycutz = Gy[cutz]
+        Gzcutz = Gz[cutz]
+        if havecr>0:
+                cregyl = cregy[cutz]
+        therml = GEint[cutz]
+        voll = Gvol[cutz]
+        if haveB>0:
+                Begyl = Begy[cutz]
+                Begy_2Bzl = Begy_2Bz[cutz]
+        Evzl = Evz[cutz]
+        Gmcutz = Gm[cutz]
+        Grxycz = np.sqrt(Gxcutz*Gxcutz+Gycutz*Gycutz)
+        cutr = (Grxycz<cylr) & (Grxycz>cylrin)
+        Gmcutzr = Gmcutz[cutr]
+        print 'Gmcutzr', np.sum(Gmcutzr)
+        if haveB>0:
+                Begyl=Begyl[cutr]
+                Begy_2Bzl = Begy_2Bzl[cutr]
+        Evzl=Evzl[cutr]
+        therml=therml[cutr]
+        voll=voll[cutr]
+        if havecr>0:
+                cregyl=cregyl[cutr]
+        Gxpl=Gxcutz[cutr]
+        Gypl=Gycutz[cutr]
+        Gzpl=Gzcutz[cutr]
+        if cosmo==1:
+                readtimelist=SSF.readtime(firever=2)
+                snap2list=readtimelist['snaplist']
+                time2list=readtimelist['timelist']
+                a2list=readtimelist['alist']
+                tnow = np.interp(ascale,a2list,time2list)*1e9
+        if cosmo==1:
+                timen = tnow
+        else:
+                timen = float(Nsnap)*0.98*1e6
+        if skiptur==1:
+            turl=[]; xcell=[]; ycell=[]; zcell=[]; Omegal=[]; gvl=[]; gml=[]; rxycell=[]
+        else:
+            if useSu==1:
+                turdata = caltur_Su(G,cylr=cylr,cylrin=cylrin,cylz=cylz,nbin = nbin)
+            else:
+                turdata = caltur_sigmaz(G,cylr=cylr,cylrin=cylrin,cylz=cylz,nbin = nbin, HIonly = HIonly)
+            turl=turdata['turl']; xcell=turdata['xcell'];
+            ycell=turdata['ycell']; zcell=turdata['zcell']; Omegal=turdata['Omegal'];
+            gvl=turdata['gvcell']; gml=turdata['gml']
+            rxycell = np.sqrt(xcell*xcell+ycell*ycell)
+        return {'turl':turl,'therml':therml,'Begyl':Begyl,'cregyl':cregyl,\
+                'Evzl':Evzl,'Begy_2Bzl':Begy_2Bzl, 'voll':voll,\
+        'cylrin':cylrin,'cylr':cylr,'cylz':cylz,'nbin':nbin,\
+        'Gxpl':Gxpl, 'Gypl':Gypl, 'Gzpl':Gzpl, 'xcell':xcell,\
+         'ycell':ycell, 'zcell':zcell, 'Omegal':Omegal,'gminl':Gmcutzr,
+                'gvcell':gvl,'gml':gml, 'timen':timen, 'G':G}
+
+    
+    
+    
+    
+def caltur_Su(G,cylr=9.0,cylrin=0.01,cylz=0.5,nbin = 5):
+        fraccut = 68.0 #in percentage
+        turl = []
+        gml = []
+        gvl = []
+        xcell = []
+        ycell = []
+        zcell = []
+        Omegal = [] #angular rotation frequency in rad/s
+        Gpos = G['p']
+        Gvel = G['v']*km_in_cm #now in cm/s
+        Gx = Gpos[:,0]
+        Gy = Gpos[:,1]
+        Gz = Gpos[:,2]
+        Gvx = Gvel[:,0]
+        Gvy = Gvel[:,1]
+        Gvz = Gvel[:,2]
+        Grho = G['rho']*1e10*solar_mass_in_g/kpc_in_cm/kpc_in_cm/kpc_in_cm
+        Gm = G['m']*1e10*solar_mass_in_g #in g
+        Gtotm = np.sum(Gm)
+        GEint = G['u']*km_in_cm*km_in_cm*Gm #in erg
+        Gvol = Gm/Grho #in cm3      
+        Grxy = np.sqrt(Gx*Gx+Gy*Gy)
+        dr = (cylr-cylrin)/float(nbin)
+        cutz = np.absolute(Gz)<cylz/2.
+        radl=[]
+        for nrad in range(nbin+1):
+                radl = np.append(radl,cylrin+nrad*dr)
+        for nrad in range(nbin):
+                cutr = (Grxy<radl[nrad+1]) & (Grxy>radl[nrad])
+                #print 'radl[nrad+1]', radl[nrad+1]
+                #print 'radl[nrad]', radl[nrad]
+                cut=cutr*cutz
+                Gmc=Gm[cut]
+                Grhoc=Grho[cut]
+                Grc=Grxy[cut]
+                Gxc=Gx[cut]
+                Gyc=Gy[cut]
+                Gzc=Gz[cut]
+                Gvxc = Gvx[cut]
+                Gvyc = Gvy[cut]
+                Gvzc = Gvz[cut]
+                #print 'len(Gmc)', len(Gmc)
+                Gvzcave = np.average(Gvz[cut],weights=Gmc)
+                #calculate average rotational velocity:
+                #theta hat dot v = vtheta
+                Grxyc = np.sqrt(Gxc*Gxc+Gyc*Gyc)
+                vth = -Gyc/Grxyc*Gvxc+Gxc/Grxyc*Gvyc
+                vthave = np.average(vth,weights=Gmc)
+                Omega = vthave/(radl[nrad+1]+radl[nrad])*2.0/kpc_in_cm
+                #print 'Gvxc', Gvxc
+                Gvxc = Gvxc+Gyc/Grxyc*vthave
+                Gvyc = Gvyc-Gxc/Grxyc*vthave
+                vzlog = np.log10(np.absolute(Gvzc-Gvzcave))
+                logvzsigma = weighted_quantile(vzlog,fraccut,sample_weight=Gmc)
+                cutvz = np.log10(vzlog)<logvzsigma ###
+                Grcz = Grc[cutvz]
+                Gmcz = Gmc[cutvz]
+                Grhoz = Grhoc[cutvz]
+                Gzcz = Gzc[cutvz]
+                Gxcz = Gxc[cutvz]
+                Gycz = Gyc[cutvz]
+                Gvzcz = Gvzc[cutvz]
+                Gvxcz = Gvxc[cutvz]
+                Gvycz = Gvyc[cutvz]
+                totnum = len(Gmcz)
+                print 'totnum', totnum
+                vol = np.pi*(radl[nrad+1]*radl[nrad+1]-radl[nrad]*radl[nrad])*cylz
+                numden = totnum/vol
+                vol15 = 15.0/numden #TK test
+                dl = np.power(vol15,1./3.)
+                print 'dl', dl
+                #print 'int(dr/dl)+1', int(cylz/dl)+1
+                numcount=0
+                rscl = []
+                for nrs in range(int(dr/dl)+2):
+                        prsc = 100.0/(int(dr/dl)+1)*nrs
+                        if prsc>100.0:
+                                prsc =100.0
+                        rsc = np.percentile(Grcz,prsc)
+                        rscl = np.append(rscl,rsc)
+                for nrs in range(int(dr/dl)+1):
+                        rcyls = (nrad)*dr+nrs*dl
+                        cutrs = (Grcz<rscl[nrs+1]) & (Grcz>rscl[nrs])
+                        Gmcrs = Gmcz[cutrs]
+                        Gzcrs = Gzcz[cutrs]
+                        Gxcrs = Gxcz[cutrs]
+                        Gycrs = Gycz[cutrs]
+                        Gvzcrs = Gvzcz[cutrs]
+                        Gvxcrs = Gvxcz[cutrs]
+                        Gvycrs = Gvycz[cutrs]
+                        cutrsa = (Grc<rscl[nrs+1]) & (Grc>rscl[nrs])
+                        Gmcsa = Gmc[cutrsa]
+                        Grhocsa = Grhoc[cutrsa]
+                        Gxcsa = Gxc[cutrsa]
+                        Gycsa = Gyc[cutrsa]
+                        Gzcsa = Gzc[cutrsa]
+                        rzscl = []
+                        for nzs in range(int(cylz/dl)+2):
+                                przsc = 100.0/(int(cylz/dl)+1)*nzs
+                                if przsc>100.0:
+                                        przsc=100.0
+                                rzsc = np.percentile(Gzcrs,przsc)
+                                rzscl = np.append(rzscl,rzsc)
+                        for nzs in range(int(cylz/dl)+1):
+                                cutzs = (Gzcrs<rzscl[nzs+1]) & (Gzcrs>rzscl[nzs])
+                                Gmcrzs = Gmcrs[cutzs]
+                                Gxcrzs = Gxcrs[cutzs]
+                                Gycrzs = Gycrs[cutzs]
+                                Gzcrzs = Gzcrs[cutzs]
+                                Gvxcrzs = Gvxcrs[cutzs]
+                                Gvycrzs = Gvycrs[cutzs]
+                                Gvzcrzs = Gvzcrs[cutzs]
+                                cutzsa = (Gzcsa<rzscl[nzs+1]) & (Gzcsa>rzscl[nzs])
+                                Gmcsa = Gmc[cutrsa]
+                                Grhocsa = Grhoc[cutrsa]
+                                Gxcsa = Gxc[cutrsa]
+                                Gycsa = Gyc[cutrsa]
+                                Gzcsa = Gzc[cutrsa]
+                                Gvxcsa = Gvxc[cutrsa]
+                                Gvycsa = Gvyc[cutrsa]
+                                Gvzcsa = Gvzc[cutrsa]                                
+                                totnphi=2.0*np.pi*rcyls/dl
+                                phi = np.arctan2(Gycrzs,Gxcrzs)
+                                phi[phi<0] += 2.0*np.pi
+                                phil=[]
+                                phia = np.arctan2(Gycsa,Gxcsa)
+                                phia[phia<0] += 2.0*np.pi
+                                phial=[]
+                                for nphi in range(int(totnphi)+2):
+                                        pphi = 100.0*nphi/(int(totnphi)+1)
+                                        if pphi>100.0:
+                                                pphi=100.0
+                                        phineed = np.percentile(phi,pphi)
+                                        phil = np.append(phil, phineed)
+                                        phianeed = np.percentile(phia,pphi)
+                                        phial = np.append(phial, phianeed)                                        
+                                #print 'phil', phil
+                                for nphi in range(int(totnphi)+1):
+                                        phis = nphi*2.0*np.pi/totnphi
+                                        cutphi = (phi>phil[nphi]) & (phi<phil[nphi+1])
+                                        Gms = Gmcrzs[cutphi]
+                                        Gvxs = Gvxcrzs[cutphi]
+                                        Gvys = Gvycrzs[cutphi]
+                                        Gvzs = Gvzcrzs[cutphi]
+                                        cutphia = (phia>phial[nphi]) & (phia<phial[nphi+1])
+                                        Gmsa = Gmcsa[cutphia]
+                                        Grhosa = Grhocsa[cutphia]
+                                        Gvxsa = Gvxcsa[cutphia]
+                                        Gvysa = Gvycsa[cutphia]
+                                        Gvzsa = Gvzcsa[cutphia]
+                                        Gvxsrel = Gvxs-np.average(Gvxs,weights=Gms)
+                                        Gvysrel = Gvys-np.average(Gvys,weights=Gms)
+                                        Gvzsrel = Gvzs-np.average(Gvzs,weights=Gms)
+                                        logGv2s = np.log10(Gvxsrel*Gvxsrel+Gvysrel*Gvysrel+Gvzsrel*Gvzsrel)
+                                        if len(Gms)<2:
+                                                Gmcell = Gms
+                                                Gvxcell = Gvxsrel
+                                                Gvycell = Gvysrel
+                                                Gvzcell = Gvzsrel
+                                        else:
+                                                logv2sigma = weighted_quantile(logGv2s,fraccut,sample_weight=Gms)
+                                                cutv2 = logGv2s<logv2sigma ###
+                                                Gmcell = Gms[cutv2]
+                                                Gvxcell = Gvxsrel[cutv2]
+                                                Gvycell = Gvysrel[cutv2]
+                                                Gvzcell = Gvzsrel[cutv2]
+                                        turenergy = np.sum(0.5*Gmcell*(Gvxcell*Gvxcell+Gvycell*Gvycell+Gvzcell*Gvzcell)) #in erg
+                                        turl = np.append(turl,turenergy)
+                                        gml = np.append(gml,np.sum(Gmcell))
+                                        Omegal = np.append(Omegal,Omega)
+                                        gvl = np.append(gvl,np.sum(Gmsa/Grhosa))
+                                        xcell = np.append(xcell,0.5*(rscl[nrs+1]+rscl[nrs])*np.cos(0.5*(phil[nphi]+phil[nphi+1])))
+                                        ycell = np.append(ycell,0.5*(rscl[nrs+1]+rscl[nrs])*np.sin(0.5*(phil[nphi]+phil[nphi+1])))
+                                        zcell = np.append(zcell,0.5*(rzscl[nzs+1]+rzscl[nzs]))
+        return {'turl':turl,'cylrin':cylrin,'cylr':cylr,'cylz':cylz,'nbin':nbin,'xcell':xcell,\
+         'ycell':ycell, 'zcell':zcell, 'Omegal':Omegal,'gvcell':gvl,'gml':gml}                                        
+    
+    
+def caltur_sigmaz(G,cylr=9.0,cylrin=0.01,cylz=0.5,nbin = 5,HIonly=0):
+        dl = 0.248 #kpc
+        nz = cylz/dl
+        turl = np.array([])
+        gml = np.array([])
+        gvl = np.array([])
+        xcell = np.array([])
+        ycell = np.array([])
+        zcell = np.array([])
+        Omegal = np.array([]) #angular rotation frequency in rad/s
+        Gpos = G['p']
+        Gvel = G['v']*km_in_cm #now in cm/s
+        Gx = Gpos[:,0]
+        Gy = Gpos[:,1]
+        Gz = Gpos[:,2]
+        Gvx = Gvel[:,0]
+        Gvy = Gvel[:,1]
+        Gvz = Gvel[:,2]
+        Grho = G['rho']*1e10*solar_mass_in_g/kpc_in_cm/kpc_in_cm/kpc_in_cm
+        Gm = G['m']*1e10*solar_mass_in_g #in g
+        Gtotm = np.sum(Gm)
+        GEint = G['u']*km_in_cm*km_in_cm*Gm #in erg
+        Gvol = Gm/Grho #in cm3      
+        Grxy = np.sqrt(Gx*Gx+Gy*Gy)
+        cutz = np.absolute(Gz)<cylz/2.
+        if HIonly==1:
+            Gmas = G['m']; Gnh = G['nh']; KernalLengths = G['h']; density = G['rho']; Gmetal = G['z'];
+            camdict = CAMF.calnH(Gmas,Gnh,KernalLengths,density,Gmetal)
+            fHI = camdict['fHI']
+        radl=[]
+        for nrad in range(int((cylr-cylrin)/dl)+2):
+                pr = dl*nrad+cylrin
+                if pr>cylr:
+                    pr = cylr
+                radl = np.append(radl,pr)
+        for nrad in range(int((cylr-cylrin)/dl)+1):
+                cutr = (Grxy<radl[nrad+1]) & (Grxy>radl[nrad])
+                cut=cutr*cutz
+                if HIonly==1:
+                    Gmc=Gm[cut]
+                    Grhoc=Grho[cut]
+                else:
+                    Gmc=Gm[cut]*fHI
+                    Grhoc=Grho[cut]*fHI
+                Grc=Grxy[cut]
+                Gxc=Gx[cut]
+                Gyc=Gy[cut]
+                Gzc=Gz[cut]
+                Gvxc = Gvx[cut]
+                Gvyc = Gvy[cut]
+                Gvzc = Gvz[cut]
+                rzscl=[]
+                #print 'radl[nrad]', radl[nrad]
+                #print 'np.sum(Gmc)', np.sum(Gmc)
+                for nzs in range(int(cylz/dl)+2):
+                        pz = -cylz/2.0+nzs*dl
+                        if pz>cylz/2.0:
+                            pz = cylz/2.0
+                        rzscl = np.append(rzscl,pz)
+                #print 'rzscl', rzscl
+                for nzs in range(int(cylz/dl)+1):
+                        cutzsa = (Gzc<rzscl[nzs+1]) & (Gzc>rzscl[nzs])
+                        Gmcsa = Gmc[cutzsa]
+                        Grhocsa = Grhoc[cutzsa]
+                        Gxcsa = Gxc[cutzsa]
+                        Gycsa = Gyc[cutzsa]
+                        Gzcsa = Gzc[cutzsa]
+                        Gvxcsa = Gvxc[cutzsa]
+                        Gvycsa = Gvyc[cutzsa]
+                        Gvzcsa = Gvzc[cutzsa]                                
+                        phi = np.arctan2(Gycsa,Gxcsa)
+                        phi[phi<0] += 2.0*np.pi
+                        #print 'Gmcsa', Gmcsa
+                        phil=[]
+                        for nphi in range(int(2.0*np.pi*radl[nrad]/dl)+2):
+                                pphi = nphi/radl[nrad]*dl
+                                if pphi>2.0*np.pi:
+                                    pphi=2.0*np.pi
+                                phil = np.append(phil, pphi)
+                        #print 'phil', phil
+                        for nphi in range(int(2.0*np.pi*radl[nrad]/dl)+1):
+                                cutphi = (phi>phil[nphi]) & (phi<phil[nphi+1])
+                                if np.count_nonzero(cutphi)==0:
+                                    continue
+                                Gms = Gmcsa[cutphi]
+                                Grhos = Grhocsa[cutphi]
+                                Gvxs = Gvxcsa[cutphi]
+                                Gvys = Gvycsa[cutphi]
+                                Gvzs = Gvzcsa[cutphi]
+                                Gvxsrel = Gvxs-np.average(Gvxs,weights=Gms)
+                                Gvysrel = Gvys-np.average(Gvys,weights=Gms)
+                                Gvzsrel = Gvzs-np.average(Gvzs,weights=Gms)
+                                turenergy = np.sum(0.5*Gms*(Gvzsrel*Gvzsrel)) #in erg
+                                turl = np.append(turl,turenergy)
+                                gml = np.append(gml,np.sum(Gms))
+                                gvl = np.append(gvl,np.sum(Gms/Grhos))
+                                xcell = np.append(xcell,0.5*(radl[nrad+1]+radl[nrad])*np.cos(0.5*(phil[nphi]+phil[nphi+1])))
+                                ycell = np.append(ycell,0.5*(radl[nrad+1]+radl[nrad])*np.sin(0.5*(phil[nphi]+phil[nphi+1])))
+                                zcell = np.append(zcell,0.5*(rzscl[nzs+1]+rzscl[nzs]))
+                                #print 'Gms', Gms
+        return {'turl':turl,'cylrin':cylrin,'cylr':cylr,'cylz':cylz,'nbin':nbin,'xcell':xcell,\
+         'ycell':ycell, 'zcell':zcell, 'Omegal':Omegal,'gvcell':gvl,'gml':gml} 
+    
+    
 
 
+def calasyn(p):
+    from scipy.special import gamma
+    asyn= np.sqrt(np.pi)/2.*gamma(p/4.+19./12.)*gamma(p/4.-1./12.)*gamma(p/4.+5./4.)/(p+1.)/gamma(p/4.+7./4.)
+    return asyn
+    
+
+def calsynke(ecre,p,Emax,Emin):
+    # ecre = cosmic ray electron density in GeV/m^3
+    # Emin #Pfrommer+04 used 0.1GeV; Longair used 
+    # We should adapt 1 GeV such that the ratio of CR proton to electron energy is aorund 100 (see Beck & Krause 2005)
+    # p is the cosmic ray electron spectral index (assume to be 2.5)
+    # N(E) = ke*E^(-p)
+    # or ke = Int( E N(E) dE )/Int( E^(-p+1) dE) = (2-p)*ecre/(Emax^(2-p)-Emin^(2-p))
+    ke = (2.-p)*ecre/(np.power(Emax,2.-p)-np.power(Emin,2.-p)) #ke in the above unit (GeV based), depending on p
+    return ke
+    
+def calsynchrotron(alpha,B,ke,nu,V):
+    #alpha = synchrotron spectral index (assume to be 0.75)
+    #B = B field strength in Tesla
+    #p = electron spectral index
+    #nu = synchrotron frequency in Hz 
+    #V = m^3
+    #energy of electron measured in GeV; i.e. N(E) in GeV^-1 m^-1
+    # N(E) = ke*E^(-p), or ke = Int( E N(E) dE )/Int( E^(-p+1) dE) 
+    p=2.*alpha+1.
+    asyn = calasyn(p)
+    bigA = 2.344e-25*np.power(3.217e17,alpha)*asyn
+    radiolum_in_W_Hz = bigA*V*ke*np.power(B,1+alpha)*np.power(nu,-alpha)
+    return radiolum_in_W_Hz
+
+
+def calBmin(eta,radiolum_in_W_Hz,V,nu):
+    #in SI unit
+    # only for alpha (synchrotron spectral index) = 0.75 
+    # and assuming numin = nu and neglecting numax in the calculation
+    # see Longair High energy astrophysics 3rd edition
+    #fnu
+    Bmin_in_T = 1.8*np.power(eta*radiolum_in_W_Hz/V,2./7.)*np.power(nu,1./7.)
+    Bmin_in_G = Bmin_in_T*Tesla_in_Gauss
+    return Bmin_in_G
+
+
+def calsyndefault(B,ecre,V,nu=1e6,alpha=0.75,Emax=100,Emin=1.0):
+    #in SI unit, except ecre in GeV/m^3
+    p = 2.*alpha+1.
+    asyn = calasyn(p)
+    ke = calsynke(ecre,p,Emax,Emin)
+    radiolum_in_W_Hz = calsynchrotron(alpha,B,ke,nu,V)
+    return radiolum_in_W_Hz
+
+def convertsyncetoHz(apara,B,reverse=0):
+    # calculate the maximum intensity in synchrotron radiation (see Longair High energy astrophysics 3rd edition)
+    #if reverse=1; input nu in Hz and output Eelectron in GeV
+    #input eelectron in GeV
+    #B in Tesla
+    Cprop = 0.29*3./2.*echarge_in_C/2./np.pi/electronmass_in_kg\
+    /electronmass_in_kg/electronmass_in_kg/cspeed_in_m_s/cspeed_in_m_s/cspeed_in_m_s/cspeed_in_m_s
+    if reverse==0:
+        Eelectron=apara
+        Eelectron=Eelectron/Joule_in_GeV #convert to SI unit
+        nu = Eelectron*Eelectron*Cprop*B #nu is the frequency of synchrotron in Hz (with the maximum intensity)
+        outpara = nu
+    if reverse==1:
+        nu=apara
+        Eelectron = np.sqrt(nu/Cprop/B) #Eelectron in SI
+        Eelectron=Eelectron*Joule_in_GeV #convert to GeV
+        outpara = Eelectron       
+    return outpara
+
+
+
+
+def pressureXYZ(G, pos, dx, dy, dz,havecr=0,haveB=0,cutcold=0,outHI=0): #calculate density with r and z (cylindrical) coordinate 
+    #xlist, ylist and zlist must have the same size; (x,y,z) is the coordinate
+    #print 'in pressureXYZ'
+    Gp = G['p']; 
+    Gmcode = G['m'];
+    Gm = Gmcode*1e10*Msun_in_g; #now cgs
+    Gx = Gp[:,0]; Gy = Gp[:,1]; Gz = Gp[:,2];  #now kpc
+    Gvel = G['v']*km_in_cm #now in cm/s
+    Gvx = Gvel[:,0]; Gvy = Gvel[:,1]; Gvz = Gvel[:,2]
+    Grhocode=G['rho']
+    Grho = Grhocode*1e10*Msun_in_g/kpc_in_cm/kpc_in_cm/kpc_in_cm
+    Gu=G['u']
+    GEint = Gu*km_in_cm*km_in_cm*Gm #in erg #thermal energy
+    Neb = G['ne']
+    Gvol = Gm/Grho
+    print 'Gvol', Gvol
+    print 'Grho', Grho
+    print 'Gm', Gm
+    if havecr>0: 
+        cregy = G['cregy']*1e10*solar_mass_in_g*km_in_cm*km_in_cm #in erg
+    if haveB>0:
+        GB = G['B']
+        Bx = GB[:,0]
+        By = GB[:,1]
+        Bz = GB[:,2]
+        B2 = Bx*Bx+By*By+Bz*Bz
+        Begy = B2/np.pi/8.*Gm/Grho
+        Begy_2Bz = Begy-Bz*Bz/np.pi/4.*Gm/Grho    
+    rhol = np.array([])
+    pthl = np.array([])
+    pthHIl = np.array([])
+    pturl = np.array([])
+    pcrl = np.array([])
+    pBl = np.array([])
+    pBtl = np.array([])
+    voll = np.array([])
+    vzavel =np.array([])
+    kezl=np.array([])
+    pturhotl=np.array([])
+    pturcoldl=np.array([])
+    pturHIl=np.array([])
+    rhohotl=np.array([])
+    rhocoldl=np.array([])
+    rhoHIl=np.array([])
+    if outHI==1 or cutcold==1:
+        TrueTemp, converted_rho = SF.convertTemp(Gu, Neb, Grhocode)
+    if outHI==1:
+        Gnh = G['nh']; KernalLengths = G['h']; Gmetal = G['z'];
+        camdict = CAMF.calnH(Gmcode,Gnh,KernalLengths,Grhocode,Gmetal)
+        fHI = camdict['fHI']
+        htcut = TrueTemp>1e5 #K
+        ctcut = TrueTemp<2e2 #K
+    if cutcold==1:
+        tempcut = TrueTemp>1e3 #K
+        dencut = converted_rho<50.0 #cm^-3
+        tcut = tempcut*dencut
+    for inpos in pos:
+        x=inpos[0]; y=inpos[1]; z=inpos[2];
+        #print 'x,y,z', x,y,z
+        cutx = np.logical_and(Gx>x-dx/2.,Gx<x+dx/2.)
+        cuty = np.logical_and(Gy>y-dy/2.,Gy<y+dy/2.)
+        cutz = np.logical_and(Gz>z-dz/2.,Gz<z+dz/2.)
+        volume = dx*dy*dz*kpc_in_cm*kpc_in_cm*kpc_in_cm
+        cut = cutx*cuty*cutz
+        if cutcold==1:
+            cut = cut*tcut
+        Gmcut = np.sum(Gm[cut])
+        Gvolcut = np.sum(Gvol[cut])
+        #print 'Gmcut', Gmcut
+        #print 'Gvolcut', Gvolcut
+        if outHI==1:
+            GmHIcut = np.sum(Gm[cut]*fHI[cut])
+            Gmhcut = np.sum(Gm[cut*htcut])
+            Gmccut = np.sum(Gm[cut*ctcut])
+        Gthcut = np.sum(GEint[cut])
+        pth = Gthcut/Gvolcut*(GAMMA-1.0)
+        if outHI==1:
+            GthHIcut = np.sum(GEint[cut]*fHI[cut])
+            pthHI = GthHIcut/Gvolcut*(GAMMA-1.0)
+        Gkez = 0.5*np.sum(Gm[cut]*np.square(Gvz[cut]))
+        try:
+            vzave = np.average(Gvz[cut],weights=Gm[cut])
+            Gztur = np.sum(Gm[cut]*np.square(Gvz[cut]-vzave))
+            if outHI==1:
+                GzHItur = np.sum(Gm[cut]*fHI[cut]*np.square(Gvz[cut]-vzave))
+                Gzhtur = np.sum(Gm[cut*htcut]*np.square(Gvz[cut*htcut]-vzave))
+                Gzctur = np.sum(Gm[cut*ctcut]*np.square(Gvz[cut*ctcut]-vzave))
+        except ZeroDivisionError:
+            vzave = 0.0
+            Gztur = 0.0
+            if outHI==1:
+                GzHItur = 0.0
+                Gzhtur = 0.0
+                Gzctur = 0.0
+        if havecr>0: 
+            Gcregycut = np.sum(cregy[cut])
+            pcr = Gcregycut/Gvolcut*(CRgamma-1.0)
+            pcrl = np.append(pcrl,pcr)
+        if haveB>0: 
+            Begy_2Bzcut = np.sum(Begy_2Bz[cut])
+            pB = Begy_2Bzcut/Gvolcut
+            Begycut = np.sum(Begy[cut])
+            pBt = Begycut/Gvolcut
+            pBl = np.append(pBl,pB)
+            pBtl = np.append(pBtl,pBt)
+        rho = Gmcut/Gvolcut
+        #print 'rho', rho
+        rhol = np.append(rhol,rho)
+        if outHI==1:
+            rhoHI = GmHIcut/Gvolcut
+            rhoHIl = np.append(rhoHIl,rhoHI)
+            rhoc = Gmccut/Gvolcut
+            rhocoldl = np.append(rhocoldl,rhoc)   
+            rhoh = Gmhcut/Gvolcut
+            rhohotl = np.append(rhohotl,rhoh) 
+        pthl = np.append(pthl,pth)
+        ptur = Gztur/Gvolcut
+        pturl = np.append(pturl,ptur)
+        if outHI==1:
+            pturHI = GzHItur/Gvolcut
+            pturHIl = np.append(pturHIl,pturHI)            
+            pturh = Gzhtur/Gvolcut
+            pturhotl = np.append(pturhotl,pturh)
+            pturc = Gzctur/Gvolcut
+            pturcoldl = np.append(pturcoldl,pturc)
+            pthHIl = np.append(pthHIl,pthHI)
+        voll = np.append(voll,Gvolcut)
+        vzavel = np.append(vzavel,vzave)
+        kezl = np.append(kezl,Gkez)
+    print 'rhol', rhol
+    return {'rhol':rhol, 'pthl':pthl, 'pturl':pturl, 'pcrl':pcrl, 'pBl':pBl,
+            'voll':voll, 'vzavel':vzavel, 'kezl':kezl, 'pBtl':pBtl,
+            'pthHIl':pthHIl,
+           'pturhotl':pturhotl, 'pturcoldl':pturcoldl, 'pturHIl':pturHIl,
+           'rhohotl':rhohotl, 'rhocoldl':rhocoldl, 'rhoHIl':rhoHIl}

@@ -37,18 +37,19 @@ def eturtimetestinput(subdict):
                 xnl = plotdict[wanted]['xnl'][inkey];
                 ynl = plotdict[wanted]['ynl'][inkey];
                 labelneed = plotdict[wanted]['labelneed'];
-                color = plotdict[wanted]['color'];
+                color = plotdict[wanted]['color'][inkey];
                 lsn = plotdict[wanted]['lsn'][inkey];
                 lw = plotdict[wanted]['lw'][inkey];
                 marker = plotdict[wanted]['marker'][inkey];
                 linelabel = plotdict[wanted]['linelab'][inkey];
                 legendneed = 1
-                if i==0 and j==0: 
-                    label = linelabel
-                elif i==1 and k==0:
-                    label = labelneed
-                else:
-                    label = '_nolegend_' 
+                label = linelabel
+                #if i==0 and j==0: 
+                #    label = linelabel
+                #elif i==1 and k==0:
+                #    label = labelneed
+                #else:
+                #    label = '_nolegend_' 
                 if noplots==1:
                     ax.plot(xnl,ynl,label=label,lw=lw,ls=lsn,color=color,marker=marker)
                 else:

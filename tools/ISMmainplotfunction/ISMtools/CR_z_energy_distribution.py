@@ -15,7 +15,6 @@ def CR_z_energy_distribution(ssdict):
     the_prefix=ssdict['the_prefix']
     the_suffix=ssdict['the_suffix']
     fmeat=ssdict['fmeat']
-    title='MW'
     titleneed=title
     ptitle=title
     needlog=0
@@ -25,123 +24,146 @@ def CR_z_energy_distribution(ssdict):
     resoneed=0
     rotface=1
     newlabelneed=1
-    
-    findradiusatnism = 1 #find the radius that has that ISM density (negative to turn off)
-    withinr=5. #withinr will change according to the above
-    dr=2.
-    
-    
+    #findradiusatnism = 0 #find the radius that has that ISM density (negative to turn off)
     print 'runtodo', runtodo
     info=SSF.outdirname(runtodo, Nsnap)
     havecr=info['havecr']
     dclabel=info['dclabel']
     haveB=info['haveB']
-
-    nogrid = 25
-    maxlength=10. #thickness
-    zlist=np.linspace(0.001,1,num=nogrid)
+    withoutr = ssdict['withoutr']
+    withinr = ssdict['withinr']
+    nogrid = ssdict['nogrid']
+    maxlength=ssdict['maxlength'] #thickness
+    zlist=np.linspace(-maxlength/2.,maxlength/2.,num=nogrid)
     if havecr>0: credenlist=zlist*0.
     if haveB>0:  Bdenlist=zlist*0.
     thdenlist = zlist*0.
+    turdenlist = zlist*0.
     numoftimes=0
     snaplist=[]
-    info=SSF.outdirname(runtodo, Nsnap)
-    rundir=info['rundir']
-    runtitle=info['runtitle']
-    slabel=info['slabel']
-    snlabel=info['snlabel']
-    dclabel=info['dclabel']
-    resolabel=info['resolabel']
-    the_snapdir=info['the_snapdir']
-    Nsnapstring=info['Nsnapstring']
-    havecr=info['havecr']
-    Fcal=info['Fcal']
-    iavesfr=info['iavesfr']
-    timestep=info['timestep']
-    cosmo=info['cosmo']
-    maindir=info['maindir']
-    color=info['color']
-    haveB=info['haveB']
-    M1speed=info['M1speed']
-    newlabel=info['newlabel']
-    snumadd=info['snumadd']
-    usepep=info['usepep']
-    halostr=info['halostr']
-    ptitle=title
-    if runtitle=='SMC':
-        ptitle='Dwarf'
-    elif runtitle=='SBC':
-        ptitle='Starburst'
-    elif runtitle=='MW':
-        ptitle=r'$L\star$ Galaxy'
-    labelneed=dclabel
-    if newlabelneed==1:
-        labelneed="\n".join(wrap(newlabel,17))
-    if cosmo==1:
-        h0=1
-    else:
-        h0=0
-    if cosmo==1:
-        datasup=0;
-    else:
-        datasup=1;
-    Gextra = SSF.readsnapwcen(the_snapdir, Nsnapstring, 0, snapshot_name=the_prefix, extension=the_suffix,\
-     havecr=havecr,h0=h0,cosmo=cosmo, usepep=usepep, maindir=maindir,snumadd=snumadd,rotface=rotface,\
-     datasup=datasup,runtodo=runtodo,rundir=rundir,halostr=halostr)
-    Gx = Gextra['p'][:,0]; Gy = Gextra['p'][:,1]; Gz = Gextra['p'][:,2];
-    Gvx = Gextra['v'][:,0]; Gvy = Gextra['v'][:,1]; Gvz = Gextra['v'][:,2];
-    Grho = Gextra['rho']; Gu = Gextra['u']; Gm = Gextra['m']; 
-    if haveB>0: GB = Gextra['B']; GBmag2  = GB[:,0]*GB[:,0]+GB[:,1]*GB[:,1]+GB[:,2]*GB[:,2]
-    if haveB>0: Begy = GBmag2/8./np.pi/Grho*Gm*kpc_in_cm*kpc_in_cm*kpc_in_cm
-    if havecr>0: cregy = Gextra['cregy'] #cosmic ray energy in 1e10Msun km^2/sec^2
-    if havecr>0: cregy_in_erg = cregy*solar_mass_in_g*1e10*km_in_cm*km_in_cm
-    thden_in_erg = Gm*1e10*Msun_in_g*Gu*km_in_cm*km_in_cm
+    if wanted=='crdenz' or wanted=='crpz':
+        info=SSF.outdirname(runtodo, Nsnap)
+        rundir=info['rundir']
+        runtitle=info['runtitle']
+        slabel=info['slabel']
+        snlabel=info['snlabel']
+        dclabel=info['dclabel']
+        resolabel=info['resolabel']
+        the_snapdir=info['the_snapdir']
+        Nsnapstring=info['Nsnapstring']
+        havecr=info['havecr']
+        Fcal=info['Fcal']
+        iavesfr=info['iavesfr']
+        timestep=info['timestep']
+        cosmo=info['cosmo']
+        maindir=info['maindir']
+        color=info['color']
+        haveB=info['haveB']
+        M1speed=info['M1speed']
+        newlabel=info['newlabel']
+        snumadd=info['snumadd']
+        usepep=info['usepep']
+        halostr=info['halostr']
+        labelneed=dclabel
+        if newlabelneed==1:
+            labelneed="\n".join(wrap(newlabel,17))
+        ptitle=labelneed
+        if cosmo==1:
+            h0=1
+        else:
+            h0=0
+        egydata=CRTF.energyoutput(runtodo,Nsnap,
+                             shiftz=1,usesolarcircle=0,
+                             rotface=1,usecentral=0,cylr=withinr,
+                             cylrin=0.01,cylz=maxlength,nbin = 10)   
+        turl = egydata['turl']; xcell=egydata['xcell']; ycell=egydata['ycell']; zcell=egydata['zcell'];    
+        Gcrxy = np.sqrt((xcell)*(xcell)+(ycell)*(ycell))
+        cutcrxy = np.logical_and(Gcrxy<withinr,Gcrxy>withoutr)
+        for i in range(len(zlist)-1):
+            shellcvol = np.pi*(withinr*withinr-withoutr*withoutr)*(zlist[i+1]-zlist[i])
+            shellcvol_in_cm3 = shellcvol*kpc_in_cm*kpc_in_cm*kpc_in_cm
+            cutcz = (zcell < zlist[i+1]) & (zcell > zlist[i])
+            cutc = cutcrxy*cutcz
+            turl_in_erg_cut = np.sum(turl[cutc])
+            turl_in_erg_per_cm3 = turl_in_erg_cut/shellcvol_in_cm3
+            turdenlist[i] = turl_in_erg_per_cm3
 
-    if findradiusatnism>0.: withinr = SSF.findradwnism(Gextra, findradiusatnism)
-    
-    cutxy = (np.sqrt((Gx)*(Gx)+(Gy)*(Gy)) > withinr) & (np.sqrt((Gx)*(Gx)+(Gy)*(Gy)) < withinr+dr)
-    zlist = np.linspace(-maxlength,maxlength,num=nogrid)
-    for i in range(len(zlist)-1):
-        shellvol = np.pi*2.*((withinr+dr)*(withinr+dr)-withinr*withinr)*(zlist[i+1]-zlist[i])
-        shellvol_in_cm3 = shellvol*kpc_in_cm*kpc_in_cm*kpc_in_cm
-        cutz = (Gz < zlist[i+1]) & (Gz > zlist[i])
-        cut = cutxy*cutz
-        if havecr>0: cregy_in_erg_cut = np.sum(cregy_in_erg[cut])
-        if havecr>0: creden_in_erg_per_cm3 = cregy_in_erg_cut/shellvol_in_cm3
-        if havecr>0: credenlist[i]=creden_in_erg_per_cm3
-        if haveB>0: Begy_in_erg_cut = np.sum(Begy[cut])
-        if haveB>0: Bden_in_erg_per_cm3 = Begy_in_erg_cut/shellvol_in_cm3
-        if haveB>0: Bdenlist[i]=Bden_in_erg_per_cm3
-        thden_in_erg_cut = np.sum(thden_in_erg[cut])
-        thden_in_erg_per_cm3 = thden_in_erg_cut/shellvol_in_cm3
-        thdenlist[i]=thden_in_erg_per_cm3        
-    if haveB>0:
-            lsn='dashed'
-    else:
-            lsn='solid'
-    plotdict[wanted]['xlab'] = r'${\rm z [kpc]}$'
-    plotdict[wanted]['ylab'] = r'$e\;[{\rm erg/cm^3}]$'
-    plotdict[wanted]['xnl']['eth'] = zlist[:-1]
-    plotdict[wanted]['ynl']['eth'] = thdenlist[:-1]
-    plotdict[wanted]['lw']['eth'] = 1    
-    plotdict[wanted]['marker']['eth'] = '^'    
-    plotdict[wanted]['linelab']['eth'] = 'thermal'
-    if haveB>0: plotdict[wanted]['xnl']['eB'] = zlist[:-1]
-    if haveB>0: plotdict[wanted]['ynl']['eB'] = Bdenlist[:-1]
-    if haveB>0: plotdict[wanted]['lw']['eB'] = 1
-    if haveB>0: plotdict[wanted]['marker']['eB'] = 's'
-    if haveB>0: plotdict[wanted]['linelab']['eB'] = 'Bfield'
-    if havecr>0: plotdict[wanted]['xnl']['ecr'] = zlist[:-1]
-    if havecr>0: plotdict[wanted]['ynl']['ecr'] = credenlist[:-1]
-    if havecr>0: plotdict[wanted]['lw']['ecr'] = 1   
-    if havecr>0: plotdict[wanted]['linelab']['ecr'] = 'CR' 
-    if havecr>0: plotdict[wanted]['marker']['ecr'] = 'o'
-    plotdict[wanted]['runtodo'] = runtodo
-    plotdict[wanted]['labelneed'] = labelneed
-    plotdict[wanted]['lsn'] = lsn
-    plotdict[wanted]['color'] = color
-    plotdict[wanted]['runtitle'] = runtitle
-    plotdict[wanted]['ptitle'] = ptitle
-    filename=homedir+'CRplot/crdenz/CRz_'+fmeat+'_sn'+str(startno)+'_'+str(Nsnap)+'.pdf'
-    plotdict[wanted]['filename'] = filename
-    return plotdict
+        therml=egydata['therml']; Begyl=egydata['Begyl']; cregyl=egydata['cregyl'];
+        Gxpl=egydata['Gxpl']; Gypl=egydata['Gypl']; Gzpl=egydata['Gzpl'];        
+        Grxy = np.sqrt((Gxpl)*(Gxpl)+(Gypl)*(Gypl))
+        cutrxy = np.logical_and(Grxy<withinr,Grxy>withoutr)
+        for i in range(len(zlist)-1):
+            shellvol = np.pi*(withinr*withinr-withoutr*withoutr)*(zlist[i+1]-zlist[i])
+            shellvol_in_cm3 = shellvol*kpc_in_cm*kpc_in_cm*kpc_in_cm
+            cutz = (Gzpl < zlist[i+1]) & (Gzpl > zlist[i])
+            cut = cutrxy*cutz
+            if havecr>0: cregy_in_erg_cut = np.sum(cregyl[cut])
+            if havecr>0: creden_in_erg_per_cm3 = cregy_in_erg_cut/shellvol_in_cm3
+            if havecr>0: credenlist[i]=creden_in_erg_per_cm3
+            if haveB>0: Begy_in_erg_cut = np.sum(Begyl[cut])
+            if haveB>0: Bden_in_erg_per_cm3 = Begy_in_erg_cut/shellvol_in_cm3
+            if haveB>0: Bdenlist[i]=Bden_in_erg_per_cm3
+            thden_in_erg_cut = np.sum(therml[cut])
+            thden_in_erg_per_cm3 = thden_in_erg_cut/shellvol_in_cm3
+            thdenlist[i]=thden_in_erg_per_cm3        
+        if haveB>0:
+                lsn='dashed'
+        else:
+                lsn='solid'
+        zlistm = (zlist[:-1]+zlist[1:])/2.
+        plotdict[wanted]['xlab'] = r'${\rm z\;[kpc]}$'
+        if wanted=='crdenz':
+            plotdict[wanted]['ylab'] = r'$e\;[{\rm erg/cm^3}]$'
+        elif wanted=='crpz':
+            plotdict[wanted]['ylab'] = r'$p\;[{\rm dyne/cm^2}]$'
+        plotdict[wanted]['xnl']['etur'] = zlistm
+        if wanted=='crdenz':
+            plotdict[wanted]['ynl']['etur'] = turdenlist[:-1]
+        elif wanted=='crpz':
+            # https://doi.org/10.1111/j.1365-2966.2011.18550.x  not used
+            plotdict[wanted]['ynl']['etur'] = turdenlist[:-1]
+        plotdict[wanted]['lw']['etur'] = 2    
+        plotdict[wanted]['marker']['etur'] = 'd'    
+        plotdict[wanted]['lsn']['etur'] = 'solid'
+        plotdict[wanted]['linelab']['etur'] = 'turbulence'
+        plotdict[wanted]['xnl']['eth'] = zlistm
+        if wanted=='crdenz':
+            plotdict[wanted]['ynl']['eth'] = thdenlist[:-1]
+        elif wanted=='crpz':
+            plotdict[wanted]['ynl']['eth'] = thdenlist[:-1]*(GAMMA-1.)
+        plotdict[wanted]['lw']['eth'] = 2    
+        plotdict[wanted]['marker']['eth'] = '^'
+        plotdict[wanted]['lsn']['eth'] = 'dashed'
+        plotdict[wanted]['linelab']['eth'] = 'thermal'
+        if haveB>0: 
+            plotdict[wanted]['xnl']['eB'] = zlistm
+            if wanted=='crdenz':
+                plotdict[wanted]['ynl']['eB'] = Bdenlist[:-1]
+            elif wanted=='crpz':
+                plotdict[wanted]['ynl']['eB'] = Bdenlist[:-1]
+            plotdict[wanted]['lw']['eB'] = 1
+            plotdict[wanted]['lsn']['eB'] = 'solid'        
+            plotdict[wanted]['marker']['eB'] = 's'
+            plotdict[wanted]['linelab']['eB'] = 'Bfield'    
+        if havecr>0: 
+            plotdict[wanted]['xnl']['ecr'] = zlistm
+            if wanted=='crdenz':
+                plotdict[wanted]['ynl']['ecr'] = credenlist[:-1]
+            elif wanted=='crpz':
+                plotdict[wanted]['ynl']['ecr'] = credenlist[:-1]*(CRgamma-1.)
+            plotdict[wanted]['lw']['ecr'] = 1  
+            plotdict[wanted]['lsn']['ecr'] = 'dashdot' 
+            plotdict[wanted]['linelab']['ecr'] = 'CR' 
+            plotdict[wanted]['marker']['ecr'] = 'o'
+        plotdict[wanted]['runtodo'] = runtodo
+        plotdict[wanted]['labelneed'] = labelneed
+        #plotdict[wanted]['lsn'] = lsn
+        plotdict[wanted]['color'] = color
+        plotdict[wanted]['runtitle'] = runtitle
+        plotdict[wanted]['ptitle'] = ptitle
+        if wanted=='crdenz':
+            filename=plotloc+'CRplot/crdenz/CRz_'+fmeat+'_sn'+str(startno)+'_'+str(Nsnap)+'.pdf'
+        elif wanted=='crpz':
+            filename=plotloc+'CRplot/crdenz/CRpz_'+fmeat+'_sn'+str(startno)+'_'+str(Nsnap)+'.pdf'
+        plotdict[wanted]['filename'] = filename
+        return plotdict
