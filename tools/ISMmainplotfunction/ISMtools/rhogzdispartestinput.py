@@ -13,6 +13,7 @@ def rhogzdispartestinput(subdict):
     wanted=subdict['wanted']
     dirneed=np.array(subdict['dirneed'])
     fmeat=subdict['fmeat']
+    maxlength=subdict['maxlength']
     dirdict = collections.defaultdict(dict)
     dshape=dirneed.shape
     if dirneed.ndim==1:
@@ -49,8 +50,6 @@ def rhogzdispartestinput(subdict):
                 labelneed = plotdict[wanted]['labelneed'];
                 color = plotdict[wanted]['color'][inkey];
                 lsn = plotdict[wanted]['lsn'][inkey];
-                #print 'inkey', inkey
-                #print 'lsn', lsn
                 lw = plotdict[wanted]['lw'][inkey];
                 marker = plotdict[wanted]['marker'][inkey];
                 linelabel = plotdict[wanted]['linelab'][inkey];
@@ -91,6 +90,7 @@ def rhogzdispartestinput(subdict):
                     labfs=22,legfs=12,title=title,locneed='lower left')
         if wanted=='pz':
             ax.set_ylim([1e-17,5e-10])
+        ax.set_xlim([-maxlength,maxlength])
         if dirneed.ndim==1:        
             if not index==nrows-1:
                 if not noplots==1:

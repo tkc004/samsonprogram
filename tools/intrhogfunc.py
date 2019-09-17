@@ -31,14 +31,21 @@ from scipy.optimize import curve_fit
 from scipy import asarray as ar,exp
 
 
-def intdpfunc(dp,zeropoint,zlist):
+def intdpfunc(dp,zeropoint,zlist,maxlength=10.0,sumfromcen=0):
     dz = np.absolute(zlist[1]-zlist[0])*kpc_in_cm
     poscut = zlist>zeropoint
-    negdp = dp[~poscut]*dz
-    posdp = dp[poscut]*dz
-    negintdp = np.cumsum(negdp)
-    revarr = np.cumsum(posdp[::-1])
-    posintdp = revarr[::-1]
+    negdp = dp[~poscut]*dz; nzlist = zlist[~poscut]
+    posdp = dp[poscut]*dz; pzlist = zlist[poscut]
+    cutn = nzlist<-maxlength; cutp = pzlist>maxlength;
+    negdp[cutn] = 0.0; posdp[cutp] = 0.0;
+    if sumfromcen==0:
+        negintdp = np.cumsum(negdp)
+        revarr = np.cumsum(posdp[::-1])
+        posintdp = revarr[::-1]
+    else:
+        posintdp = np.cumsum(posdp)
+        revarr = np.cumsum(negdp[::-1])
+        negintdp = revarr[::-1]        
     intdp = np.concatenate([negintdp,posintdp])
     return np.absolute(intdp)
 

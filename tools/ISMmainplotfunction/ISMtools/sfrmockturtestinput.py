@@ -204,8 +204,10 @@ def sfrmockturtestinput(subdict):
         ]
     lablist=[
         #'no CR', 
-        'MHD no CR', 
-        r'MHD $\kappa$=3e29',
+        #'MHD no CR',
+        'MHD+',
+        'CR+',
+        #r'MHD $\kappa$=3e29',
         'Obs'
         ]
     legend1 = plt.legend(lxlist, lablist, loc='upper left',fontsize=14,ncol=1)

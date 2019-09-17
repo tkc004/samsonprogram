@@ -1,6 +1,10 @@
 import collections
 from inputplotdataISM import inputplotdict
-plotlist=['figgasdenTz_m12']
+plotlist=['figTztrackstart_m12i_warmslowout']
+#plotlist=['figTvznologgrid_m12_rad']
+#plotlist=['figTvznologgrid_m12i_1_2kpc']
+#plotlist=['figTztrack_m12i_inflow']
+#plotlist=['figgasdenTz_m12']
 #plotlist=['figanHz_m12m']
 #plotlist=['figsfr_m12']
 #plotlist = ['outssm12mcr_700590']

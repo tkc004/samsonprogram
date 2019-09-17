@@ -228,11 +228,11 @@ def readsnapcr(sdir,snum,ptype,
         if readflux==1:
                 returndict= {'k':1,'B':bfield,'p':pos,'v':vel,'m':mass,'id':ids,'u':ugas,'rho':rho,'h':hsml,'cregy':cregy,'crflux':crflux,'cregyl':cregyl, 'cregyg':cregyg, 'cregyd':cregyd, 'cregyp':cregyp, 'cregya':cregya,'cids':cids, 'header':newheader};
     elif (ptype==4):
-        returndict - {'k':1,'p':pos,'v':vel,'m':mass,'id':ids,'z':metal,'age':stellage,'cids':cids, 'header':newheader}
+        returndict = {'k':1,'p':pos,'v':vel,'m':mass,'id':ids,'z':metal,'age':stellage, 'header':newheader}
     elif (ptype==5) and (skip_b==0):
-        returndict= {'k':1,'p':pos,'v':vel,'m':mass,'id':ids,'mbh':bhmass,'mdot':bhmdot,'cids':cids, 'header':newheader}
+        returndict= {'k':1,'p':pos,'v':vel,'m':mass,'id':ids,'mbh':bhmass,'mdot':bhmdot, 'header':newheader}
     else:
-        returndict = {'k':1,'p':pos,'v':vel,'m':mass,'id':ids,'cids':cids, 'header':newheader}
+        returndict = {'k':1,'p':pos,'v':vel,'m':mass,'id':ids, 'header':newheader}
     return returndict
 
 

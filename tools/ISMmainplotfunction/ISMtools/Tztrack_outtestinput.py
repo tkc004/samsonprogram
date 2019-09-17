@@ -40,8 +40,7 @@ def Tztrack_outtestinput(subdict):
         for j, runtodo in enumerate(items):
             ssdict['runtodo'] = runtodo
             print 'runtodo', runtodo
-            labelcount=0
-            for modekey in modelist:
+            for labelcount, modekey in enumerate(modelist):
                 ssdict['Tcut_t']=modedict[modekey]['Tcut_t']
                 ssdict['highTcut_t']=modedict[modekey]['highTcut_t']
                 print 'modekey', modekey
@@ -69,13 +68,12 @@ def Tztrack_outtestinput(subdict):
                 else:
                     ax.plot(xpoints,ypoints,lw=lw,ls=lsn,color=color,marker=marker)
                 ax.scatter(xpoints[1:-1],ypoints[1:-1],color=color)
-                if labelcount==0:
+                if labelcount==0 and j==0:
                     ax.scatter(xpoints[0],ypoints[0],color=color,marker='s',s=4*rcParams['lines.markersize']**2,label='Start') 
                     ax.scatter(xpoints[-1],ypoints[-1],color=color,marker='>',s=4*rcParams['lines.markersize']**2,label='End')
                 else:
                     ax.scatter(xpoints[0],ypoints[0],color=color,marker='s',s=4*rcParams['lines.markersize']**2) 
                     ax.scatter(xpoints[-1],ypoints[-1],color=color,marker='>',s=4*rcParams['lines.markersize']**2) 
-                labelcount=1
         logx=1
         if trackstart==1:
             logx=0

@@ -3,7 +3,10 @@ from inputplotdataISM import inputplotdict
 #plotlist = ['figsfrmocktur_m12imhdcv',
 #                'figsfrmocktur_m12i']
 #]
-plotlist=['figTztrackstart_m12i_580']
+plotlist=['figpcrpthgrid_m12']
+#plotlist=['figrhoTgrid_m12']
+#plotlist=['figTztrackstart_m12i_warmssout']
+#plotlist=['figTztrackstart_m12i_580']
 #plotlist=['figintrhogfrompardist_m12hr0_25kpcr0_9_usekez']
 #plotlist = ['figsfrmocktur_m11gcr_700']
 #plotlist=['figsfrmocktur_m11bcr_700']

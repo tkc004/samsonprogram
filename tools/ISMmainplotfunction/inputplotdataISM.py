@@ -36,6 +36,27 @@ inputplotdict = nested_dict()
 
 
 
+inputplotdict['figTztrack_m12i_inflow']={
+    '_plotfunction':Tztrack_outtestinput,
+    'dirneed':[['m12imhdcvhr','m12icr_700hr']],
+    'wanted':'Tztrack',
+    'startno':510,
+    'Nsnap':600,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12i_inflow',
+    'Tcut_t':0.1,
+    'highTcut_t':1e10,
+    'vcut_t':-1e10,
+    'vhcut_t':0.0,
+    'withinr_t':10.0,
+    'zup_t':2.0,
+    'zdown_t':1.0,
+    'zup':1.0,
+    'zdown':1e2  
+    }
+
 inputplotdict['figTztrackstart_m12i_580']={
     '_plotfunction':Tztrack_outtestinput,
     'dirneed':[['m12imhdcvhr','m12icr_700hr']],
@@ -57,6 +78,169 @@ inputplotdict['figTztrackstart_m12i_580']={
     'zdown':1e2,
     'trackstart':1    
     }
+
+
+inputplotdict['figTztrackstart_m12m_warmout']={
+    '_plotfunction':Tztrack_outtestinput,
+    'dirneed':[['m12mmhdcvhr','m12mcr_700hr']],
+    'wanted':'Tztrack',
+    'startno':510,
+    'Nsnap':600,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12m_trackstartwarm',
+    'Tcut_t':1e0,
+    'highTcut_t':1e5,
+    'vcut_t':2e2,
+    'vhcut_t':1e10,
+    'withinr_t':10.0,
+    'zup_t':2.0,
+    'zdown_t':1.0,
+    'zup':0.01,
+    'zdown':1e2,
+    'trackstart':1    
+    }
+
+
+inputplotdict['figTztrackstart_m12f_warmout']={
+    '_plotfunction':Tztrack_outtestinput,
+    'dirneed':[['m12fmhdcvhr','m12fcr_700hr']],
+    'wanted':'Tztrack',
+    'startno':510,
+    'Nsnap':600,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12f_trackstartwarm',
+    'Tcut_t':1e0,
+    'highTcut_t':1e5,
+    'vcut_t':2e2,
+    'vhcut_t':1e10,
+    'withinr_t':10.0,
+    'zup_t':2.0,
+    'zdown_t':1.0,
+    'zup':0.01,
+    'zdown':1e2,
+    'trackstart':1    
+    }
+
+
+inputplotdict['figTztrackstart_m12i_warmout']={
+    '_plotfunction':Tztrack_outtestinput,
+    'dirneed':[['m12imhdcvhr','m12icr_700hr']],
+    'wanted':'Tztrack',
+    'startno':510,
+    'Nsnap':600,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12i_trackstartwarm',
+    'Tcut_t':1e0,
+    'highTcut_t':1e5,
+    'vcut_t':2e2,
+    'vhcut_t':1e10,
+    'withinr_t':10.0,
+    'zup_t':2.0,
+    'zdown_t':1.0,
+    'zup':0.01,
+    'zdown':1e2,
+    'trackstart':1    
+    }
+
+
+inputplotdict['figTztrackstart_m12i_warmslowout']={
+    '_plotfunction':Tztrack_outtestinput,
+    'dirneed':[['m12imhdcvhr','m12icr_700hr']],
+    'wanted':'Tztrack',
+    'startno':580,
+    'Nsnap':600,
+    'snapsep':4,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12i_trackstartslowwarm',
+    'Tcut_t':1e0,
+    'highTcut_t':1e5,
+    'vcut_t':0.0,
+    'vhcut_t':2e2,
+    'withinr_t':10.0,
+    'zup_t':2.0,
+    'zdown_t':1.0,
+    'zup':0.01,
+    'zdown':1e2,
+    'trackstart':1    
+    }
+
+
+
+inputplotdict['figTztrackstart_m12i_warmssout']={
+    '_plotfunction':Tztrack_outtestinput,
+    'dirneed':[['m12imhdcvhr','m12icr_700hr']],
+    'wanted':'Tztrack',
+    'startno':580,
+    'Nsnap':600,
+    'snapsep':4,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12i_trackstartsswarm',
+    'Tcut_t':1e0,
+    'highTcut_t':1e5,
+    'vcut_t':0.0,
+    'vhcut_t':50.0,
+    'withinr_t':10.0,
+    'zup_t':2.0,
+    'zdown_t':1.0,
+    'zup':0.01,
+    'zdown':1e2,
+    'trackstart':1    
+    }
+
+inputplotdict['figTztrackstart_m12i_hotfastout']={
+    '_plotfunction':Tztrack_outtestinput,
+    'dirneed':[['m12imhdcvhr','m12icr_700hr']],
+    'wanted':'Tztrack',
+    'startno':510,
+    'Nsnap':600,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12i_trackstartfasthot',
+    'Tcut_t':1e5,
+    'highTcut_t':1e10,
+    'vcut_t':2.0e2,
+    'vhcut_t':1e10,
+    'withinr_t':10.0,
+    'zup_t':2.0,
+    'zdown_t':1.0,
+    'zup':0.01,
+    'zdown':1e2,
+    'trackstart':1    
+    }
+
+
+inputplotdict['figTztrackstart_m12f']={
+    '_plotfunction':Tztrack_outtestinput,
+    'dirneed':[['m12fmhdcvhr','m12fcr_700hr']],
+    'wanted':'Tztrack',
+    'startno':510,
+    'Nsnap':600,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12f_trackstart',
+    'Tcut_t':1e5,
+    'highTcut_t':1e10,
+    'vcut_t':2e2,
+    'vhcut_t':1e10,
+    'withinr_t':10.0,
+    'zup_t':2.0,
+    'zdown_t':1.0,
+    'zup':0.01,
+    'zdown':1e2,
+    'trackstart':1    
+    }
+
+
 
 
 inputplotdict['figTztrackstart_m12i']={
@@ -103,6 +287,7 @@ inputplotdict['figTztrack_m12i']={
     'zdown':1e2,
     'hotwarmmode':1    
     }
+
 
 inputplotdict['figTztrack_m12i_580']={
     '_plotfunction':Tztrack_outtestinput,
@@ -4581,6 +4766,28 @@ inputplotdict['figintrhogfrompardist_m12hr0_5kpcr0_9_usekez']={
     'griddir':'grid0_5kpc'
     }
 
+inputplotdict['figintrhogfrompardist_m12hr0_25kpcr0_9_test']={
+    '_plotfunction':rhogzdispartestinput,
+    'dirneed':[['m12icr_700hr','m12fcr_700hr','m12mcr_700hr']],
+    'wanted':'pz',
+    'startno':595,
+    'Nsnap':600,
+    'snapsep':1,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12grid0_25kpc_r0_9kpc_test',
+    'withoutrnew':0.1,
+    'withinr':9.0,
+    'withoutr':0.1,
+    'maxlength':2.0,
+    'nogrid':80,
+    'usehalfz':0,
+    'usepredata':1,
+    'cutcold':0,
+    'usekez':1,
+    'griddir':'grid0_25kpc'
+    }
+
 
 inputplotdict['figintrhogfrompardist_m12hr0_25kpcr0_9_usekez']={
     '_plotfunction':rhogzdispartestinput,
@@ -4595,7 +4802,7 @@ inputplotdict['figintrhogfrompardist_m12hr0_25kpcr0_9_usekez']={
     'withoutrnew':0.1,
     'withinr':9.0,
     'withoutr':0.1,
-    'maxlength':2.0,
+    'maxlength':10.0,
     'nogrid':80,
     'usehalfz':0,
     'usepredata':1,
@@ -5397,6 +5604,68 @@ inputplotdict['figrhogfrompardist_m12ihr10kpc']={
     'maxlength':10.0,
     'nogrid':10,
     'usehalfz':1
+    }
+
+inputplotdict['figvgfrompardist_m12ihr10kpc']={
+    '_plotfunction':rhogzdispartestinput,
+    'dirneed':['m12imhdcvhr','m12icr_700hr'],
+    'wanted':'vg',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12icr700hr10kpc',
+    'withoutr':-1.0,
+    'withinr':10.0,
+    'maxlength':10.0,
+    'nogrid':10,
+    'usepredata':1,
+    'usehalfz':0,
+    'griddir':'grid0_25kpc',
+    'nogrid':80
+    }
+
+
+
+inputplotdict['figagfrompardist_m12ihr10kpc']={
+    '_plotfunction':rhogzdispartestinput,
+    'dirneed':['m12imhdcvhr','m12icr_700hr'],
+    'wanted':'ag',
+    'startno':580,
+    'Nsnap':600,
+    'snapsep':1,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12icr700hr10kpc',
+    'withoutr':-1.0,
+    'withinr':10.0,
+    'maxlength':10.0,
+    'nogrid':10,
+    'usepredata':1,
+    'usehalfz':0,
+    'griddir':'grid0_25kpc',
+    'nogrid':80
+    }
+
+inputplotdict['figvgfrompardist_m12ihr5kpc']={
+    '_plotfunction':rhogzdispartestinput,
+    'dirneed':['m12imhdcvhr','m12icr_700hr'],
+    'wanted':'vg',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12icr700hr5kpc',
+    'withoutr':-1.0,
+    'withinr':10.0,
+    'maxlength':5.0,
+    'nogrid':10,
+    'usepredata':1,
+    'usehalfz':0,
+    'griddir':'grid0_25kpc',
+    'nogrid':80
     }
 
 
@@ -6580,6 +6849,105 @@ inputplotdict['figvzzgrid_m12']={
     'normalized':0
     }
 
+
+inputplotdict['figvzzgrid_m12_z200_510']={
+    '_plotfunction':rhoTgridtestinput,
+    'dirneed':['m12imhdcvhr','m12fmhdcvhr','m12icr_700hr','m12fcr_700hr'],
+    'wanted':'vzz',
+    'startno':510,
+    'Nsnap':511,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12_z200',
+    'mtitle':'',
+    'withinr':10.0,
+    'withoutr':0.01,
+    'zup':200,
+    'zdown':-200,
+    'addtitleinbox':1,
+    'normalized':0
+    }
+
+inputplotdict['figvzzgrid_m12_r200']={
+    '_plotfunction':rhoTgridtestinput,
+    'dirneed':['m12imhdcvhr','m12fmhdcvhr','m12icr_700hr','m12fcr_700hr','m12fcr_700hr','m12mcr_700hr'],
+    'wanted':'vzz',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12_r200',
+    'mtitle':'',
+    'withinr':10.0,
+    'withoutr':0.01,
+    'zup':200,
+    'zdown':10,
+    'addtitleinbox':1,
+    'normalized':0,
+    'userad':1
+    }
+
+
+inputplotdict['figvzzgrid_m12_z200']={
+    '_plotfunction':rhoTgridtestinput,
+    'dirneed':['m12imhdcvhr','m12fmhdcvhr','m12mmhdcvhr','m12icr_700hr','m12fcr_700hr','m12mcr_700hr'],
+    'wanted':'vzz',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12_z200',
+    'mtitle':'',
+    'withinr':10.0,
+    'withoutr':0.01,
+    'zup':200,
+    'zdown':-200,
+    'addtitleinbox':1,
+    'normalized':0
+    }
+
+inputplotdict['figvzzgrid_m12_z200_cr100']={
+    '_plotfunction':rhoTgridtestinput,
+    'dirneed':['m12imhdcvhr','m12fmhdcvhr','m12mmhdcvhr','m12icr_700hr','m12fcr_700hr','m12mcr_700hr'],
+    'wanted':'vzz',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12_z200_cr100',
+    'mtitle':'',
+    'withinr':100.0,
+    'withoutr':0.01,
+    'zup':200,
+    'zdown':-200,
+    'addtitleinbox':1,
+    'normalized':0
+    }
+
+
+inputplotdict['figvzzgrid_m12_z100']={
+    '_plotfunction':rhoTgridtestinput,
+    'dirneed':['m12imhdcvhr','m12fmhdcvhr','m12mmhdcvhr','m12icr_700hr','m12fcr_700hr','m12mcr_700hr'],
+    'wanted':'vzz',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12',
+    'mtitle':'',
+    'withinr':10.0,
+    'withoutr':0.01,
+    'zup':100,
+    'zdown':-100,
+    'addtitleinbox':1,
+    'normalized':0
+    }
+
 inputplotdict['figTvzgrid_m12']={
     '_plotfunction':rhoTgridtestinput,
     'dirneed':['m12imhdcvhr','m12fmhdcvhr','m12mmhdcvhr','m12icr_700hr','m12fcr_700hr','m12mcr_700hr'],
@@ -6618,14 +6986,142 @@ inputplotdict['figTvznologgrid_m12']={
     'normalized':1
     }
 
+inputplotdict['figTvznologgrid_m12_rad']={
+    '_plotfunction':rhoTgridtestinput,
+    'dirneed':['m12imhdcvhr','m12fmhdcvhr','m12mmhdcvhr','m12icr_700hr','m12fcr_700hr','m12mcr_700hr'],
+    'wanted':'Tvznolog',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12',
+    'mtitle':'',
+    'withinr':10.0,
+    'withoutr':0.01,
+    'zup':200.0,
+    'zdown':50.0,
+    'addtitleinbox':1,
+    'normalized':0,
+    'userad':1
+    }
+
+
+
+
+inputplotdict['figTvznologgrid_m12_r100_200']={
+    '_plotfunction':rhoTgridtestinput,
+    'dirneed':['m12imhdcvhr','m12fmhdcvhr','m12mmhdcvhr','m12icr_700hr','m12fcr_700hr','m12mcr_700hr'],
+    'wanted':'Tvznolog',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12_r100_200',
+    'mtitle':'',
+    'withinr':10.0,
+    'withoutr':0.01,
+    'zup':200.0,
+    'zdown':100.0,
+    'addtitleinbox':1,
+    'normalized':0,
+    'userad':1
+    }
+
+
+
+
+inputplotdict['figTvznologgrid_m12_z100_200kpc']={
+    '_plotfunction':rhoTgridtestinput,
+    'dirneed':['m12imhdcvhr','m12fmhdcvhr','m12mmhdcvhr','m12icr_700hr','m12fcr_700hr','m12mcr_700hr'],
+    'wanted':'Tvznolog',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12_z100_200kpc',
+    'mtitle':'',
+    'withinr':10.0,
+    'withoutr':0.01,
+    'zup':200.0,
+    'zdown':100.0,
+    'addtitleinbox':1,
+    'normalized':0
+    }
+
+
+
+inputplotdict['figTvznologgrid_m12_z50_100kpc_510']={
+    '_plotfunction':rhoTgridtestinput,
+    'dirneed':['m12imhdcvhr','m12fmhdcvhr','m12icr_700hr','m12fcr_700hr'],
+    'wanted':'Tvznolog',
+    'startno':510,
+    'Nsnap':511,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12_z50_100kpc',
+    'mtitle':'',
+    'withinr':10.0,
+    'withoutr':0.01,
+    'zup':100.0,
+    'zdown':50.0,
+    'addtitleinbox':1,
+    'normalized':0
+    }
+
+
+inputplotdict['figTvznologgrid_m12_z50_100kpc']={
+    '_plotfunction':rhoTgridtestinput,
+    'dirneed':['m12imhdcvhr','m12fmhdcvhr','m12mmhdcvhr','m12icr_700hr','m12fcr_700hr','m12mcr_700hr'],
+    'wanted':'Tvznolog',
+    'startno':600,
+    'Nsnap':601,
+    'snapsep':10,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12_z50_100kpc',
+    'mtitle':'',
+    'withinr':10.0,
+    'withoutr':0.01,
+    'zup':100.0,
+    'zdown':50.0,
+    'addtitleinbox':1,
+    'normalized':0
+    }
+
+
+
+inputplotdict['figTvznologgrid_m12i_1_2kpc']={
+    '_plotfunction':rhoTgridtestinput,
+    'dirneed':['m12imhdcvhr','m12icr_700hr'],
+    'wanted':'Tvznolog',
+    'startno':580,
+    'Nsnap':601,
+    'snapsep':1,
+    'the_prefix':'snapshot',
+    'the_suffix':'.hdf5',
+    'fmeat':'m12iz1_2kpc',
+    'mtitle':'',
+    'withinr':10.0,
+    'withoutr':0.01,
+    'zup':2.0,
+    'zdown':1.0,
+    'addtitleinbox':1,
+    'normalized':0,
+    'useverplot':1
+    }
+
 
 inputplotdict['figTvznologgrid_m12i']={
     '_plotfunction':rhoTgridtestinput,
     'dirneed':['m12imhdcvhr','m12icr_700hr'],
     'wanted':'Tvznolog',
-    'startno':600,
+    'startno':580,
     'Nsnap':601,
-    'snapsep':10,
+    'snapsep':1,
     'the_prefix':'snapshot',
     'the_suffix':'.hdf5',
     'fmeat':'m12iz5_10kpc',
@@ -8395,7 +8891,7 @@ inputplotdict['figCRcox_m12ihrout']={
     }
 
 
-presetkeylist = [['withoutrnew',-1],['the_prefix','snapshot'],['the_suffix','.hdf5'],['usehalfz',0],['title',''],['addsurden',0],['egyneed',''],['addtitleinbox',0],['minsfr',1],['maxsfr',20],['extendedrange',0],['usepredata',0],['griddir','grid1kpc'],['cutcold',0],['parallel',0],['usekez',0],['normalized',1],['Tcut',-1],['withoutr',-1.0],['HIonly',0],['outHI',0],['usesnipshot',0],['extendedrange',0],['outz',0],['zup',1.0],['zdown',0.1],['phicut',0],['usehz',1],['useobs',0],['useverplot',0],['hotwarmmode',0],['trackstart',0]]
+presetkeylist = [['withoutrnew',-1],['the_prefix','snapshot'],['the_suffix','.hdf5'],['usehalfz',0],['title',''],['addsurden',0],['egyneed',''],['addtitleinbox',0],['minsfr',1],['maxsfr',20],['extendedrange',0],['usepredata',0],['griddir','grid1kpc'],['cutcold',0],['parallel',0],['usekez',0],['normalized',1],['Tcut',-1],['withoutr',-1.0],['HIonly',0],['outHI',0],['usesnipshot',0],['extendedrange',0],['outz',0],['zup',1.0],['zdown',0.1],['phicut',0],['usehz',1],['useobs',0],['useverplot',0],['hotwarmmode',0],['trackstart',0],['userad',0]]
 
 for key in list(inputplotdict):
     for pkey in presetkeylist:

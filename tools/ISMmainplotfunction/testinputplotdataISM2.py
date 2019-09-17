@@ -1,7 +1,15 @@
 import collections
 from inputplotdataISM import inputplotdict
 plotlist=[
-'figTztrack_m12i_580',
+'figvgfrompardist_m12ihr10kpc',
+#'figvgfrompardist_m12ihr5kpc',
+#'figvzzgrid_m12_r200',
+#'figvzzgrid_m12_z200_510',
+#'figTztrackstart_m12m_warmout',
+#'figTztrackstart_m12f_warmout',
+#'figTztrackstart_m12f',
+#'figintrhogfrompardist_m12hr0_25kpcr0_9_usekez',
+#'figTztrack_m12i_580',
 #'figanHz_m12f',
 #'figgasdenTz_m12f_atr8kpc',
 #'figgasdenTz_m12',

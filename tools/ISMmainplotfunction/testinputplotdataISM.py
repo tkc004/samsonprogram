@@ -1,6 +1,15 @@
 import collections
 from inputplotdataISM import inputplotdict
-plotlist=['figTztrackstart_m12i_580']
+#plotlist=['figTztrackstart_m12m_warmout']
+plotlist=['figsfrmockturtot_m11_m12']
+#plotlist=['figpcrpthgrid_m12']
+#plotlist=['figTztrackstart_m12i_hotfastout']
+#plotlist=['figTztrackstart_m12i_warmssout']
+#plotlist=['figTztrackstart_m12i_warmslowout']
+#plotlist=['figTvznologgrid_m12_r100_200']
+#plotlist=['figvzzgrid_m12_z200']
+#plotlist=['figTztrack_m12i_inflow']
+#plotlist=['figTztrackstart_m12i_580']
 #plotlist=['figTztrackstart_m12i']
 #plotlist=['figTztrack_m12i']
 #plotlist=['figTvznologgrid_m12i_50_100']

@@ -25,6 +25,7 @@ def rhoTgridtestinput(subdict):
         print 'extendedrange', extendedrange
         normalized=subdict['normalized']
         useverplot=subdict['useverplot']
+        userad=subdict['userad']
         if useverplot==1:
             ncols=1
             nrows=len(dirneed) 
@@ -43,6 +44,8 @@ def rhoTgridtestinput(subdict):
         plotit=[]
 
         for idir, runtodo in enumerate(dirneed):
+            print 'dirneed', dirneed
+            print 'idir, runtodo', idir, runtodo
             im, plotupt,plotit,cblabel,totalname\
             = crgridfunction(gridag,runtodo,wanted,idir,plotupt,plotit,startno,Nsnap,snapsep,cbcolor='YlOrRd',
                            rotface=1,
@@ -54,7 +57,7 @@ def rhoTgridtestinput(subdict):
                            withoutr=withoutr,
                            zup=zup,
                            zdown=zdown,
-                           userad=0,
+                           userad=userad,
                            trackgas=0,
                            normalized=normalized,
                            fmeat=fmeat,
